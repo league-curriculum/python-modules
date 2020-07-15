@@ -12,9 +12,9 @@ class Eye():
         
     def draw(self):
         self.turtle.begin_fill()
-        self.myTurtle.goto(self.x, self.y)
-        self.myTurtle.circle(radius=self.radius, steps=20)
-        self.myTurtle.end_fill()
+        self.turtle.goto(self.x, self.y)
+        self.turtle.circle(radius=self.radius, steps=20)
+        self.turtle.end_fill()
 
 def setBackground(filename):
     
