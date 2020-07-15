@@ -7,7 +7,8 @@ if __name__ == '__main__':
     
     # Hide the window using the window's .withdraw() method
 
-    #// Put this sentence in a pop-up message box:
+    # Put this sentence in a pop-up message box:
+    # "If you find yourself having to cross a piranha-infested river, here's how to do it..."
     
     # Get the player to enter an adjective
      
