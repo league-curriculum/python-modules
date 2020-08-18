@@ -7,7 +7,13 @@ def get_random_color():
     return "#%06X" % (random.randint(0, 0xFFFFFF))
 
 
-class Duck:
+class Animal:
+    pass
+
+
+# Classes can inherit other classes by putting the super class inside
+# parenthesis after the class name, Duck(SuperClass)
+class Duck(Animal):
     # Static variables go here. They can be used using the class name,
     # Duck.num_ducks_created
     num_ducks_created = 0
@@ -38,7 +44,7 @@ class Duck:
 
 if __name__ == '__main__':
     # 1. Create an object of the Duck class
-    # my_duck = Duck('Kenny')
+    # kenny = Duck('Kenny')
 
     # 2. Add 2 more input variables into the Duck constructor
 

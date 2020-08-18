@@ -76,8 +76,9 @@ class Hangman(tk.Tk):
 
 
 if __name__ == '__main__':
-    # 1. Make a new Hangman game, example
+    # 1. Delete 'pass' and make a new Hangman game, example
     # game = Hangman(None)
+    pass
 
     # 2. Set your game title
 
