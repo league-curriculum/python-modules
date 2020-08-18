@@ -13,7 +13,6 @@ class Hangman(tk.Tk):
         self.random_word = None
 
         # 5. Make a new instance variable to hold the word being guessed
-        self.wtg = ''
 
         self.initialize()
 
@@ -31,33 +30,22 @@ class Hangman(tk.Tk):
 
     def setup_new_word(self):
         # 6. Create an string of underscores that's the same length of the random word
-        for i in range(len(self.random_word)):
-            self.wtg += '_'
 
-        # 7. set the string of underscores using entered_text.set()
-        self.entered_text.set(self.wtg)
+        # 7. Set the string of underscores using entered_text.set()
 
+        # 8. Delete 'pass'
         pass
 
     def key_pressed(self, event):
         key = str(event.char)
         print("pressed " + key)
 
-        # 8. Check if the key that was pressed is within the guess string
+        # 9. Check if the key that was pressed is within the guess string
         # You can change a string into a list by doing: my_list = list(my_string)
         # You can change a list into a string by doing: my_string = ''.join(my_list)
-        self.wtg = list(self.wtg)
 
-        for i in range(len(self.random_word)):
-            if self.random_word[i] == key:
-                self.wtg[i] = key
-
-        self.wtg = ''.join(self.wtg )
-
-        self.entered_text.set(self.wtg)
-
-        if self.wtg == self.random_word:
-            print('YOU WIN!!!!!!')
+        # 10. If the guess string matches the random word,
+        # Print a message/pop-up telling the user they won!
 
     # --------------------------- DO NOT EDIT this method ---------------------
     @staticmethod
@@ -88,14 +76,12 @@ class Hangman(tk.Tk):
 
 
 if __name__ == '__main__':
-    # 1. Make a new Hangman game
-    game = Hangman(None)
+    # 1. Make a new Hangman game, example
+    # game = Hangman(None)
 
     # 2. Set your game title
-    game.title("Hangman")
 
     # 3. Add a key listener to your game
-    game.bind("<Key>", game.key_pressed)
+    # game.bind("<Key>", game.key_pressed)
 
     # 4. Run your game's mainloop()
-    game.mainloop()

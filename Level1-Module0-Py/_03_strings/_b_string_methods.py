@@ -13,7 +13,7 @@ def format_spaces(s1):
 # You cannot assume there are no extra spaces around the name, but you can
 # assume there is only one space between the first and last name.
 # Strings can be compared alphabetically using <, >. Be aware that capital letters
-# come first alphabetically
+# come first alphabetically:
 # "abc" < "abd"   # True
 # "abc" < "abD"   # False
 def line_leader(s1, s2, s3):

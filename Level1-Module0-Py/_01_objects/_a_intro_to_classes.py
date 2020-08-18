@@ -8,7 +8,8 @@ def get_random_color():
 
 
 class Duck:
-    # Static variables go here. They can be
+    # Static variables go here. They can be used using the class name,
+    # Duck.num_ducks_created
     num_ducks_created = 0
 
     # This is a constructor! It's called when an object of this class
@@ -23,12 +24,13 @@ class Duck:
         self.new_instance_variable = 'A new instance variable!'
         self.name = name
 
-        # This is a local variable can only be used in the constructor
+        # This is a local variable and can only be used in the constructor
         new_local_variable = 'A new local variable!'
 
         # Calling a method also begins with '.self'
         self.initialize()
 
+    # This is a method!
     def initialize(self):
         # The instance variable can be used throughout the class
         print(self.name + ' the Duck was created!')
