@@ -2,6 +2,7 @@ from tkinter import Tk, Label, Button
 
 from PIL import ImageTk, Image
 
+
 def onclick(args):
     if args == 1:
         print("rock")
@@ -9,7 +10,8 @@ def onclick(args):
         print("paper")
     if args == 3:
         print("scissors")
-        
+
+
 if __name__ == '__main__':
     window = Tk()
     window.title("Join")
@@ -22,9 +24,9 @@ if __name__ == '__main__':
     img_paper = ImageTk.PhotoImage(file="paper.jpeg")
     img_scissors = ImageTk.PhotoImage(file="scissors.jpeg")
 
-    Button(window, image=img_rock, command=lambda:onclick(1)).pack(side="left")
-    Button(window, image=img_paper, command=lambda:onclick(2)).pack(side="left")
-    Button(window, image=img_scissors, command=lambda:onclick(3)).pack(side="left")
+    Button(window, image=img_rock, command=lambda: onclick(1)).pack(side="left")
+    Button(window, image=img_paper, command=lambda: onclick(2)).pack(side="left")
+    Button(window, image=img_scissors, command=lambda: onclick(3)).pack(side="left")
 
     # Start the GUI
     window.mainloop()
