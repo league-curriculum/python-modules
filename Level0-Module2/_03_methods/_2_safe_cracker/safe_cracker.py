@@ -8,8 +8,7 @@ wekncrzpasfdkjhcfjse = random.randint(0,99)
 def crack_the_safe():
     # TODO: Your mission: Use the try_code method to crack the safe
     #  by trying all possible combinations
-    for i in range(9999900, 9999999):
-        try_code(i)
+    remove_this_code_only_to_stop_error = 0
 
 def try_code(guess):
     print("trying" + str(guess))
@@ -22,8 +21,7 @@ def try_code(guess):
         sys.exit(0)
 
 def play_the_sound_of_success():
-    # FIGURE OUT SOUND
-    compileCode=0
+    remove_this_code_only_to_stop_error = 0
 
 if __name__ == '__main__':
     window = Tk()
