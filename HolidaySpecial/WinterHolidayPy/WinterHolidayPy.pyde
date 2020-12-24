@@ -10,7 +10,7 @@ def setup():
     #    global snow_man
     
     # 3. Call size() to set the size of the sketch to at least
-    #     width=800 and height=600. The inputs to size() are
+    #     width=1000 and height=800. The inputs to size() are
     #     size(width, height) 
     
     # 4. Call loadImage() with "snowBg.jpg" as an input
