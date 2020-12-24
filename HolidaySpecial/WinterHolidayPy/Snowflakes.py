@@ -50,19 +50,19 @@ class Snowflake:
         push()
     
         if self.sparkle:
-            stroke(255 - random(50), 255 - random(50), 255 - random(50))
+            stroke(red(self.snowflakeColor) - random(50), green(self.snowflakeColor) - random(50), blue(self.snowflakeColor) - random(50))
         else:
             # White snowflake
             stroke( self.snowflakeColor )
     
-            m = 16
-            pDegrees = 360 / m
+        m = 16
+        pDegrees = 360 / m
     
-            for i in range(m):
-                if i % 2 == 0:
-                    self.drawBranch(self.x, self.y, self.w, pDegrees * i)
-                else:
-                    self.drawBranch(self.x, self.y, self.w * 0.7, pDegrees * i)
+        for i in range(m):
+            if i % 2 == 0:
+                self.drawBranch(self.x, self.y, self.w, pDegrees * i)
+            else:
+                self.drawBranch(self.x, self.y, self.w * 0.7, pDegrees * i)
     
         self.y += self.gravity + self.fallSpeed
         self.r += self.rotateSpeedDegrees

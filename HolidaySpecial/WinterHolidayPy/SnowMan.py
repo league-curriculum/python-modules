@@ -28,21 +28,17 @@ class SnowMan:
         self.snowballY = 0
         self.snowballThrowX = 0
         self.snowballThrowY = 0
-
-    def draw(self):
-        self.drawBody()
-        self.drawEyesMouth()
-        self.drawNose()
-        self.drawButtons()
-        self.drawHat()
-        self.drawArms()
   
     def drawBody(self):
+        push()
+        
         noStroke()
         fill(self.body_color)
         ellipse(self.x, self.offsetBot, 2.15 * self.radiusBot, 2 * self.radiusBot)
         ellipse(self.x, self.offsetMid, 2.15 * self.radiusMid, 2 * self.radiusMid)
         ellipse(self.x, self.offsetTop, 2 * self.radiusTop, 2 * self.radiusTop)
+        
+        pop()
   
     def drawNose(self):
         push()
