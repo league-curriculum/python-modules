@@ -16,7 +16,7 @@ def setup():
     # 4. Call loadImage() with "snowBg.jpg" as an input
     #    and set the output to your background image variable 
 
-    # 5. Call resize() with the width and height of your sketch
+    # 5. Call bg.resize() with the width and height of your sketch
 
     # 6. Set your snowman variable to a new SnowMan()
     #    snow_man = SnowMan()
