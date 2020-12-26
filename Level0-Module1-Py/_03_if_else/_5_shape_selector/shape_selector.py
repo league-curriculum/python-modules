@@ -15,5 +15,3 @@ if __name__ == '__main__':
     # Draw the shape requested by the user using if-elif-else statements
     
     # Call the turtle .done() method
-    
-    window.mainloop()

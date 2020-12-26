@@ -3,7 +3,8 @@ def find_longer_string(s1, s2):
     pass
 
 
-# If String s contains the word "underscores", change all of the spaces to underscores
+# If String s contains the word "underscores", change all of the spaces to
+# underscores
 def format_spaces(s1):
     pass
 
@@ -12,8 +13,8 @@ def format_spaces(s1):
 # in alphabetical order.
 # You cannot assume there are no extra spaces around the name, but you can
 # assume there is only one space between the first and last name.
-# Strings can be compared alphabetically using <, >. Be aware that capital letters
-# come first alphabetically:
+# Strings can be compared alphabetically using <, >. Be aware that capital
+# letters come first alphabetically:
 # "abc" < "abd"   # True
 # "abc" < "abD"   # False
 def line_leader(s1, s2, s3):
