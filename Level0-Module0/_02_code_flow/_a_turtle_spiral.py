@@ -1,11 +1,13 @@
 import random
 import turtle
 
+
 # Returns a random color!
-def getRandomColor():
+def get_random_color():
     return "#%06X" % (random.randint(0, 0xFFFFFF))
 
 # ====================== DO NOT EDIT THE CODE ABOVE ===========================
+
 
 if __name__ == '__main__':
     window = turtle.Screen()

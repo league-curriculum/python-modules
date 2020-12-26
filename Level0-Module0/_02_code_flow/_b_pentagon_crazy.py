@@ -1,12 +1,15 @@
 import random
 import turtle
 
+
 # Returns a random color!
-def getRandomColor():
+def get_random_color():
     return "#%06X" % (random.randint(0, 0xFFFFFF))
 
-def getNextColor(i):
+
+def get_next_color(i):
     return colors[i % len(colors)]
+
 
 # ====================== DO NOT EDIT THE CODE ABOVE ===========================
 
@@ -15,7 +18,7 @@ if __name__ == '__main__':
     window.bgcolor('black')
     window.setup(width=0.75, height=0.9, startx=0, starty=0)
     
-    colors = ('red','blue','green','yellow','orange')
+    colors = ('red', 'blue', 'green', 'yellow', 'orange')
     
     # Make a new turtle
     
@@ -35,8 +38,8 @@ if __name__ == '__main__':
         
         # If the loop variable (i) is equal to 200, set the turtle width to 3
         
-        # Use the getNextColor function to set the turtle pencolor,
-        # *hint .pencolor(getNextColor(i)) 
+        # Use the get_next_color function to set the turtle pencolor,
+        # *hint .pencolor(get_next_color(i))
         
         # Move the turtle forward by the loop variable, *hint .forward(i)
         

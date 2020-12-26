@@ -41,11 +41,11 @@ class Hangman(tk.Tk):
         print("pressed " + key)
 
         # 9. Check if the key that was pressed is within the guess string
-        # You can change a string into a list by doing: my_list = list(my_string)
-        # You can change a list into a string by doing: my_string = ''.join(my_list)
+        #    You can change a string into a list by doing: my_list = list(my_string)
+        #    You can change a list into a string by doing: my_string = ''.join(my_list)
 
         # 10. If the guess string matches the random word,
-        # Print a message/pop-up telling the user they won!
+        #     Print a message/pop-up telling the user they won!
 
     # --------------------------- DO NOT EDIT this method ---------------------
     @staticmethod
@@ -76,9 +76,8 @@ class Hangman(tk.Tk):
 
 
 if __name__ == '__main__':
-    # 1. Delete 'pass' and make a new Hangman game, example
+    # 1. Make a new Hangman game, example
     # game = Hangman(None)
-    pass
 
     # 2. Set your game title
 
@@ -86,3 +85,5 @@ if __name__ == '__main__':
     # game.bind("<Key>", game.key_pressed)
 
     # 4. Run your game's mainloop()
+
+    pass

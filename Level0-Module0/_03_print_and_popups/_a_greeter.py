@@ -17,3 +17,5 @@ if __name__ == '__main__':
     # Show an error message using messagebox.showerror()
 
     # Run the window's .mainloop() method
+
+    pass
