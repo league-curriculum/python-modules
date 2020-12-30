@@ -15,7 +15,7 @@ def setup():
      addSprinkle(100)
      # Write code to add a cherry to the top of your ice cream. Hint: ellipse
      fill(255,0,0)
-     ellipse(250,100,50,50)
+     ellipse(250,200,50,50)
 
 
 #***********  These are methods for you to use. DON'T CHANGE CODE BELOW THIS LINE !!!   *****************/
@@ -32,15 +32,16 @@ def makeIceCreamCone():
 
 
 def addScoop(flavor):
+     global scoops;
      noStroke()
-     if flavor.equalsIgnoreCase("chocolate"):
+     if flavor.lower() == "chocolate":
          fill(116,71,16)
-     elif flavor.equalsIgnoreCase("Strawberry"):
+     elif flavor.lower() == "strawberry":
          fill( 232 ,144,129)
-     elif flavor.equalsIgnoreCase("Vanilla"):
+     elif flavor.lower() == "vanilla":
          fill(245, 243, 227)
      else:
-         println("ERROR: We don't have the flavor "+ flavor) 
+         print "ERROR: We don't have the flavor "+ flavor 
          return
 
      ellipse(width/2,coneY - 50 - (SCOOPSIZE*scoops)/2,SCOOPSIZE,SCOOPSIZE)
