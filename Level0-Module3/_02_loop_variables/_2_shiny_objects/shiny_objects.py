@@ -2,7 +2,7 @@ from tkinter import simpledialog, Tk
 
 can_play_sounds = False
 
-
+############# Use this method. #############
 def play_mister_zee():
     if can_play_sounds:
         # TODO FIGURE OUT SOUND
@@ -24,5 +24,3 @@ if __name__ == '__main__':
     window = Tk()
     window.withdraw()
     many_shiny_objects()
-
-############# Use this method. DON'T CHANGE THE CODE BELOW #############
