@@ -15,33 +15,33 @@ def animals():
 
 
 def moo():
-    # playsound('cow.wav')
     im = Image.open("cow.jpg")
     im.show()
+    playsound('moo.wav')
 
 
 def quack():
-    # playsound('duck.wav')
     im = Image.open("duck.jpg")
     im.show()
+    playsound('quack.wav')
 
 
 def woof():
-    # playsound('dog.wav')
     im = Image.open("dog.jpg")
     im.show()
+    playsound('woof.wav')
 
 
 def meow():
-    # playsound('meow.wav')
     im = Image.open("cat.jpg")
     im.show()
+    playsound('meow.wav')
 
 
-def llamascream():
-    # playsound('llama.wav')
+def llama_scream():
     im = Image.open("llama.jpg")
     im.show()
+    playsound('llama.wav')
 
 
 if __name__ == '__main__':

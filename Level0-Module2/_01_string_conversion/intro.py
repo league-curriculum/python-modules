@@ -13,7 +13,14 @@ if __name__ == '__main__':
     messagebox.showinfo(None, num1 + num2)
     messagebox.showinfo(None, str(num1) + str(num2))
 
-    # TODO: Uncomment the code below and run the program again
-    #   Using str() we can use words and numbers together
-    messagebox.showinfo(None, "num1 = " + str(num1) + " num2 = " + str(num2))
+    # TODO: String can also be converted to integers using the int() function
+    #  The first pop-up combines the 2 strings "3" and '7' to get "37"
+    #  When converted to integers, the + does an arithmetic add to get 10
+    num1_str = '3'
+    num2_str = '7'
+    messagebox.showinfo(None, num1_str + num2_str)
+    messagebox.showinfo(None, int(num1_str) + int(num2_str))
 
+    # TODO: Uncomment the code below and run the program again
+    #   Use str() to print num1 and num2
+    # messagebox.showinfo(None, "num1 = " + num1 + " num2 = " + num2)
