@@ -1,12 +1,13 @@
 from tkinter import simpledialog, messagebox, Tk
 
-import vlc, pafy
-######################### TODO NEED TO FIGURE OUT VLC IMPORT
+#import vlc, pafy
+
 def play_video(url):
-    video = pafy.new(url)
-    best = video.getbest()
-    media = vlc.MediaPlayer(best.url)
-    media.play()
+   # video = pafy.new(url)
+   # best = video.getbest()
+   # media = vlc.MediaPlayer(best.url)
+   # media.play()
+   print("Not Working Yet")
 
 if __name__ == '__main__':
 
