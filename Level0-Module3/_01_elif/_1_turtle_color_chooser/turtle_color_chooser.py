@@ -2,9 +2,11 @@ import random
 import turtle
 from tkinter import simpledialog
 
+
 # Returns a random color!
-def getRandomColor():
+def get_random_color():
     return "#%06X" % (random.randint(0, 0xFFFFFF))
+
 
 # ====================== DO NOT EDIT THE CODE ABOVE ===========================
 
@@ -19,9 +21,6 @@ if __name__ == '__main__':
     #      5) Use an if/else statement to set the pen color that the user requested
     #      6) If the user doesn't enter anything, choose a random color
     #      7) Put a loop around your code so that you keep asking the user for more colors & drawing them
-
-
-
 
     # ===================== DO NOT EDIT THE CODE BELOW ============================
     turtle.done()

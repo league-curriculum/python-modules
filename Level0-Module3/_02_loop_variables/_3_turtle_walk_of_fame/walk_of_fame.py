@@ -16,4 +16,4 @@ if __name__ == '__main__':
     #       Hint: The distance between stars is 50.
 
 # ===================== DO NOT EDIT THE CODE BELOW ============================
-turtle.done()
+    turtle.done()

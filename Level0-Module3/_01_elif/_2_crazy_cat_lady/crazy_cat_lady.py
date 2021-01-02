@@ -1,16 +1,12 @@
 from tkinter import simpledialog, messagebox, Tk
+import webbrowser
 
-#import vlc, pafy
 
 def play_video(url):
-   # video = pafy.new(url)
-   # best = video.getbest()
-   # media = vlc.MediaPlayer(best.url)
-   # media.play()
-   print("Not Working Yet")
+    webbrowser.open(url)
+
 
 if __name__ == '__main__':
-
     # TODO 1) Make a new window variable, window = Tk()
     #      2) Hide the window using the window's .withdraw() method
     #      3) Ask the user how many cats they have

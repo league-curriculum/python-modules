@@ -20,6 +20,7 @@ def draw():
     # Now put his head on using draw_bee_face(x,y)
     
 
+    pass
 
 #**************   Use these methods but  DON'T CHANGE THE CODE BELOW  **************/
 
