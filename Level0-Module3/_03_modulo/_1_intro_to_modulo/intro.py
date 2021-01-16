@@ -7,7 +7,8 @@ if __name__ == '__main__':
     #  -
     #  A common use for modulo is to test if a number is odd or even.
     #  To do this test, you divide the number by 2.
-    #  If the remainder is zero, the number is even, but if the remainder is one, the number is odd.
+    #  If the remainder is zero, the number is even, but if the remainder
+    #  is one, the number is odd.
     #  In code this would look like this:
 
     for i in range(3):
@@ -17,7 +18,8 @@ if __name__ == '__main__':
         else:
             print(str(number) + " is odd")
 
-    # TODO: Another use for modulo could be to track every 20 times a loop is executed, as follows:
+    # TODO: Another use for modulo could be to track every 20 times a loop
+    #  is executed, as follows:
     for i in range(101):
         if i % 20 == 0:
             print("i is: " + str(i) + ", 20 more repeats completed")

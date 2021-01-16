@@ -13,3 +13,5 @@ if __name__ == '__main__':
     #      4) If they have 3 or more cats, tell them they are a crazy cat lady
     #      5) If they have less than 3 cats AND more than 0 cats, call the method below to show them a cat video
     #      6) If they have 0 cats, show them a video of A Frog Sitting on a Bench Like a Human
+
+    pass
