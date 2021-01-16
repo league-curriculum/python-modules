@@ -1,5 +1,8 @@
 """
-* Instructions are in the __main__ block below
+Below is a demo of how to create and use a class in Python
+Follow the instructions in the __main__ block below
+For a complete reference:
+https://docs.python.org/3/tutorial/classes.html
 """
 
 import random

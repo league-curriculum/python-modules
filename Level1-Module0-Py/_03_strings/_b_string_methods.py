@@ -27,7 +27,7 @@ def numeral_sum(s):
 
 
 # Return the number of times String substring appears in String s
-def substring_count(s):
+def substring_count(s, substring):
     pass
 
 

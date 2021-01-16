@@ -1,3 +1,8 @@
+"""
+Below is a demo of how to use different string methods in Python
+For a complete reference:
+https://docs.python.org/3/library/string.html
+"""
 
 if __name__ == '__main__':
 
