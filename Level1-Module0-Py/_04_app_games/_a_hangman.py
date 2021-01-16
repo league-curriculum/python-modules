@@ -33,14 +33,13 @@ class Hangman(tk.Tk):
 
         # 7. Set the string of underscores using entered_text.set()
 
-        # 8. Delete 'pass'
         pass
 
     def key_pressed(self, event):
         key = str(event.char)
         print("pressed " + key)
 
-        # 9. Check if the key that was pressed is within the guess string
+        # 8. Check if the key that was pressed is within the guess string
         #    You can change a string into a list by doing: my_list = list(my_string)
         #    You can change a list into a string by doing: my_string = ''.join(my_list)
 
