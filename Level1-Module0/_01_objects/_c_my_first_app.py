@@ -1,3 +1,11 @@
+"""
+* 1. Test out this app by putting text in the text field and pressing the
+    button. Does the text on the top label change?
+
+* 2. Add another label, button, and text field in the MyFirstPythonApp
+    class. Feel free to rearrange the components in the app.
+"""
+
 import tkinter as tk
 from PIL import Image, ImageTk
 
@@ -28,7 +36,8 @@ class MyFirstPythonApp(tk.Tk):
 
         # Add a text label. Notice 'textvariable=' is used, not 'text=' because
         # we want to update the text on the label
-        label = tk.Label(self, textvariable=self.label_text, bg='yellow', fg='blue', font=('arial', 32, 'bold'), relief='solid')
+        label = tk.Label(self, textvariable=self.label_text, bg='yellow',
+                         fg='blue', font=('arial', 32, 'bold'), relief='solid')
 
         # You can set the location of the label relative to the size of the window
         # The scaling will be maintained if the the app window is resized
@@ -45,7 +54,8 @@ class MyFirstPythonApp(tk.Tk):
         # Add a button.
         # command=lambda: self.on_button_press() tells the program to call the
         # on_button_press() method when the button is clicked
-        button = tk.Button(self, text='Press Me!', bg='green', fg='black', command=lambda: self.on_button_press())
+        button = tk.Button(self, text='Press Me!', bg='green', fg='black',
+                           command=lambda: self.on_button_press())
         button.place(x=200, y=450)
 
         # Add a text field
@@ -66,12 +76,5 @@ if __name__ == '__main__':
 
     # Sets the size of the app window
     app.geometry('500x500')
-
-    # --------------------------- Assignment --------------------------------
-    # 1. Test out this app by putting text in the text field and pressing the
-    # button. Does the text on the top label change?
-    #
-    # 2. Add another label, button, and text field in the MyFirstPythonApp
-    # class. Feel free to rearrange the components in the app.
 
     app.mainloop()

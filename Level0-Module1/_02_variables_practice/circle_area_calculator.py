@@ -23,13 +23,12 @@ if __name__ == '__main__':
 
     # Move your turtle to a new x,y position using .goto()
 
-    # Calculate the area of your circle and store it in a variable, you can use math.pi
+    # Calculate the area of your circle and store it in a variable
+    # Hint, you can use math.pi
     
     # Write the area of your circle using the turtle .write() method
-    # myTurtle.write(arg="area = " + str(area), move=True, align='left', font=('Arial',8,'normal'))
+    # my_turtle.write(arg="area = " + str(area), move=True, align='left', font=('Arial',8,'normal'))
 
     # Hide your turtle
 
     # Call turtle.done()
-
-    window.mainloop()

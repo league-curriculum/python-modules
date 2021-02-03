@@ -1,3 +1,9 @@
+"""
+Below is a demo of how to use different list methods in Python
+For a complete reference:
+https://docs.python.org/3/tutorial/introduction.html#lists
+https://docs.python.org/3/tutorial/datastructures.html
+"""
 import random
 
 
