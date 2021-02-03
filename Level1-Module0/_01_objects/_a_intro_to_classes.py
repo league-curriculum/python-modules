@@ -1,3 +1,10 @@
+"""
+Below is a demo of how to create and use a class in Python
+Follow the instructions in the __main__ block below
+For a complete reference:
+https://docs.python.org/3/tutorial/classes.html
+"""
+
 import random
 
 
@@ -48,13 +55,13 @@ if __name__ == '__main__':
 
     # 2. Add 2 more input variables into the Duck constructor
 
-    # 2. Create 2 instance variables in the Duck class
+    # 3. Create 2 instance variables in the Duck class
 
-    # 3. Create 2 more methods in the Duck class,
-    # for example quack or waddle
+    # 4. Create 2 more methods in the Duck class,
+    #    for example quack or waddle
 
-    # 4. Create 2 more Ducks with different names and call the methods
-    # created in the previous step
+    # 5. Create 2 more Ducks with different names and call the methods
+    #    created in the previous step
 
     if Duck.num_ducks_created < 3:
         print('There are only ' + str(Duck.num_ducks_created) + ' Ducks.')
