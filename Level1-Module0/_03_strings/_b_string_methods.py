@@ -1,3 +1,10 @@
+# TODO: 1) Implement the functions below so that the test cases in the string
+#  methods test file pass. You can delete the 'pass' instruction.
+#
+# TODO: 2) Run the string test file. A summary of the test results on your
+#  code will be displayed. Fix any problems in your code so that all the
+#  tests pass.
+
 # Given Strings s1 and s2, return the longer String
 def find_longer_string(s1, s2):
     pass

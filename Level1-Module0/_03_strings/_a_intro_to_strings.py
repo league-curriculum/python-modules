@@ -20,6 +20,13 @@ if __name__ == '__main__':
     print('Is ' + new_str[2] + ' a letter: ' + str(new_str[2].isalpha()))
     print('Is ' + new_str[2] + ' a digit: ' + str(new_str[2].isdigit()))
 
+    # Removing leading and trailing whitespace from a string
+    whitespace_str = '   This string has whitespace   '
+    print('original string .......: ' + whitespace_str + ' ' + str(len(whitespace_str)))
+    print('leading spaces removed : ' + whitespace_str.lstrip() + ' ' + str(len(whitespace_str.lstrip())))
+    print('trailing spaces removed: ' + whitespace_str.rstrip() + ' ' + str(len(whitespace_str.rstrip())))
+    print('leading and trailing spaces removed: ' + whitespace_str.strip() + ' ' + str(len(whitespace_str.strip())))
+
     # Find the number of times a substring (or letter) appears in a string
     num_character = new_str.count('o')      # 3 occurrences
     num_substring = new_str.count('to')     # 1 occurrences

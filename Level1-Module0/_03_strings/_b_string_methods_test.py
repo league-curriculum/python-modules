@@ -1,6 +1,9 @@
 import unittest
 import _b_string_methods
 
+# TODO Run this file and check if your function implementations in the
+#   string methods file pass all the tests below!
+
 
 class StringTests(unittest.TestCase):
 
