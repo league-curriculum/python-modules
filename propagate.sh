@@ -35,7 +35,7 @@ while read in; do
         echo "copy repo over"
         repoName=$(basename "$in" ".${in##*.}")
         echo ${repoName}
-        cp -rf "${repoName}" "${destination}/java-modules/"
+        cp -rf "${repoName}" "${destination}/python-modules/"
         rm -rf ./*/.git
         echo "do stuff"
         git add ${repoName}
@@ -52,7 +52,7 @@ done < RepoList.txt
 echo "syncing folders"
 rsync -av --exclude='.git/' --delete "${MODULES}" "${destination}" 
 
-cd "${destination}/java-modules"
+cd "${destination}/python-modules"
 #Save current directory so we can restore it later
 cur=$PWD
 #Save command line arguments so functions can access it
