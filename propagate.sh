@@ -1,7 +1,7 @@
 #!/bin/sh
 #Log
 MODULES="/home/ec2-user/python-module-updater-DO_NOT_MOVE/python-modules"
-destination="/home/ec2-user/python-module-updater-DO_NOT_MOVE/destination"
+destination="/home/ec2-user/python-module-updater-DO_NOT_MOVE/destination/python-modules"
 cd ${MODULES}
 git clean -fd
 exec 3>&1 4>&2
