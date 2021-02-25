@@ -55,7 +55,7 @@ class MyFirstPythonApp(tk.Tk):
         # command=lambda: self.on_button_press() tells the program to call the
         # on_button_press() method when the button is clicked
         button = tk.Button(self, text='Press Me!', bg='green', fg='black',
-                           command=lambda: self.on_button_press())
+                           command=self.on_button_press)
         button.place(x=200, y=450)
 
         # Add a text field

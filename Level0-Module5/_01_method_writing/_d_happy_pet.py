@@ -5,7 +5,7 @@ from tkinter import messagebox, simpledialog, Tk
 
 
 if __name__ == '__main__':
-    # TODO) This recipe practices writing and calling functions.
+    # TODO)
     #   1. Ask the user to enter the type of pet they want (give them a few
     #      choices).
     #   2. Use a loop (maybe a while loop?) to keep offering interactions with
