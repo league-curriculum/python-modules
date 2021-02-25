@@ -5,7 +5,7 @@ from tkinter import messagebox, simpledialog, Tk
 
 
 if __name__ == '__main__':
-    # TODO) Practice writing and calling functions that take parameters.
+    # TODO)
     #   1) Move the turtle to the left side of the window near the bottom.
     #   2) Draw ONE flat-topped house with height=100 and green grass after it.
     #   3) Put the code that drew the house into a function called draw_house

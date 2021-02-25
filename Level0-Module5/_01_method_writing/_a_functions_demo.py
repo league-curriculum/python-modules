@@ -6,8 +6,6 @@ potentially less mistakes) and makes the code more maintainable (if there
 is an error it only has to be fixed in the function and not in each place
 where the code is duplicated).
 """
-from tkinter import messagebox, simpledialog, Tk
-
 
 # Function basics
 # All functions have the following format:
@@ -18,10 +16,11 @@ from tkinter import messagebox, simpledialog, Tk
 #     definition
 #   - <function name> is the name of the function. This name is used to
 #     execute the code in the function, also know as calling the function.
-#   - <input_variable_1> is an input variable. They are optional. If there is
-#     more than 1 input variable, they're separated by commas.
-#   - '()' open and close parenthesis are always right after the function name
-#     if there are any input variables they go between the parenthesis
+#   - <input_variable_1> is an input variable. They are optional. There can be
+#     no input variables or there can be several. If there is more than 1 input
+#     variable, they're separated by commas.
+#   - '()' open and close parenthesis are always right after the function name.
+#     If there are any input variables they go between the parenthesis
 #   - ':" the colon is always at the end, just like for, if, elif, and else
 def function_1(var1, var2):
     # Only the indented lines of code are executed. Lines that aren't indented
@@ -78,5 +77,6 @@ if __name__ == '__main__':
     # Calling function_3 with 3 input variables
     function_3('one', 'two', 'three')
 
+    # Calling function_4 and saving the return value in a variable
     return_var = function_4(10)
     print('Value returned by function_4 is: ' + str(return_var))
