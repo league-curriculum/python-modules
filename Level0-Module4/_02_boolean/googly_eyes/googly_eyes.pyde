@@ -34,7 +34,6 @@ def draw():
     # 6. Place a white ellipse over the left eye of your image.
     #    fill(<your color>)
     #    ellipse(x, y, width, height)
-    println(str(mouseX) + ' ' + str(mouseY))
     left_eye_x = 240
     left_eye_y = 212
     right_eye_x = 520
@@ -81,18 +80,17 @@ def is_mouse_inside_eye(eye_center_x, eye_center_y, eye_radius, pupil_radius):
     dist_y = mouseY - eye_center_y;
     distance = sqrt( (dist_x * dist_x) + (dist_y * dist_y) )
     
-    if distance <= eye_radius - pupil_radius:
+    if distance < eye_radius - pupil_radius:
         return True
     
     return False
 
 def get_eye_position(eye_center_x, eye_center_y, eye_radius, pupil_radius):
     position = Position()
-    
-    if mouseX - eye_center_x != 0:
-        angle = atan2( mouseY - eye_center_y, mouseX - eye_center_x )
-        position.x = eye_center_x + ((eye_radius - pupil_radius) * cos(angle))
-        position.y = eye_center_y + ((eye_radius - pupil_radius) * sin(angle))
+
+    angle = atan2( mouseY - eye_center_y, mouseX - eye_center_x )
+    position.x = eye_center_x + ((eye_radius - pupil_radius) * cos(angle))
+    position.y = eye_center_y + ((eye_radius - pupil_radius) * sin(angle))
 
     return position
 
