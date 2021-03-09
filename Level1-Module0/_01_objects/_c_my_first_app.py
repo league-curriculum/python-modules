@@ -5,7 +5,6 @@
 * 2. Add another label, button, and text field in the MyFirstPythonApp
     class. Feel free to rearrange the components in the app.
 """
-
 import tkinter as tk
 from PIL import Image, ImageTk
 

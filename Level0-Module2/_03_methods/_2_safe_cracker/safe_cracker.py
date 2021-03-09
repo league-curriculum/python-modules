@@ -3,18 +3,22 @@ import sys
 from tkinter import messagebox, Tk
 from playsound import playsound
 
-wekncrzpasfdkjhcfjse = random.randint(0, 999)
-
 
 def crack_the_safe():
     # TODO: Your mission: Use the try_code method to crack the safe
     #  by trying all possible combinations
-
+    for i in range(999999):
+        try_code(i)
     pass
 
 
+# ======================= DO NOT EDIT THE CODE BELOW =========================
+
+wekncrzpasfdkjhcfjse = random.randint(0, 999)
+
+
 def try_code(guess):
-    print("trying" + str(guess))
+    print("trying " + str(guess))
 
     secret_code = 999999 - wekncrzpasfdkjhcfjse
 
