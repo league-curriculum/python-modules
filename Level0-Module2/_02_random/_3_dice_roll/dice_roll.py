@@ -54,7 +54,7 @@ class DiceRoll(tk.Tk):
 
         random_image = get_random_dice_image()
         self.label_image = tk.Label(self, image=random_image)
-        self.label_image.image = random_image
+        self.label_image.image = random_image   # To prevent garbage collection of image
         self.label_image.pack()
 
         self.button = tk.Button(self, text='Roll!', command=self.on_button_press)
@@ -63,7 +63,7 @@ class DiceRoll(tk.Tk):
     def on_button_press(self):
         random_image = get_random_dice_image()
         self.label_image.config(image=random_image)
-        self.label_image.image = random_image
+        self.label_image.image = random_image   # To prevent garbage collection of image
 
 
 if __name__ == '__main__':
