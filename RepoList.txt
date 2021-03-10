@@ -1,5 +1,9 @@
 https://github.com/league-python/HolidaySpecial
 https://github.com/league-python/Level0-Module0
 https://github.com/league-python/Level0-Module1
+https://github.com/league-python/Level0-Module2
+https://github.com/league-python/Level0-Module3
+https://github.com/league-python/Level0-Module4
+https://github.com/league-python/Level0-Module5
 https://github.com/league-python/league-python.github.io
 https://github.com/league-python/Level1-Module0
