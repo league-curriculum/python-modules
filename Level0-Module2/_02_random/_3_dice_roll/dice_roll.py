@@ -10,8 +10,11 @@ import random
 def get_random_dice_image():
     random_image = None
 
-    # TODO Change the line of code below to so a random number from
-    #  1 to 6 (1 and 6 included)
+    # TODO Run the code and click the button. Notice that only 1 side of
+    #  the die is shown.
+
+    # TODO Change the line of code below to a random number from 1 to 6
+    #  (1 and 6 included) so all 6 sides of the die are randomly shown.
     rand_num = 1
 
     if rand_num == 1:
