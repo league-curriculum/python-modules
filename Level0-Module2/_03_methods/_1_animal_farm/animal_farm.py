@@ -7,7 +7,7 @@ from playsound import playsound
 def animals():
     window = Tk()
     window.withdraw()
-    woof()
+
     # TODO 1. Ask the user which animal they want, then see and
     #  hear the animal they chose using one of the methods below.
 
