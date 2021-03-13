@@ -13,10 +13,13 @@ def setup():
      ellipse(297, 350, 100, 30)
 
 def draw():
-    # Write code here that uses the drawMole method to put a mole in each of the holes
+    # Write code here that uses the drawMole method to put a mole
+    # in each of the holes
 
 
     pass
+
+# =================== DO NOT MODIFY THE CODE BELOW =====================
 
 def draw_mole(mole_x, mole_y):
      noStroke()
