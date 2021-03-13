@@ -1,7 +1,7 @@
 #!/bin/sh
 #Log
 MODULES="/home/ec2-user/python-module-updater-DO_NOT_MOVE/python-modules"
-destination="/home/ec2-user/python-module-updater-DO_NOT_MOVE/destination/python-modules"
+destination="/home/ec2-user/python-module-updater-DO_NOT_MOVE/destination/"
 cd ${MODULES}
 git clean -fd
 exec 3>&1 4>&2
@@ -76,7 +76,7 @@ function dir_command {
     if [ "${args[0]}" == "gitignore" ]
     then
     cecho "GREEN" "creating gitignore in $1"
-    curl https://gitignore.io/api/java -o .gitignore
+    curl https://gitignore.io/api/python -o .gitignore
     fi
     pwd
     echo $1
