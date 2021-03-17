@@ -6,7 +6,7 @@ from tkinter import messagebox, simpledialog, Tk
 
 # Write you code under the if __name__ == '__main__': below
 def vending_machine(money):
-    items_for_sale = {"water" : 0.50, "soda" : 1.00, "pretzels" : 1.00, "candy bar" : 1.50, 'exit' : 0.00}
+    items_for_sale = {"water" : 0.50, "soda" : 1.00, "pretzels" : 1.00, "candy bar" : 1.50, "exit" : 0.00}
 
     while True:
         intro_str = "Welcome to the vending machine! You have " +\
@@ -26,6 +26,8 @@ def vending_machine(money):
         else:
             messagebox.showwarning('Invalid item',
                                    'Please enter one of the following ' + str([item for item in items_for_sale]))
+
+# ======================= DO NOT EDIT THE CODE ABOVE =========================
 
 
 if __name__ == '__main__':
