@@ -3,8 +3,11 @@ from tkinter import simpledialog, Tk
 from PIL import Image, ImageTk
 from playsound import playsound
 
+window = None
+
 
 def animals():
+    global window
     window = Tk()
     window.withdraw()
 
@@ -25,12 +28,21 @@ def show_image(filename=None):
         print("ERROR: Unable to find file " + filename)
         return
 
-    # Use Toplevel since a tk window is already being used for the
-    # simpledialog
-    screen = tk.Toplevel()
+    # Put the image on the Tk window used by simpledialog so that when the
+    # window with the image is closed, the interpreter moves to the next
+    # line of code
+    global window
+    window.deiconify()
     image = ImageTk.PhotoImage(image)
-    tk.Label(master=screen, image=image).pack()
-    screen.mainloop()
+    tk.Label(master=window, image=image).pack()
+
+    # Blocks so picture can be shown--resumes when picture window is closed
+    window.mainloop()
+
+    # Regenerate a new window after closing so more simpledialogs and
+    # images can be shown
+    window = Tk()
+    window.withdraw()
 
 
 def moo():

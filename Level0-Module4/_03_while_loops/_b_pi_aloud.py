@@ -8,7 +8,7 @@ import math
 if __name__ == '__main__':
     window = Tk()
     window.withdraw()
-    # TODO) Place the first 20 digits of pi into a String variable.
+    # TODO) Place the first 20 digits of pi into a variable as a string
     #  3.1415926535897932384
 
     # TODO) Print out the first 3 digits of pi. For example,
