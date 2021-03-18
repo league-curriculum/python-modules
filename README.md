@@ -12,3 +12,15 @@ Checkpoints:
 
 - LEVEL 1 -
   - Module 0: SOC-55070652
+
+Module download Links:
+- LEVEL 0 -
+  - Module 0: https://classroom.github.com/a/8neTFR0_
+  - Module 1: https://classroom.github.com/a/RIhi_CY7
+  - Module 2: https://classroom.github.com/a/kJxwZ7qI
+  - Module 3: https://classroom.github.com/a/akxpn7fg
+  - Module 4: https://classroom.github.com/a/opBCapC6
+  - Module 5: https://classroom.github.com/a/aEcM-DUA
+
+- LEVEL 1 -
+  - Module 0: https://classroom.github.com/a/whGSUc8C
