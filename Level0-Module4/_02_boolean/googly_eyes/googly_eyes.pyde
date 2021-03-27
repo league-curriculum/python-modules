@@ -2,8 +2,8 @@
 You’re going to draw a face with eyes that will follow the mouse!
 """
 
-# 1. Find an image on the internet and drop it into your sketch.
-# It can be anything as long as it has large eyes!
+# 1. Find an image on the internet or use the provided image (big_eye_bird.png)
+# and drop it into your sketch. It can be anything as long as it has large eyes!
 
 def setup():
     # 2. Import your image using the following code:
@@ -38,9 +38,10 @@ def draw():
     # Use the is_mouse_inside_eye() function for this.
     #
     # If the mouse is not inside the eye, call the get_eye_position()
-    # function:
-    # position = get_eye_position(left_eye_x, left_eye_y, eye_radius, pupil_radius)
-    # ellipse(position.x, position.y, pupil_radius * 2, pupil_radius * 2)
+    # functions:
+    # pupil_x = get_eye_position_x(left_eye_x, left_eye_y, eye_radius, pupil_radius)
+    # pupil_y = get_eye_position_y(left_eye_x, left_eye_y, eye_radius, pupil_radius)
+    # ellipse(pupil_x, pupil_y, pupil_radius * 2, pupil_radius * 2)
     
     # 9. Repeat the steps above for the right eye and observe the googly eyes!
 
@@ -55,6 +56,12 @@ def is_mouse_inside_eye(eye_center_x, eye_center_y, eye_radius, pupil_radius):
         return True
     
     return False
+
+def get_eye_position_x(eye_center_x, eye_center_y, eye_radius, pupil_radius):
+    return get_eye_position(eye_center_x, eye_center_y, eye_radius, pupil_radius).x
+
+def get_eye_position_y(eye_center_x, eye_center_y, eye_radius, pupil_radius):
+    return get_eye_position(eye_center_x, eye_center_y, eye_radius, pupil_radius).y
 
 def get_eye_position(eye_center_x, eye_center_y, eye_radius, pupil_radius):
     position = Position()
