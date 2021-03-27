@@ -6,20 +6,21 @@ Make a program where the user has to find Waldo!
 # Some computers are unable to play sounds. 
 # If you cannot play sound on this computer, set canPlaySounds to false.
 # If you are not sure, ask your teacher 
-can_play_sounds = True
+can_play_sounds = False
 
 def setup():
-    # Find a Where's Waldo picture and drop it onto the sketch.    
+    # Find a Where's Waldo picture and drop it onto the sketch.
     
     # Change the line below to match your file name.
+    waldo = loadImage("waldo.jpg")
     
     # Use the size() function to set the width and height of your sketch
-    
+
     # Resize your waldo picture to the same size as the sketch
-  
+
     # Use the background() function to make the waldo image your
     # sketch background
-    
+
     
 def draw():
     # If the user presses the mouse...
@@ -38,14 +39,16 @@ def draw():
         # Use the text() command to write it on the sketch.
           
             # Use the play_doh() method below.
-            
+      
+
+    pass    
 
 # =================== This code is needed to play sounds. ===================
-
-add_library('sound')
-
 woohoo = None
 doh = None
+
+if can_play_sounds:
+    add_library('sound')
 
 def play_woohoo():
     global woohoo
