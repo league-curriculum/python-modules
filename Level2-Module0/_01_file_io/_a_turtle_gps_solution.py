@@ -15,8 +15,7 @@ def set_background(filename):
     rootwindow.call('wm', 'attributes', '.', '-topmost', '1')
     rootwindow.call('wm', 'attributes', '.', '-topmost', '0')
     
-def initialize_turtle():
-    my_turtle = turtle.Turtle()
+def initialize_turtle(my_turtle):
     my_turtle.hideturtle()
     my_turtle.shape('turtle')
     my_turtle.speed(0)
@@ -36,22 +35,25 @@ if __name__ == '__main__':
     
     # ====================== DO NOT EDIT THE CODE ABOVE ===========================
     
-    my_turtle = initialize_turtle()
+    # TODO) 1. Create a Turtle object and initialize it with initialize_turtle()
+    my_turtle = turtle.Turtle()
+    my_turtle = initialize_turtle(my_turtle)
     
-    # 1. Use the open() function and "with" to start 
-    #    reading "turtle_gps.txt" in python
+    # TODO) 2. Use the open() function and "with" to start 
+    #          reading "turtle_gps.txt" in python
     # with open("turtle_gps.txt", "r") as f:
     with open("turtle_gps.txt", "r") as f:
         
-    # 2. Use a for loop inside the "with" to iterate through the file lines
+    # TODO) 3. Use a for loop inside the "with" to iterate 
+    #          through the file lines
     #     for line in f:
         for line in f:
         
-    # 3. Use if statements to interpret each line in the file and get
-    #    the turtle to navigate the maze.
-    #    FORWARD should use my_turtle.forward()
-    #    RIGHT should use my_turtle.right()
-    #    LEFT should use my_turtle.left()
+    # TODO) 4. Use if statements to interpret each line in the file 
+    #          and get the turtle to navigate the maze.
+    #          FORWARD should use my_turtle.forward()
+    #          RIGHT should use my_turtle.right()
+    #          LEFT should use my_turtle.left()
             command, value = line.strip().split()
             value = int(value)
             if command == 'FORWARD':
@@ -60,7 +62,7 @@ if __name__ == '__main__':
                 my_turtle.right(value)
             elif command == 'LEFT':
                 my_turtle.left(value)
-    
+                
     # ===================== DO NOT EDIT THE CODE BELOW ============================
     
     turtle.done()
