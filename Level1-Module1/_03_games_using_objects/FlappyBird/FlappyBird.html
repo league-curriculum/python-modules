@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<title>Level 1 - Flappy Bird</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+   #moduleIndex {
+   padding: 0;
+}
+</style>
+<script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
+<body>
+        <div id ="wrap">
+            <div id ="main">
+                 <div id="header">
+                    <script>addRecipeHeader();</script>
+                </div>         
+                <div id = "moduleIndex">   
+
+
+<h1>Flappy Bird</h1>
+<br>
+  <div style="align-content: center">      
+      <img alt="" src="images/FlappyBirdScreenShot.png" style="width: 194px; height: 300px;">
+  </div>
+<br><br>
+<p class="normal">
+
+1. Start a new sketch with <b>draw</b> and <b>setup</b> methods.<br>
+<br>
+2. Set your canvas size in the setup method</p><br>
+    <p class="code">
+    size(width, height)<br>
+</p><br>
+
+<p class="normal">
+3. In your draw method, set a background, and draw a ball (bird) on the screen.
+</p>
+   <pre>background(red, green, blue);
+fill(red, green, blue);
+stroke(red, green, blue);
+ellipse(x, y, width, height);
+</pre>
+    
+ <br>   
+<p class="normal">
+4. Make the bird fall down<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Hint:</u> make variables for the bird's X and Y position and use them for the ellipse in the draw method.
+</p><br>
+
+
+<p class="normal">
+5. Add velocity to the bird. <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Hint:</u> make a variable for the velocity of the bird in the Y direction (up). Changing its value should change the velocity of your bird.</p><br>
+    <p class="code">bird_y_velocity = 30;</p><br>
+    
+
+<p class="normal">
+6.  Give the bird gravity.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Hint:</u> make a variable for the gravity pulling the bird down. Gravity should continually increase the value of y . 
+</p>
+    <p class="code">gravity = 1;</p><br>
+
+
+<p class="normal">
+7. Make the bird jump (flap) when the mouse is clicked.<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Hint:</u> construct a mousePressed() method the same way setup() and draw() were made. <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this method, apply the bird’s velocity to its y position to make the bird rise.
+    </p><br>
+    
+<p class="normal">
+8.  Draw a pipe coming down from the top of the sketch.<br>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the draw() method: 
+    </p><br>
+   <p class="code">
+    fill(red, green, blue);<br>
+    rect(x, y, width, height);<br>
+    </p><br>
+      
+<p class="normal">
+9. Make the pipe move from right to left.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Hint:</u> make a variable for the pipe X position and change it in the draw method.
+    </p><br>
+    
+<p class="normal">
+10. Make the pipe teleport back to the right side of the screen once it has passed through the left. This will simulate the repeating pipes coming from the right of the screen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Tip:</u> Put this code into a teleport_pipes() method and you can also call it from the setup() method to create the first pipes.
+    </p><br>
+    
+<p class="normal">    
+11. Set the upper pipe's height to a new random number each time it teleports
+    </p><br>
+   <p class="code">
+    int upper_pipe_height = int(random(100, 400))
+    </p><br> 
+    
+
+<p class="normal">
+12. Create a variable, pipe_gap, to represent the gap between the pipes. Make sure the gap is big enough for the ball to go through. The gap between the pipes will not change.</p><br> 
+
+<p class="normal">
+ 13. Make a second pipe that will go down to the bottom of the sketch, leaving a space between the two pipes that is the size of the gap (see step 12). Make sure both pipes use the same value for their x position. Set the lower pipe y value by adding the upper pipe height and pipe gap. Ex:</p><br>
+         <p class="code">
+    lower_y = upper_pipe_height + pipe_gap;<br>
+    </p><br>
+  
+<p class="normal">
+14. Make the game end when the bird hits the pipe. Figure it out by yourself, or use this method:
+</p>
+<pre>
+def intersects_pipes(): 
+  if bird_y < upper_pipe_height and bird_x > pipe_x and bird_x < pipe_x + pipe_width:
+    return True
+  elif bird_y > lower_pipe_top and bird_x > pipe_x and bird_x < pipe_x + pipe_width:
+    return True
+  else:
+    return False
+</pre><br>
+<p class="normal">    
+15. End the game when the bird hits the ground.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a rectangle for the ground.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use a boolean variable at the top of the sketch to indicate if game has ended.</p><br>
+    
+    <p class="normal">
+        17.  Create a score and make it increase each time the bird passes through a pipe.</p><br>
+             <p class="code">
+    text(text, x_position, y_position);
+    </p><br> 
+    <p class="normal">
+        18. OPTIONAL.   Use images for the background, pipes and bird (see image at top). You can find your own images, or those provided in the Module 3 Java project. See below for code snippets to load and draw images.<br>
+    <br>
+       
+  
+<pre>
+def setup():
+  global back
+  global pipeBottom
+  global pipeTop
+  global bird
+  size(500, 750)
+  back = loadImage("flappyBackground.jpg")
+  pipeBottom = loadImage("bottomPipe.png")
+  pipeTop = loadImage("topPipe.png")
+  bird = loadImage("bird.png")
+  bird.resize(50, 50)
+
+def draw():
+  background(back)
+  image (pipeBottom, 250, 375)
+  image (pipeTop, 250, -130)
+  image (bird, 250, 300)
+</pre><br>
+ 
+        
+        
+<a href="https://processing.org/reference">
+    <img src="https://league-level0.github.io/p3logo.jpeg" class="footer" alt="Processing Reference"></a>
+
+    </div>
+    </div>
+    </div>                
+                
+<div id="footer">
+<script>addFooter();</script>
+</div>
+
+</body>
+</html>

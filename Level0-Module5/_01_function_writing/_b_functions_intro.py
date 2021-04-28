@@ -6,24 +6,24 @@ import random
 import unittest
 
 
-# TODO Write function definitions below!
+# TODO Write your function definitions on the next line below!
 
 
 class FunctionTests(unittest.TestCase):
 
-    # TODO 1) Write a function definition for multiply
+    # TODO 1) Write a function definition ABOVE AND OUTSIDE this class for multiply
     def test_1(self):
         self.assertEqual(100, multiply(10, 10))
 
-    # TODO 2) Write a function definition for str_cat
+    # TODO 2) Write a function definition ABOVE AND OUTSIDE this class for str_cat
     def test_2(self):
         self.assertEqual('Welcome to Python', str_cat(var1='Welcome', var2='to', var3='Python'))
 
-    # TODO 3) Write a function definition for greater_than
+    # TODO 3) Write a function definition ABOVE AND OUTSIDE this class for greater_than
     def test_3(self):
         self.assertEqual(True, greater_than(1, 2))
 
-    # TODO 4) Write a function definition for get_random_number
+    # TODO 4) Write a function definition ABOVE AND OUTSIDE this class for get_random_number
     def test_4(self):
         for i in range(100):
             random_number = get_random_number(low=0, high=100)

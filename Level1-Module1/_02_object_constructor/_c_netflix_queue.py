@@ -43,12 +43,12 @@ if __name__ == '__main__':
 
     # Use Movie and NetflixQueue classes above to complete the following changes:
 
-    # 1. Instantiate some Movie objects (at least 5).
-    # 2. Use the Movie class to get the ticket price of one of your movies.
-    # 3. Instantiate a NetflixQueue.
-    # 4. Add your movies to the Netflix queue.
-    # 5. Print all the movies in your queue.
-    # 6. Use your NetflixQueue object to finish the sentence "the best movie is...."
-    # 7. Use your NetflixQueue to finish the sentence "the second best movie is...."
+    # TODO 1) Instantiate (create) at least 5 Movie objects.
+    # TODO 2) Use the Movie class to get the ticket price of one of your movies.
+    # TODO 3) Instantiate a NetflixQueue object.
+    # TODO 4) Add your movies to the Netflix queue.
+    # TODO 5) Print all the movies in your queue.
+    # TODO 6) Use your NetflixQueue object to finish the sentence "the best movie is...."
+    # TODO 7) Use your NetflixQueue to finish the sentence "the second best movie is...."
 
     pass

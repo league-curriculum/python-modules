@@ -22,9 +22,9 @@ def draw():
     # global face
     # background(face)
 
-    # 5. Place a white ellipse over the left eye of your image.
+    # 5. Place a white circle over the left eye of your image.
     # fill(<your color>)
-    # ellipse(x, y, width, height)
+    # circle(x, y, radius)
     println(str(mouseX) + ' ' + str(mouseY))   
     
     # 6. Now add a pupil (the black part) to the left eye earlier.
