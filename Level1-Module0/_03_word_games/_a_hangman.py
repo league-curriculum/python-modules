@@ -1,6 +1,36 @@
 import random
 import tkinter as tk
+from tkinter import messagebox
 
+# TODO 1) Complete the function to return a string with as many
+#  underscores (_) as there are letters in the word to guess
+def setup_new_word(word_to_guess):
+    word = str()
+
+    for i in range(len(word_to_guess)):
+        word += '_'
+
+    return word
+
+# TODO 2) Complete the function to return whether the letter is in
+#  the word to guess
+def check_letter_in_word(word_to_guess, letter):
+    if letter in word_to_guess:
+        return True
+    return False
+
+# TODO 3) Complete the function to return the current guess with the
+#  letter in the same places (index) of the word to guess. For example,
+#       word to guess = orange
+#       current guess = o__n_e
+#       letter = g
+#       return o__nge
+def replace_letter_in_word(word_to_guess, current_guess, letter):
+    for i in range(len(word_to_guess)):
+        if word_to_guess[i] == letter:
+            current_guess[i] = letter
+
+    return current_guess
 
 class Hangman(tk.Tk):
     dict_word_list = None
@@ -8,11 +38,12 @@ class Hangman(tk.Tk):
     def __init__(self, parent):
         tk.Tk.__init__(self, parent)
         self.entered_text = tk.StringVar()
+        self.lives_text = tk.StringVar()
+        self.lives = 10
         self.label = None
         self.restart_button = None
         self.random_word = None
-
-        # 5. Make a new instance variable to hold the word being guessed
+        self.wtg = ''
 
         self.initialize()
 
@@ -20,33 +51,45 @@ class Hangman(tk.Tk):
         # Get Random word from dictionary
         Hangman.read_words_file()
         self.random_word = Hangman.get_random_word()
-        print(self.random_word)
+
+        # UNCOMMENT TO SHOW HIDDEN WORD
+        #print(self.random_word)
 
         # Setup label to display keys pressed by the user
         self.label = tk.Label(self, bg='light grey', textvariable=self.entered_text)
-        self.label.place(relwidth=1, relheight=1)
+        self.label.place(relx=0, rely=0, relwidth=1, relheight=0.5)
+
+        self.label = tk.Label(self, bg='light grey', textvariable=self.lives_text)
+        self.label.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
 
         self.setup_new_word()
 
     def setup_new_word(self):
-        # 6. Create an string of underscores that's the same length of the random word
-
-        # 7. Set the string of underscores using entered_text.set()
-
-        pass
+        self.wtg = setup_new_word(self.random_word)
+        self.entered_text.set(self.wtg)
+        self.lives_text.set('guesses: ' + str(self.lives))
 
     def key_pressed(self, event):
         key = str(event.char)
         print("pressed " + key)
 
         # 8. Check if the key that was pressed is within the guess string
-        #    You can change a string into a list by doing: my_list = list(my_string)
-        #    You can change a list into a string by doing: my_string = ''.join(my_list)
+        # You can change a string into a list by doing: my_list = list(my_string)
+        # You can change a list into a string by doing: my_string = ''.join(my_list)
+        if check_letter_in_word(self.random_word, key):
+            self.wtg = list(self.wtg)
+            self.wtg = replace_letter_in_word(self.random_word, self.wtg, key)
+            self.wtg = ''.join(self.wtg )
+            self.entered_text.set(self.wtg)
 
-        # 10. If the guess string matches the random word,
-        #     Print a message/pop-up telling the user they won!
+            if self.wtg == self.random_word:
+                messagebox.showinfo("WINNER", "Congratulations, you win!")
+        else:
+            self.lives -= 1
+            self.lives_text.set('guesses: ' + str(self.lives))
+            if self.lives == 0:
+                messagebox.showinfo("Lose", "You lose! The correct word was " + self.random_word)
 
-    # --------------------------- DO NOT EDIT this method ---------------------
     @staticmethod
     def read_words_file():
         # Only need to be read once
@@ -62,7 +105,6 @@ class Hangman(tk.Tk):
                 # Sort the list so it'll be easier to find plurals
                 Hangman.dict_word_list.sort()
 
-    # --------------------------- DO NOT edit this method ---------------------
     @staticmethod
     def get_random_word():
         if Hangman.dict_word_list is None or len(Hangman.dict_word_list) == 0:
@@ -75,14 +117,7 @@ class Hangman(tk.Tk):
 
 
 if __name__ == '__main__':
-    # 1. Make a new Hangman game, example
-    # game = Hangman(None)
-
-    # 2. Set your game title
-
-    # 3. Add a key listener to your game
-    # game.bind("<Key>", game.key_pressed)
-
-    # 4. Run your game's mainloop()
-
-    pass
+    game = Hangman(None)
+    game.title("Hangman")
+    game.bind("<Key>", game.key_pressed)
+    game.mainloop()

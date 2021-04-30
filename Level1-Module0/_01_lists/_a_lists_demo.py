@@ -57,11 +57,25 @@ if __name__ == '__main__':
     num_items = len(my_list)
     print('There are now ' + str(num_items) + ' items in ' + repr(my_list))
 
+    # Removing the first matching item from a list
+    # *Note* If there are the one with the lowest index is removed
+    my_list.remove('NEW ITEM')
+    num_items = len(my_list)
+    print('There are now ' + str(num_items) + ' items in ' + repr(my_list))
+
     # Iterating (looping) through all the items in the list
     for item in my_list:
-        print(item)
+        print(item, end=' ')
 
-    # Iterating (looping) through all the items in the list with an index
+    print()
+
+    # Method #1: Iterating (looping) through all items in list with an index
     num_items = len(my_list)
     for index in range(num_items):
-        print(index, my_list[index])
+        print(index, my_list[index], end='; ')
+
+    print()
+
+    # Method #2: Iterating (looping) through all items in list with an index
+    for index, item in enumerate(my_list):
+        print(index, item, end='; ')

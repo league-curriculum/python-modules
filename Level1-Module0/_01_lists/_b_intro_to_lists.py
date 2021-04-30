@@ -10,7 +10,7 @@ def test_1_create_a_list():
 
 
 # TODO Complete the function so it returns a list of numbers from 0 to 20
-#  with numbers 0 and 20 included in the list
+#  with both numbers 0 and 20 included in the list
 def test_2_generate_a_list():
     return list()
 
@@ -36,12 +36,13 @@ class ListTests(unittest.TestCase):
         generated_list = test_2_generate_a_list()
 
         self.assertEqual(21, len(generated_list))
-        for index in range(len(generated_list)):
+
+        for index in range(21):
             self.assertEqual(index, generated_list[index])
 
     def test_3(self):
-        test_list = [1, 5, -1, -2]
-        self.assertEqual(10, test_3_product(test_list))
+        test_list = [1, 5, -1, 2]
+        self.assertEqual(-10, test_3_product(test_list))
 
         test_list = [91, 50, 120, 7, 0]
         self.assertEqual(0, test_3_product(test_list))
