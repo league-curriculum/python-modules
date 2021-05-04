@@ -10,14 +10,8 @@ import tkinter as tk
 #         b. Add the guest to list_of_guests
 #         c. Return the list_of_guests
 def add_guest(list_of_guests):
-    guest = None
 
-    while guest is None:
-        guest = simpledialog.askstring(None, prompt="Enter the new Guest name to add")
-
-    list_of_guests.append(guest)
-
-    return list_of_guests
+    return list()
 
 # TODO 2) Complete the function by:
 #         a. Asking for the name of the guest to remove
@@ -25,17 +19,8 @@ def add_guest(list_of_guests):
 #            the guest isn't in the list.
 #         c. Return the list_of_guests
 def remove_guest(list_of_guests):
-    guest = None
 
-    while guest is None:
-        guest = simpledialog.askstring(None, prompt="Enter the Guest name to remove")
-
-    try:
-        list_of_guests.remove(guest)
-    except ValueError:
-        messagebox.showerror("ERROR", str(guest) + ' is not a guest on the guest list')
-
-    return list_of_guests
+    return list()
 
 # TODO 3) Complete the function by:
 #         a. Display the names of the guests in the following format:
@@ -44,18 +29,7 @@ def remove_guest(list_of_guests):
 #            Guest 3. Jin
 #         b. If there are no guests, print "There are no guests"
 def print_guests(list_of_guests):
-    guest_list = str()
-
-    for i, guest in enumerate(list_of_guests):
-        guest_list += 'Guest #' + str(i + 1) + '. ' + guest
-
-        if i != (len(list_of_guests) - 1):
-            guest_list += '\n'
-
-    # Alternate way
-    # guest_list = ''.join([ 'Guest #' +str(i+1) + '. ' + guest + '\n' for i, guest in enumerate(self.guests)])
-
-    messagebox.showinfo('Guests', guest_list)
+    pass
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 

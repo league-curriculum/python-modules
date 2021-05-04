@@ -40,7 +40,7 @@ class NetflixQueue:
 
 
 if __name__ == '__main__':
-
+    pass
     # Use Movie and NetflixQueue classes above to complete the following changes:
 
     # TODO 1) Instantiate (create) at least 5 Movie objects.
@@ -51,4 +51,3 @@ if __name__ == '__main__':
     # TODO 6) Use your NetflixQueue object to finish the sentence "the best movie is...."
     # TODO 7) Use your NetflixQueue to finish the sentence "the second best movie is...."
 
-    pass

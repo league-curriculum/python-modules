@@ -5,18 +5,13 @@ from tkinter import messagebox
 # TODO 1) Complete the function to return a string with as many
 #  underscores (_) as there are letters in the word to guess
 def setup_new_word(word_to_guess):
-    word = str()
 
-    for i in range(len(word_to_guess)):
-        word += '_'
-
-    return word
+    return str()
 
 # TODO 2) Complete the function to return whether the letter is in
 #  the word to guess
 def check_letter_in_word(word_to_guess, letter):
-    if letter in word_to_guess:
-        return True
+
     return False
 
 # TODO 3) Complete the function to return the current guess with the
@@ -27,22 +22,8 @@ def check_letter_in_word(word_to_guess, letter):
 #       return o__nge
 #  Remember that strings can't be changed!
 def replace_letter_in_word(word_to_guess, current_guess, letter):
-    new_current_guess = str()
 
-    for i in range(len(word_to_guess)):
-        if word_to_guess[i] == letter:
-            new_current_guess += letter
-        else:
-            new_current_guess += current_guess[i]
-
-    return new_current_guess
-
-    # Alternate method
-    #current_guess_list = list(current_guess)
-    #for i in range(len(word_to_guess)):
-    #    if word_to_guess[i] == letter:
-    #        current_guess_list[i] = letter
-    #return ''.join(current_guess_list)
+    return str()
 
 # ====================== DO NOT EDIT THE CODE BELOW ===========================
 
