@@ -17,6 +17,8 @@ import unittest
 #   master
 
 
+# ======================= DO NOT EDIT THE CODE BELOW =========================
+
 class MinionTest(unittest.TestCase):
 
     def test_constructor(self):

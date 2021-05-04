@@ -1,11 +1,13 @@
 """
-Below is a demo of how to create and use a class in Python
-Follow the instructions in the __main__ block below
-For a complete reference:
-https://docs.python.org/3/tutorial/classes.html
+Demonstration of code that goes into a class
 """
-
 import random
+
+# Below is a demo of how to create and use a class in Python.
+# Follow the instructions in the __main__ block below to add functionality
+# to the Duck class below.
+# And for a complete reference:
+# https://docs.python.org/3/tutorial/classes.html
 
 
 # This is a function. It can be used within the file and does not need
@@ -50,18 +52,18 @@ class Duck(Animal):
 
 
 if __name__ == '__main__':
-    # 1. Create an object of the Duck class
-    # kenny = Duck('Kenny')
+    # TODO 1) Create an object of the Duck class, for example
+    #  kenny = Duck('Kenny')
 
-    # 2. Add 2 more input variables into the Duck constructor
+    # TODO 2) Add 2 more input variables into the Duck constructor
 
-    # 3. Create 2 instance variables in the Duck class
+    # TODO 3) Create 2 instance variables in the Duck class
 
-    # 4. Create 2 more methods in the Duck class,
-    #    for example quack or waddle
+    # TODO 4) Create 2 more methods in the Duck class,
+    #  for example quack or waddle
 
-    # 5. Create 2 more Ducks with different names and call the methods
-    #    created in the previous step
+    # TODO 5) Create 2 more Ducks with different names and call the methods
+    #  created in the previous step
 
     if Duck.num_ducks_created < 3:
         print('There are only ' + str(Duck.num_ducks_created) + ' Ducks.')

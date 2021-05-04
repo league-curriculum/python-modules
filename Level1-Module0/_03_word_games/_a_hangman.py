@@ -25,12 +25,26 @@ def check_letter_in_word(word_to_guess, letter):
 #       current guess = o__n_e
 #       letter = g
 #       return o__nge
+#  Remember that strings can't be changed!
 def replace_letter_in_word(word_to_guess, current_guess, letter):
+    new_current_guess = str()
+
     for i in range(len(word_to_guess)):
         if word_to_guess[i] == letter:
-            current_guess[i] = letter
+            new_current_guess += letter
+        else:
+            new_current_guess += current_guess[i]
 
-    return current_guess
+    return new_current_guess
+
+    # Alternate method
+    #current_guess_list = list(current_guess)
+    #for i in range(len(word_to_guess)):
+    #    if word_to_guess[i] == letter:
+    #        current_guess_list[i] = letter
+    #return ''.join(current_guess_list)
+
+# ====================== DO NOT EDIT THE CODE BELOW ===========================
 
 class Hangman(tk.Tk):
     dict_word_list = None
@@ -41,7 +55,9 @@ class Hangman(tk.Tk):
         self.lives_text = tk.StringVar()
         self.lives = 10
         self.label = None
+        self.lives_label = None
         self.restart_button = None
+        self.hint_button = None
         self.random_word = None
         self.wtg = ''
 
@@ -50,7 +66,7 @@ class Hangman(tk.Tk):
     def initialize(self):
         # Get Random word from dictionary
         Hangman.read_words_file()
-        self.random_word = Hangman.get_random_word()
+        self.get_new_random_word()
 
         # UNCOMMENT TO SHOW HIDDEN WORD
         #print(self.random_word)
@@ -59,36 +75,65 @@ class Hangman(tk.Tk):
         self.label = tk.Label(self, bg='light grey', textvariable=self.entered_text)
         self.label.place(relx=0, rely=0, relwidth=1, relheight=0.5)
 
-        self.label = tk.Label(self, bg='light grey', textvariable=self.lives_text)
-        self.label.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
+        self.lives_label = tk.Label(self, bg='light grey', textvariable=self.lives_text)
+        self.lives_label.place(relx=0, rely=0.5, relwidth=1, relheight=0.25)
 
+        self.restart_button = tk.Button(self, bg='light grey', text='restart', command=self.get_new_random_word)
+        self.restart_button.place(relx=0.15, rely=0.8, relwidth=0.25, relheight=0.15)
+
+        self.hint_button = tk.Button(self, bg='light grey', text='hint', command=self.give_hint)
+        self.hint_button.place(relx=0.5, rely=0.8, relwidth=0.25, relheight=0.15)
+
+    def give_hint(self):
+        if self.lives > 4 and self.random_word != self.wtg:
+            unguessed_letter = None
+
+            while True:
+                random_index = random.randint(0, len(self.wtg)-1)
+                if self.wtg[random_index] == '_':
+                    unguessed_letter = self.random_word[random_index]
+                    break
+
+            self.wtg = replace_letter_in_word(self.random_word, self.wtg, unguessed_letter)
+            self.entered_text.set(self.wtg)
+            self.lives -= 4
+            self.lives_text.set('guesses: ' + str(self.lives))
+            self.check_words_match()
+        else:
+            messagebox.showerror(None, 'You need at least 4 lives. You have ' + str(self.lives))
+
+    def get_new_random_word(self):
+        if self.random_word is not None and self.lives > 0 and self.wtg != self.random_word:
+            messagebox.showinfo(None, 'The word was: ' + self.random_word)
+
+        self.random_word = Hangman.get_random_word()
         self.setup_new_word()
 
     def setup_new_word(self):
         self.wtg = setup_new_word(self.random_word)
         self.entered_text.set(self.wtg)
+        self.lives = 10
         self.lives_text.set('guesses: ' + str(self.lives))
+
+    def check_words_match(self):
+        if self.wtg == self.random_word:
+            messagebox.showinfo("WINNER", "Congratulations, you win!")
+            self.get_new_random_word()
 
     def key_pressed(self, event):
         key = str(event.char)
         print("pressed " + key)
 
-        # 8. Check if the key that was pressed is within the guess string
-        # You can change a string into a list by doing: my_list = list(my_string)
-        # You can change a list into a string by doing: my_string = ''.join(my_list)
-        if check_letter_in_word(self.random_word, key):
-            self.wtg = list(self.wtg)
-            self.wtg = replace_letter_in_word(self.random_word, self.wtg, key)
-            self.wtg = ''.join(self.wtg )
-            self.entered_text.set(self.wtg)
-
-            if self.wtg == self.random_word:
-                messagebox.showinfo("WINNER", "Congratulations, you win!")
-        else:
-            self.lives -= 1
-            self.lives_text.set('guesses: ' + str(self.lives))
-            if self.lives == 0:
-                messagebox.showinfo("Lose", "You lose! The correct word was " + self.random_word)
+        if self.lives > 0:
+            if check_letter_in_word(self.random_word, key):
+                self.wtg = replace_letter_in_word(self.random_word, self.wtg, key)
+                self.entered_text.set(self.wtg)
+                self.check_words_match()
+            else:
+                self.lives -= 1
+                self.lives_text.set('guesses: ' + str(self.lives))
+                if self.lives == 0:
+                    messagebox.showinfo("Lose", "You lose! The correct word was " + self.random_word)
 
     @staticmethod
     def read_words_file():
@@ -119,5 +164,6 @@ class Hangman(tk.Tk):
 if __name__ == '__main__':
     game = Hangman(None)
     game.title("Hangman")
+    game.configure(bg='light grey')
     game.bind("<Key>", game.key_pressed)
     game.mainloop()

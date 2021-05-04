@@ -57,9 +57,8 @@ def print_guests(list_of_guests):
 
     messagebox.showinfo('Guests', guest_list)
 
+# ======================= DO NOT EDIT THE CODE BELOW =========================
 
-# 4. Create an app like the one show in the pictures in this package, 'guest_book_add.png'
-# and 'guest_book_print'
 class GuestBook(tk.Tk):
 
     def __init__(self, parent):

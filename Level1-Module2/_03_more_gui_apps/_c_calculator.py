@@ -1,3 +1,6 @@
+"""
+Create a simple calculator app
+"""
 import tkinter as tk
 
 if __name__ == '__main__':

@@ -23,6 +23,7 @@ def find_the_diamond(the_murder=None):
     #  the diamond, then 2 innocent crows died.
     pass
 
+# ======================= DO NOT EDIT THE CODE BELOW =========================
 
 class Crow:
     def __init__(self, name):

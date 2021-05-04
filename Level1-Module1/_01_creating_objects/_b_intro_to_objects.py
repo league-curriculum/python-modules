@@ -6,18 +6,18 @@ import unittest
 
 class Car:
     def __init__(self):
-        self.amount_of_gasoline = 0
-        self.miles_driven = 0
+        self._amount_of_gasoline = 0
+        self._miles_driven = 0
         print('Creating a Car Object')
 
     def add_gasoline(self):
         print('Refilling gasoline')
-        self.amount_of_gasoline = 100
+        self._amount_of_gasoline = 100
 
     def drive(self, miles):
-        if self.amount_of_gasoline > miles:
-            self.amount_of_gasoline -= miles
-            self.miles_driven = miles
+        if self._amount_of_gasoline > miles:
+            self._amount_of_gasoline -= miles
+            self._miles_driven = miles
             print('Driving ' + str(miles) + ' miles')
         else:
             print("Can't drive! Fill with gasoline before driving.")
@@ -26,18 +26,20 @@ class Car:
 
 
 # TODO  1) Create a Car Object in the function below
-#       2) Drive the car 50 miles
+#       2) Look at the Car class and figure out how to drive the car 50 miles
 #       3) return the Car Object from the test_drive() function
 def test_drive():
-
+    car = Car()
+    car.add_gasoline()
+    car.drive(50)
     # Replace None with your car Object
-    return None
+    return car
 
 
 class CreatingObjectsTests(unittest.TestCase):
 
     def test_1(self):
-        self.assertTrue(test_drive().miles_driven == 50)
+        self.assertTrue(test_drive()._miles_driven == 50)
 
 
 if __name__ == '__main__':
