@@ -4,14 +4,14 @@ bird_width = 50
 bird_height = 3 * bird_width / 4
 bird_y_velocity = 15
 gravity = 3
-pipe_gap = 3 * bird_height
+pipe_gap = 4 * bird_height
 
 def setup():
     size(500, 500)
     
     global flappy_bird, lower_pipe, upper_pipe, bg
     flappy_bird = loadImage("bird.png")
-    flappy_bird.resize(bird_size, bird_size)
+    flappy_bird.resize(bird_width, bird_height)
     upper_pipe = Pipe("topPipe.png")
     lower_pipe = Pipe("bottomPipe.png")
     reset_pipes()
@@ -79,7 +79,7 @@ def intersects_pipes():
       bird_y <= lower_pipe.y + lower_pipe.height):
     return True
 
-  if bird_y > height or bird_y + bird_size < 0:
+  if bird_y > height or bird_y + bird_height < 0:
     return True
 
   return False
