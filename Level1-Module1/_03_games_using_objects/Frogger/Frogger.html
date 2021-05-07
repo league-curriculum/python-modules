@@ -52,6 +52,7 @@
 5. Add code to the method below (match the code to the comments) to give our frog movement.</p>
 <pre>
 def keyPressed():
+    global frog_x, frog_y
     if key == CODED:
         if keyCode == UP:
             # Frog Y position goes up
@@ -77,9 +78,9 @@ def keyPressed():
 8. Create a constructor for your Car class that initializes each member variable with parameters.</p><br>
     
 <p class="normal">
-9. Copy this functionality into your Car class to display your car</p>
+9. Copy this functionality into your Car class to draw your car</p>
 <pre>
-def display():
+def draw():
     fill(0,255,0)
     rect(x , y,  size, 50)
 </pre><br>
@@ -89,7 +90,7 @@ def display():
 </p><br>
     
 <p class="normal">
-11. Call the <b>display()</b> method from your <b>draw</b> method for each car. You should see your cars appear.
+11. Call the <b>draw()</b> method from your <b>draw</b> method for each car. You should see your cars appear.
 </p><br>
 
 <p class="normal">
@@ -104,7 +105,7 @@ def display():
  14.  Write another method for the car to move to the right with its speed. In the same method,  if the car goes off the canvas, have it return to the leftmost position of your canvas</p><br>
 
        <p class="normal">
- 15.  In the <b>draw()</b> method, alternate the driving direction of each of your cars to either go left or right. Use the <b>display()</b> method after every drive method.
+ 15.  In the <b>draw()</b> method, alternate the driving direction of each of your cars to either go left or right. Use the <b>draw()</b> method after every drive method.
     </p><br>
 
     <p class="normal">
