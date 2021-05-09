@@ -2,6 +2,8 @@
 Create the classic Flappy Bird game!
 """
 
+# 0. Do the other exercises in this folder before starting this one!
+
 def setup():
     pass
     # 1. Use the size function to set the width and height of the program
