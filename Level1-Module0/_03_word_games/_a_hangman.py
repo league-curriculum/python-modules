@@ -4,23 +4,28 @@ from tkinter import messagebox
 
 # TODO 1) Complete the function to return a string with as many
 #  underscores (_) as there are letters in the word to guess
+#  word_to_guess = orange (a string)
+#  return          ______ (a string with 6 underscores)
 def setup_new_word(word_to_guess):
 
     return str()
 
 # TODO 2) Complete the function to return whether the letter is in
 #  the word to guess
+#  word_to_guess = orange (a string)
+#  letter = o (a string)
+#  return True
 def check_letter_in_word(word_to_guess, letter):
 
     return False
 
 # TODO 3) Complete the function to return the current guess with the
 #  letter in the same places (index) of the word to guess. For example,
-#       word to guess = orange
-#       current guess = o__n_e
+#       word to guess = orange (a string)
+#       current guess = o__n_e (a string)
 #       letter = g
-#       return o__nge
-#  Remember that strings can't be changed!
+#       return o__nge (a string)
+#  Remember that strings can't be changed directly!
 def replace_letter_in_word(word_to_guess, current_guess, letter):
 
     return str()
