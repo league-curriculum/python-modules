@@ -12,8 +12,8 @@ class Student:
         self.name = name_input
 
 # * The variable 'student_name' can be used anywhere in the file
-# * The variable 'name' within the class Student can only be used if an object
-#   of Student is created
+# * The variable 'name' within the class Student can only be used outside the
+#   class if an object of Student is created
 print(student_name)         # No error. Prints Kevin
 # print(name)               # ERROR, name variable not defined outside of class
 student_1 = Student("Javier")
