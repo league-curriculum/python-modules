@@ -19,8 +19,9 @@ print(student_name)         # No error. Prints Kevin
 student_1 = Student("Javier")
 print(student_1.name)       # No error. Prints Javier
 
-# The name variable in the class is called a member variable. Member variables
-# are created in a special function called the constructor, __init__(self):
+# The name variable in the class is called a member variable. The best place
+# for Member variables to be created are in a special function called the
+# constructor, __init__(self):
 #   def __init__(self):
 #       self.member_var = 0     # create member variable 'member_var'
 
