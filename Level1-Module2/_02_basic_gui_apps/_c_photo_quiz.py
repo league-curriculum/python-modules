@@ -25,12 +25,13 @@ def create_image(filename, width, height):
 
 # TODO 1) Create a new tkinter class
 
-# TODO 2) Create a constructor
+    # TODO 2) Create a constructor
 
-# TODO 3) call Tk's constructor,
-#  super().__init__()
+        # TODO 3) call Tk's constructor
 
-# TODO 4) Create a label and place it
+        # TODO 4) Create a member variable for a label and place it.
+        #  You do not need to add any text or images to the label.
+
 
 # TODO 5) Create an if __name__ == '__main__': block
 
@@ -40,8 +41,8 @@ def create_image(filename, width, height):
 
     # TODO 8) Declare and initialize a score variable
 
-    # TODO 9) Create an image object using the create_image function above
-    #  and store it in a variable
+    # TODO 9) Create an image object variable using the create_image function
+    #  above and store it in a variable
 
     # TODO 10) Set the image onto the class's label using the configure method,
     #  for example:
