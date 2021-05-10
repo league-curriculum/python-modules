@@ -26,5 +26,5 @@ Module download Links:
 
 - LEVEL 1 -
   - Module 0: https://classroom.github.com/a/whGSUc8C
-  - Module 1: 
-  - Module 2:
+  - Module 1: https://classroom.github.com/a/CNjT0RQN
+  - Module 2: https://classroom.github.com/a/5cub_qf5
