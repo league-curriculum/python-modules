@@ -9,7 +9,7 @@ if __name__ == '__main__':
     # 1. Change this line to give you a random number between 1 - 100.
     random_num = random.randint(1, 10)
 
-    # 2. Print out the random variable above
+    # 2. Print out the random variable that you made in step #1
 
     # 3. Code a for loop to run steps 4-10, 10 times
 
