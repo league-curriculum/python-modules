@@ -12,7 +12,7 @@ def find_the_diamond(the_murder=None):
 
     # TODO 2) How many innocent crows had to die before the diamond was found?
     #  For example, if you had to look through the stomachs of 3 crows to find
-    #  the diamond, then 2 innocent crows died.   
+    #  the diamond, then 2 innocent crows died.
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 
