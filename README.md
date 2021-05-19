@@ -1,5 +1,6 @@
 # python-modules
-Home of all our python modules. To begin with, this will just be the workshop.
+Classroom repos: https://github.com/league-python
+Student modules: https://github.com/league-python-student
 
 Checkpoints:
 - LEVEL 0 -
@@ -28,3 +29,10 @@ Module download Links:
   - Module 0: https://classroom.github.com/a/whGSUc8C
   - Module 1: https://classroom.github.com/a/CNjT0RQN
   - Module 2: https://classroom.github.com/a/5cub_qf5
+
+How to add a new classroom repo to league-python, e.g. adding new level modules:
+1. Create new repo in /python-modules
+2. Create a new repo in /league-phthon with the same name as the repo in /python-modules from step 1.
+3. Add the new repo url to /python-modules/RepoList.txt
+4. Commit all code for the repo in /python-modules to the master branch
+5. Check code propagates to the empty repo in /league-python
