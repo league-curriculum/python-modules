@@ -32,7 +32,7 @@ Module download Links:
 
 How to add a new classroom repo to league-python, e.g. adding new level modules:
 1. Create new repo in /python-modules
-2. Create a new repo in /league-phthon with the same name as the repo in /python-modules from step 1.
-3. Add the new repo url to /python-modules/RepoList.txt
+2. Create a new repo in /league-python with the same name as the repo in /python-modules from step 1.
+3. Add the new repo URL to /python-modules/RepoList.txt
 4. Commit all code for the repo in /python-modules to the master branch
 5. Check code propagates to the empty repo in /league-python
