@@ -22,7 +22,7 @@ def setup():
     size(800, 600)
     
     # 2. Use the Segment class to make a new snake_head in the middle of the window.
-    # #Example:
+    # Example:
     snake_head = Segment(width / 2, height / 2)
     
     # 3. Use the Food class to make new food
