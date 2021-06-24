@@ -4,37 +4,34 @@ from FriendlyFish import FriendlyFish
 from Shark import Shark
 from Anchovy import Anchovy
 
-def setup():
+def setup(): 
+    global bg, fish, sharks, anchovies
+    bg = fish = sharks = anchovies = None
+    
     # 1. Use the fullScreen() function to make the game window the entire screen
     fullScreen()
- 
-    global bg, fish, sharks, anchovies
     
     # 2. Initialize the 'bg' variable with one of the four underwater backgrounds
     #    bg = loadImage("underwater_bg1.jpg")
     #    bg = loadImage("underwater_bg2.jpg")
     #    bg = loadImage("underwater_bg3.jpg")
     #    bg = loadImage("underwater_bg4.jpg")
-    bg = loadImage("underwater_bg1.jpg")
     
     # 3. Use bg's resize(wdith, height) method to set the background to the entire screen
-    bg.resize(width, height)
 
     # 4. Initialize the 'fish' variable using the create_red_fish(x, y) function
     #    fish = create_red_fish(width/2, height/2) # places the fish in the center of the window 
-    fish = create_red_fish(width/2, height/2)
     
     # 5. Initialize the 'sharks' variable using the create_sharks() function
-    sharks = create_sharks()
     
     # 6. Initialize the 'anchovies' variable using the create_anchovies() function
-    anchovies = create_anchovies()
+
 
     setup_game()
 
 def draw():
     global fish, sharks, anchovies, anchovies_eaten
-    if not started:
+    if bg is not None and not started:
         background(bg)
         filter(BLUR, 6)
         image(title, width/2, height/4)
@@ -47,91 +44,71 @@ def draw():
 
     # 7. Use the background() function to draw the bg image 
     # Do you see the game's background image?
-    background(bg)
 
     # 8. Use the fish variable's draw() method to draw the fish
     # Do you see the red fish on the screen?
-    fish.draw()
     
     #
     # 9. Skip below to the mouseDragged() function below to make the fish move
     #
     
     # 12. Use the spawn_sharks() function to create sharks
-    spawn_sharks()
     
     # 13. Use the move_sharks() function to move the sharks
     # The sharks won't appear yet. They have to drawn first.
-    move_sharks()
 
     # 14. Use a for loop through all the sharks in the 'sharks' list 
-    for shark in sharks:
     
         # 15. Call the draw() method for each shark
         # Do you see the sharks?
         # The sharks won't interact with the fish until the collision is checked 
-        shark.draw()
         
         # 16. Use an if statement and the is_collision(fish, shark) function to check for a collision
         # *HINT* the is_collision() function returns a boolean value
-        if is_collision(fish, shark):
             
             # 17. If there is a collision, use the text("message", x, y) function to print "GAME OVER"
             #     Use textSize() and fill() before text() to set the color and size of the message
-            textSize(90)
-            fill(0)
-            text("Game Over", width/3, height/2)
             
             # 18. Use noLoop() to stop the game
             # Does the game stop when the fish collides with the shark?
-            noLoop()
+            
 
     # 19. Use the spawn_anchovies() function to create anchovies
-    spawn_anchovies()
     
     # 20. Use the move_anchovies() function to move the anchovies
     # The anchovies won't appear yet. They have to drawn first.
-    move_anchovies()
     
     # 21. Use a for loop through all the anchovies in the 'anchovies' list
-    for anchovy in anchovies:
         
         # 22. Call the draw() method for each anchovy
         # Do you see the small, green anchovies?
-        anchovy.draw()
     
         # 23. Use an if statement and the is_collision(fish, anchovy) function to check for a collision
         # *HINT* the is_collision() function returns a boolean value
-        if is_collision(fish, anchovy):
-            
+        
             # 24. If there is a collision, set anchovy.is_alive to False
             # Do the anchovies disappear when the fish collides with them?
-            anchovy.is_alive = False
             
             # 25. If there is a collision, increase 'anchovies_eaten' by 1 
-            anchovies_eaten += 1
+            
     
     # 26. Use the text("message", x, y) function to print the anchovies_eaten variable on the game window
     #     Use textSize() and fill() before text() to set the color and size of the message
-    textSize(48)
-    fill(0)
-    text("Anchovies Eaten: ", 20, 50)
-    fill(255, 255, 0)
-    text(str(anchovies_eaten), 450, 50)
+
 
 def mouseDragged():
     pass
     # 10. Use the fish variable's follow_mouse() method to move the fish
     # Does the fish move when you click on it and drag the mouse across the screen?
     # The fish won't stop moving until we finish the code in the mouseReleased() function
-    fish.follow_mouse()
+    
         
 def mouseReleased():
     pass
     # 11. Use the fish variable's stop() method to stop moving the fish when no longer pressing the mouse
     # Does the fish stop moving when the mouse is released?
     # If so, go back up and finish the code in the draw() function
-    fish.stop()
+    
     
     
     
