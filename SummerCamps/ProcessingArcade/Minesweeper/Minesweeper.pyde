@@ -61,8 +61,8 @@ def draw():
         # Skip down and complete the draw_cells() function
         draw_cells()
         
-        # 14. Use the draw_game_header() function to count the game seconds
-        # when the game starts
+        # 14. Use the update_game_time() function to count the game seconds
+        # when the game starts.
         # Does the game start counting up the seconds when the start button is pressed?
         update_game_time()
         
@@ -260,6 +260,9 @@ def mousePressed():
         initialize_cells()
         initialize_mines()
         start_game_timer()
+        return
+    elif not game_in_progress:
+        # Don't allow clicking on the cells before pressing the start button
         return
     
     cell = check_cell_pressed()
