@@ -15,6 +15,7 @@ def setup():
     
     # 3. Use the bg variable's resize(width, height) method to set the background
     # to the entire screen
+    # Do you see the start screen with the blurred background image?
     bg.resize(width, height)
     
     # 5. Initialize the 'energy_bar' variable to an EnergyBar()
@@ -24,10 +25,8 @@ def setup():
     # 6. Initialize the 'shots' variable to a list()
     shots = list()
     
-    # 7. Initialize the 'crosshair' variable to one of two crosshair images
-    #    crosshair = loadImage("crosshair1.png")
-    #    OR
-    #    crosshair = loadImage("crosshair2.png") 
+    # 7. UInitialize the 'crosshair' variable for the crosshair image
+    #    crosshair = loadImage("crosshair1.png") 
     crosshair = loadImage("crosshair2.png")
     
     # 8. Use the crosshair's resize(width, height) method to resize
@@ -64,28 +63,30 @@ def draw():
         alien.move()
         
         # 15. Call the draw() method for each alien
+        # Do you see the aliens?
         alien.draw()        
     
     # 16. Use the image(crosshair, mouseX, mouseY) function to draw
     # the crosshair. Do you see it on the game when you run the code?
     image(crosshair, mouseX, mouseY)
     
-    # 17. Use an if statement to check if the mouse is pressed
-    # *HINT* use mousePressed
+    # 17. Next is coding the shot when the mouse is pressed.
+    # Use an if statement to check the 'mousePressed' variable
     if mousePressed:
         
         # 18. Call the fire_shot() function to shoot
-        # Do you see the shot fired when you press the mouse?
+        # The shot won't appear, but it will drain the energy
+        # The shots are drawn on the next step
         fire_shot()
     
     # 19. Use a for loop to iterate through all the shots
     for shot in shots:
         
         # 20. Call the draw() method for each shot
-        # Do you see the shot when the mouse is clicked
+        # Do you see the shot when the mouse is clicked?
         shot.draw()
         
-        # 21. Now let's check if we shot one of the UFOs
+        # 21. Now let's check if we shot one of the aliens
         # Use a for loop to iterate through all the aliens
         for alien in aliens:
             
@@ -94,14 +95,15 @@ def draw():
             if is_collision(shot, alien):
                 
                 # 23. If the alien was shot, set the alien's 'is_alive' variable to False
-                # Do you see the alien disappear when it's shot?
+                # The alien won't disapear yet, that's handled later
                 alien.is_alive = False
                 
                 # 24. Increase score by 1
-                # Do you see the score increase by one when an alien is shot?
+                # The score will be draw later so it won't appear on the game yet
                 score += 1
     
     # 25. Call the purge_objects() function to remove aliens and other objects from the game
+    # Do you see the aliens disappear when they're shot?
     purge_objects()
     
     # 26. Use the text(str(score), x, y) function to print the 'score' variable
@@ -112,6 +114,7 @@ def draw():
     text(str(score), 100, 100)
 
     # 27. Call the update_timer() function to count down the game's time
+    # Do you see the game time counting down?
     update_timer()
 
     
@@ -174,7 +177,8 @@ def end_game():
         intro += "0.0"
     else:
         intro += str(100.0 * float(score) / float(total_shots)) + '%'
-    text(intro, (width/3) + 100, (height/2) + 100)   
+    text(intro, (width/3) + 100, (height/2) + 100)
+    text("press ENTER to restart", (width/3) + 100, (height/2) + 275)
     pop()
     
 def update_timer():
