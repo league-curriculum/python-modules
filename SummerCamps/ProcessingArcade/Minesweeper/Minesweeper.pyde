@@ -41,11 +41,9 @@ def setup():
     # 4. Use the initialize_mines() function to randomly place the mines
     initialize_mines()
 
-#
-# Draw all game objects
-#
+
 def draw():
-    # 5. Use an 'if' statement to check if game_read is set to True
+    # 5. Use an if statement to check if the 'game_ready' variable is set to True
     if game_ready:
         
         # 6. Use background(color) to set the game's background
@@ -56,10 +54,14 @@ def draw():
         # Skip down and complete the draw_game_header() function
         draw_game_header()
         
-        # 11. Complete the instructions in draw_game_header() FIRST!
-        # Use the draw_cells() function to draw the game's grid cells
-        # Skip down and complete the draw_cells() function
-        draw_cells()
+        # 8. Complete the instructions in draw_game_header() below FIRST!
+
+        # 12. Use a for loop to go through each cell in the 'cells' list variable 
+        for cell in cells:
+            
+            # 13. Call each cell's draw() method
+            # Do you see the grid of cells?
+            cell.draw()
         
         # 14. Use the update_game_time() function to count the game seconds
         # when the game starts.
@@ -77,7 +79,7 @@ def draw():
 # Draw top game header with # mines, start button, elapsed time
 #            
 def draw_game_header():
-    # 8. Use the text("my text", x, y) function to draw the remaining number
+    # 9. Use the text("my text", x, y) function to draw the remaining number
     # of mines at the top of window
     #    - num_of_mines variable holds the total number of mines in the game
     #    - mines_flagged variable holds the number of mines that have been flagged
@@ -91,23 +93,17 @@ def draw_game_header():
     else:
         text( "0", 5, cell_width - 5 )
     
-    # 9. Use the text("my text", x, y) function to draw the game time
+    # 10. Use the text("my text", x, y) function to draw the game time
     #    - game_time_sec variable holds the number of seconds since the game started
     text( game_time_sec, width - 100, cell_width - 5 )
     
-    # 10. Call draw() from the start_button to draw the start button
+    # 11. Call draw() from the start_button to draw the start button
     # Do you see the start button, mines left, and game timer?
     start_button.draw()
 
-#
-# Draw all cells
-#
-def draw_cells():
-    # 12. Use a for loop to go through each cell in the 'cells' list variable 
-    for cell in cells:
-        # 13. Call each cell's draw() method
-        # Do you see the grid of cells?
-        cell.draw()
+
+
+# =================== DO NOT MODIFY THE CODE BELOW ======================
 
 #
 # Win or lose, reveal all cells
@@ -271,7 +267,10 @@ def mousePressed():
         if mouseButton == RIGHT:
             if not cell.revealed:
                 cell.pinned = not cell.pinned
-                mines_flagged += 1
+                if cell.pinned:
+                    mines_flagged += 1
+                else:
+                    mines_flagged -= 1
             
         elif mouseButton == LEFT:
             # Don't reveal pinned/marked cells. User must unpin to reveal.

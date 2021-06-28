@@ -5,6 +5,7 @@ from Shot import Shot
 
 def setup():
     global bg, aliens, shots, energy_bar, crosshair
+    bg = aliens = shots = energy_bar = crosshair = None
     
     # 1. Use the fullScreen() function to make the game window the entire screen
     
@@ -131,7 +132,7 @@ def mouseReleased():
     total_shots += 1
 
 def display_intro():
-    if not started:
+    if bg is not None and not started:
         image(bg, width/2, height/2)
         filter(BLUR, 6)
         image(title, width/2, height/4)

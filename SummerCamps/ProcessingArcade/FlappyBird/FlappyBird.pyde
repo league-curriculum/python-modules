@@ -2,58 +2,80 @@
 Create the classic Flappy Bird game!
 """
 
-# 0. Do the other exercises in this folder before starting this one!
-
 def setup():
     pass
-    # 1. Use the size function to set the width and height of the program
+    # 1. Use the size(width, height) function to set the width and height
+    # of the game window
+    size(800, 600)
     
     # 2. Remove the comment (the '#') in the line below 
-    #global bg, bird, lower_pipe, upper_pipe
+    global bg, bird, lower_pipe, upper_pipe
     
     # 3. Use the loadImage function to inialize the bg variable with the
-    # flappyBackground.jpg image 
+    # flappyBackground.jpg image
+    bg = loadImage("flappyBackground.jpg") 
     
-    # 4. Resize the background to the width and height of the program
+    # 4. Use the bg variable's resize(width, height) method to set
+    # the background to the width and height of the game window
+    bg.resize(width, height)
     
     # 5. Use the Bird class defined below to create a Bird object.
-    # The bird image is named 'bird.png'
+    bird = Bird('bird.png', 100, height/2)
     
-    # 6. Use the Pipe class defined below to create 2 Pipe objects,
-    # one pipe at the top and one at the bottom.
-    # The pipe images are named, "topPipe.png" and "bottomPipe.png"  
+    # 6. Initialize the 'lower_pipe' and 'upper_pipe' variables using
+    # the Pipe class defined below.
+    # The pipe images are named, "upper_pipe.png" and "lower_pipe.png"
+    upper_pipe = Pipe('upper_pipe.png')
+    lower_pipe = Pipe('lower_pipe.png')
 
-    # 7. Call the reset_pipes function to set the initial positions
-    # of the pipes
+    # 7. Call the reset_pipes(lower_pipe, upper_pipe) function to set
+    # the initial positions of the pipes
+    reset_pipes(lower_pipe, upper_pipe)
+
 
 def draw():
-    pass
-    # 8. Remove the comment (the '#') in the line below
-    #global bg, bird, lower_pipe, upper_pipe
-    
-    # 9. Use the background function to draw the game's background
+    # 8. Use the background() function to draw the game's background
+    background(bg)
 
-    # 10. Find the Bird class below and follow the instructions
+    # 9. Find the Bird class below and follow the instructions
     # there to complete the Bird class before continuing
 
-    # 18. Call the bird's update and draw methods.
+    # 16. Call the bird's update and draw methods.
     # Is the bird displayed and move up when the mouse is clicked?
+    bird.update()
+    bird.draw()
     
-    # 19. Call the upper and lower pipe's update methods.
+    # 17. Call the upper and lower pipe's update methods.
+    upper_pipe.update()
+    lower_pipe.update()
     
-    # 20. Call the upper and lower pipe's draw methods. 
+    # 18. Call the upper and lower pipe's draw methods. 
     # Do the pipes move across the screen?
+    upper_pipe.draw()
+    lower_pipe.draw()
 
-    # 21. Call the reset_pipes function defined below when the pipes
-    # move past the screen to reset their position. 
+    # 19. Call the reset_pipes function defined below when the pipes
+    # move past the screen (lower_pipe.x < 0) to reset their position.
+    if upper_pipe.x < 0 and lower_pipe.x < 0:
+        reset_pipes(lower_pipe, upper_pipe)
 
-    # 22. Call the intersects_pipes function defined below to check if
-    # the bird collided with one of the pipes. If there's a collision,
-    # stop the game by calling noLoop()  
+    # 20. Use an if statement along with the intersects_pipes() function
+    # defined below to check if the bird collided with one of the pipes.
+    # If there's a collision, stop the game by calling noLoop()
+    if intersects_pipes(bird, lower_pipe, upper_pipe):
+        noLoop()
     
-    # 23. End the game if the bird flies too low (hitting the ground)
+    # 21. End the game if the bird flies too low (hitting the ground)
     # OR flies too high (above the screen)
-    
+    if bird.y > height or bird.y < 0:
+        noLoop()
+        
+        
+    # *** ENHANCEMENTS ***
+    # * Change the bird image to something else!
+    # * Add a score that increments every time the bird gets through the pipes.
+    # * Add a way to reset the game when it's over.
+    # * Make the pipes move faster the longer the game goes.
 
 class Bird:
     def __init__(self, image_file, bird_x, bird_y):
@@ -64,26 +86,35 @@ class Bird:
         self.image = loadImage(image_file)
         self.image.resize(self.width, self.height)
         
-        # 11. Initialize a member variable for gravity (typically 1 to 5)
+        # 10. Remove the 'None' and pick a new value for the bird gravity,
+        # typically a value of 1 to 5
+        self.gravity = 2
         
-        # 12. Add a member variable for the distance the bird travels
-        # upward when it flaps (jumps)
+        # 11. Remove the 'None' and pick a new value for the bird flap_height
+        # typically a value at least double the gravity 
+        self.flap_height = 6
         
-    # 13. Create an update method that will update the bird's position
-    # while the game runs
-
-        # 14. Move the bird downward by the gravity member variable to make
+    def update(self):
+        pass
+        # 13. Move the bird downward by the gravity member variable to make
         # it look like the bird is falling
+        self.y += self.gravity
         
-        # 15. Use the boolean mousePressed variable to flap (jump) the bird
-        # up by flap distance member variable the when the mouse is pressed
+        # 14. Use an if statement and the mousePressed variable to flap (jump)
+        # the bird up by flap distance member variable the when the mouse is pressed
+        if mousePressed:
+            self.y -= self.flap_height
     
-    # 16. Create a draw method that shows the bird on the program
-
-        # 17. Use the image function and the class's member variables to
+    def draw(self):
+        pass
+        # 15. Use the image function and the class's member variables to
         # draw the bird
         # image( <image>, <x positon>, <y position> )
+        image(self.image, self.x, self.y)
         
+
+
+# =================== DO NOT MODIFY THE CODE BELOW ======================
 
 class Pipe:
     pipe_gap = 125

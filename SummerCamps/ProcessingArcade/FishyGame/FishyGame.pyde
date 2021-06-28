@@ -16,6 +16,7 @@ def setup():
     #    bg = loadImage("underwater_bg2.jpg")
     #    bg = loadImage("underwater_bg3.jpg")
     #    bg = loadImage("underwater_bg4.jpg")
+
     
     # 3. Use bg's resize(wdith, height) method to set the background to the entire screen
 

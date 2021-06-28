@@ -1,4 +1,4 @@
-from SnakeSegment import Segment
+from Segment import Segment
 from Food import Food
 
 # All the game variables that will be shared by the game methods are here
@@ -18,23 +18,23 @@ def setup():
     frameRate(15 + food_eaten)
     
     # 1. Use size(width, height) to set the width and height of the window
-    # Example:
+    #size(800, 600
     size(800, 600)
     
-    # 2. Use the Segment class to make a new snake_head in the middle of the window.
-    # Example:
+    # 2. Initialize the 'snake_head' variable using the Segment class to a new snake segment.
+    #snake_head = Segment(x, y)
     snake_head = Segment(width / 2, height / 2)
     
-    # 3. Use the Food class to make new food
+    # 3. Initialize the 'food' variable using the Food class to make new food
     food = Food()
     
     # 4. Use the food's drop() method to place a peice of food randomly in the window.
     food.drop()
 
-#
-# These methods are used to draw the snake and its food
-# 
+
 def draw():
+    global food_eaten
+    
     # 5. Use the background(color) function to draw the game background
     # Example: background(0)    # black background 
     background(0)
@@ -51,15 +51,29 @@ def draw():
     # has collided with the body (when the tail gets really long)
     check_tail_collision()
     
-    # 9. Use the draw_food() function to display the food
+    # 9. Use the food's draw() method to display the food
     # Do you see the green food?
-    draw_food()
+    food.draw()
     
-    # 10. Use the eat() function to grow the snake's tail if the snake eats the food
-    # Does the game work?
-    eat()
+    # 10. Use an if statement and the collision() function check if the
+    # snake_head variable collides with the food variable
+    if collision(snake_head, food):
+        
+        # 11. If there is a collision, increase the food_eaten variable by 1
+        food_eaten += 1
+        
+        # 12. If there is a collision, call the food variable's drop method
+        food.drop()
+        
+        # 13. Use the Segment(snake_head.x, snake_head.y) class to make a
+        # new snake segment and save it to a variable
+        new_segment = Segment(snake_head.x, snake_head.y)
+        
+        # 14. Call the snake_body variable's append() method to add the new
+        # snake segment
+        snake_body.append( new_segment )
     
-    # 11. Use the text("message", x, y) function to display the number of food
+    # 15. Use the text("message", x, y) function to display the number of food
     # eaten using the global food_eaten variable.
     # global food_eaten
     
@@ -71,6 +85,9 @@ def draw():
     # * Changing the food from a square to an image, like a pizza?
     # * Can you make the game faster the more food the snake eats?
     #   Hint: use the frameRate() function
+
+
+# =================== DO NOT MODIFY THE CODE BELOW ======================
 
 #
 # Set the direction of the snake according to the arrow keys pressed
@@ -87,13 +104,6 @@ def keyPressed():
             direction = LEFT
         elif keyCode == RIGHT and direction != LEFT:
             direction = RIGHT
-
-#
-# Draw food
-#
-def draw_food():
-    global food
-    food.draw()
 
 # 
 # Draw the head of the snake followed by its tail
@@ -163,18 +173,6 @@ def check_tail_collision():
     if is_collision:
         food_eaten = 0
         snake_body = list()
-
-#
-# When the snake eats the food, its tail should grow and
-# another should food appear
-#
-def eat():
-    global snake_body, snake_head, food, food_eaten
-
-    if collision(snake_head, food):
-        food_eaten += 1
-        food.drop()
-        snake_body.append( Segment(snake_head.x, snake_head.y) )
 
 #
 # Detect collision between 2 squares/rectangles
