@@ -31,15 +31,7 @@ def setup():
 
 def draw():
     global fish, sharks, anchovies, anchovies_eaten
-    if bg is not None and not started:
-        background(bg)
-        filter(BLUR, 6)
-        image(title, width/2, height/4)
-        textSize(90)
-        fill(0)
-        text("Press 's' to start", width/3, height/2)
-        textSize(36)
-        text("Click and drag the mouse to move\nthe red fish and avoid the sharks", (width/3) + 50, (height/2) + 100)    
+    if display_intro:
         return
 
     # 7. Use the background() function to draw the bg image 
@@ -129,6 +121,19 @@ def keyPressed():
     elif key == 'e':
         global anchovies_eaten
         anchovies_eaten += 1
+
+def display_intro():
+    if bg is not None and not started:
+        background(bg)
+        filter(BLUR, 6)
+        image(title, width/2, height/4)
+        textSize(90)
+        fill(0)
+        text("Press 's' to start", width/3, height/2)
+        textSize(36)
+        text("Click and drag the mouse to move\nthe red fish and avoid the sharks", (width/3) + 50, (height/2) + 100)    
+        return False
+    return True
 
 def setup_game():
     frameRate(30)
