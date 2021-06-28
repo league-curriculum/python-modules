@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<title>Level 1 - Frogger</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+   #moduleIndex {
+   padding: 0;
+}
+</style>
+<script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
+<body>
+        <div id ="wrap">
+            <div id ="main">
+                 <div id="header">
+                    <script>addRecipeHeader();</script>
+                </div>         
+                <div id = "moduleIndex">   
+
+<h1>Frogger</h1>
+<br>
+  <div style="align-content: center">      
+      <img alt="" src="images/FroggerScreenShot.png" style="width: 270px; height: 200px;">
+  </div>                    
+<br>                    
+<p class="normal">
+
+1. Start a new sketch with <b>draw</b> and <b>setup</b> methods. Ask your teacher if you do not know how to do this.<br>
+<br>
+    2.  In the <b>setup</b> method, set your canvas of size 800x600 for your game<br></p><br>
+   
+    <p class="code">
+    size(width, height);</p><br>
+  
+    <p class="normal">    In the <b>draw</b> method, set the background color of your sketch<br></p><br>
+   
+    <p class="code">  
+    background(red,green,blue);</p><br>
+
+<p class="normal">
+3. In the <b>draw</b> method, draw a frog on the bottom of the canvas. (It can be a ball for now)</p><br>
+    <p class="code">
+    fill(red, green, blue);<br>
+    ellipse(x, y, width, height);</p><br>
+    
+<p class="normal">
+4. Make member variables to keep track of your frog’s hop distance, <b>x</b> and <b>y</b> position</p><br>
+    
+<p class="normal">
+5. Add code to the method below (match the code to the comments) to give our frog movement.</p>
+<pre>
+def keyPressed():
+    global frog_x, frog_y
+    if key == CODED:
+        if keyCode == UP:
+            # Frog Y position goes up
+            print("up")
+        elif keyCode == DOWN:
+            # Frog Y position goes down
+            print("down")
+        elif keyCode == RIGHT:
+            # Frog X position goes right
+            print("right")
+        elif keyCode == LEFT:
+            # Frog X position goes left
+            print("left")
+</pre><br>
+
+<p class="normal">
+6. Write a method to keep our frog from going outside of the canvas</p><br>
+
+<p class="normal">
+7. Create a Car class inside your sketch. Your Car class will include the car’s x position, y position, the size of the car, and the speed of the car.</p><br>
+
+<p class="normal">
+8. Create a constructor for your Car class that initializes each member variable with parameters.</p><br>
+    
+<p class="normal">
+9. Copy this functionality into your Car class to draw your car</p>
+<pre>
+def draw():
+    fill(0,255,0)
+    rect(x , y,  size, 50)
+</pre><br>
+
+<p class="normal">
+10. Create several new Car objects at the top of your sketch.
+</p><br>
+    
+<p class="normal">
+11. Call the <b>draw()</b> method from your <b>draw</b> method for each car. You should see your cars appear.
+</p><br>
+
+<p class="normal">
+ 12. Inside your Car class write a method for the car to move to the left with its speed.
+</p><br>
+ 
+    <p class="normal">
+ 13. Inside your Car class write a method for the car to move to the left with its speed. In the same method, if the car goes off the canvas, have it return to the rightmost position of your canvas.  (hint: use Processing's <font color="magenta">width</font> variable)
+</p><br>
+
+       <p class="normal">
+ 14.  Write another method for the car to move to the right with its speed. In the same method,  if the car goes off the canvas, have it return to the leftmost position of your canvas</p><br>
+
+       <p class="normal">
+ 15.  In the <b>draw()</b> method, alternate the driving direction of each of your cars to either go left or right. Use the <b>draw()</b> method after every drive method.
+    </p><br>
+
+    <p class="normal">
+        16. Check when a car hits your frog. You can use the following intersection method to help.<br></p>
+
+<pre>
+def intersects(car):
+  if frog_y > car.y and frog_y < car.y + 50 and frog_x > car.x and frog_x < car.x + car.size:
+    return True;
+  else:
+    return False;
+</pre>
+<br>
+   <p class="normal">
+        17. Call the intersects method for one of your cars in your draw method.  If the intersects method returns true, return your frog to the starting point.<br></p><br>    
+
+     <p class="normal">  
+    18. Repeat step 18 for all of your cars.
+    </p><br>
+    <p class="normal">
+        19. OPTIONAL.   Use images for the background, cars and frog (see image at top). You can find your own images, or those provided in the Module 3 Java project. See below for code snippets to load and draw images.</p>
+       
+  
+<pre>
+def setup():
+  size(844,600)
+  global back
+  global car_left
+  global car_right
+  global frog
+  back = loadImage("froggerBackground.png")
+  car_left = loadImage("carLeft.png")
+  car_left.resize(160,100)
+  car_right = loadImage("carRight.png")
+  car_right.resize(160,100)
+  frog = loadImage("frog.png")
+  frog.resize(75,75)
+
+def draw():
+  background(back)
+  image (car_left,250,360)
+  image (car_right,250, 210)
+  image (frog, 300, 530)
+</pre><br>
+
+<a href="https://processing.org/reference">
+    <img src="https://league-level0.github.io/p3logo.jpeg" class="footer" alt="Processing Reference"></a>
+
+                </div>
+    </div>
+    </div>                
+                
+<div id="footer">
+<script>addFooter();</script>
+</div>
+
+</body>
+</html>
