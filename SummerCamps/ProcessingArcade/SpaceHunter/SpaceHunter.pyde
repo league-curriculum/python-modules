@@ -7,18 +7,15 @@ def setup():
     # 1. Use the fullScreen() function to make the game window the entire screen
     fullScreen();
     
-    global bg, fg, aliens, shots, energy_bar, crosshair
+    global bg, aliens, shots, energy_bar, crosshair
     
-    # 2. Initialize the 'bg' and 'fg' variables for the background image
+    # 2. Initialize the 'bg' variable for the background image
     #    bg = loadImage("spaceBg.png")
-    #    fg = loadImage("spaceFg.png")
     bg = loadImage("spaceBg.png")
-    fg = loadImage("spaceFg.png")
     
-    # 3. Use the variable's resize(width, height) method to set the background
-    # and foreground to the entire screen
+    # 3. Use the bg variable's resize(width, height) method to set the background
+    # to the entire screen
     bg.resize(width, height)
-    fg.resize(width, height)
     
     # 5. Initialize the 'energy_bar' variable to an EnergyBar()
     # energy_bar = EnergyBar()
@@ -52,37 +49,34 @@ def draw():
     # Do you see the background when you run the code?
     image(bg, width/2, height/2)
     
-    # 11. Use an if statement to check if the mouse is pressed
-    # *HINT* use mousePressed
-    if mousePressed:
-        
-        # 12. Call the fire_shot() function to shoot
-        # Do you see the shot fired when you press the mouse?
-        fire_shot()
-    
-    # 13.
-    image(fg, width/2, height/2)
-    
-    # 14. Use the energy_bar's draw() method to display it on the game
+    # 11. Use the energy_bar's draw() method to display it on the game
     # Do you see the energy bar on the screen?
     energy_bar.draw()
     
-    # 15. Call the spawn_aliens() function to generate aliens
+    # 12. Call the spawn_aliens() function to generate aliens
     # The aliens don't appear yet! Do the next steps to move and draw them.
     spawn_aliens()
     
-    # 16. Use a for loop to iterate though all the aliens
+    # 13. Use a for loop to iterate though all the aliens
     for alien in aliens:
         
-        # 17. Call the move() method for each alien
+        # 14. Call the move() method for each alien
         alien.move()
         
-        # 17. Call the draw() method for each alien
+        # 15. Call the draw() method for each alien
         alien.draw()        
     
-    # 18. Use the image(crosshair, mouseX, mouseY) function to draw
+    # 16. Use the image(crosshair, mouseX, mouseY) function to draw
     # the crosshair. Do you see it on the game when you run the code?
     image(crosshair, mouseX, mouseY)
+    
+    # 17. Use an if statement to check if the mouse is pressed
+    # *HINT* use mousePressed
+    if mousePressed:
+        
+        # 18. Call the fire_shot() function to shoot
+        # Do you see the shot fired when you press the mouse?
+        fire_shot()
     
     # 19. Use a for loop to iterate through all the shots
     for shot in shots:
@@ -117,7 +111,7 @@ def draw():
     textSize(64)
     text(str(score), 100, 100)
 
-
+    # 27. Call the update_timer() function to count down the game's time
     update_timer()
 
     
@@ -139,7 +133,6 @@ def mouseReleased():
 def display_intro():
     if not started:
         image(bg, width/2, height/2)
-        image(fg, width/2, height/2)
         filter(BLUR, 6)
         image(title, width/2, height/4)
         textSize(90)
@@ -237,7 +230,8 @@ def purge_objects():
 
 def fire_shot():
     if energy_bar.is_enough_energy_for_shot():
-        filter(INVERT)
+        # Flashes
+        #filter(INVERT)
         
         shots.append(Shot())
         energy_bar.shot_fired()
