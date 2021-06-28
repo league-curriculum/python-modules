@@ -4,37 +4,37 @@ from EnergyBar import EnergyBar
 from Shot import Shot
 
 def setup():
-    # 1. Use the fullScreen() function to make the game window the entire screen
-    fullScreen();
-    
     global bg, aliens, shots, energy_bar, crosshair
+    
+    # 1. Use the fullScreen() function to make the game window the entire screen
+    
     
     # 2. Initialize the 'bg' variable for the background image
     #    bg = loadImage("spaceBg.png")
-    bg = loadImage("spaceBg.png")
+
     
     # 3. Use the bg variable's resize(width, height) method to set the background
     # to the entire screen
     # Do you see the start screen with the blurred background image?
-    bg.resize(width, height)
+
     
     # 5. Initialize the 'energy_bar' variable to an EnergyBar()
     # energy_bar = EnergyBar()
-    energy_bar = EnergyBar()
+
     
     # 6. Initialize the 'shots' variable to a list()
-    shots = list()
+
     
     # 7. UInitialize the 'crosshair' variable for the crosshair image
     #    crosshair = loadImage("crosshair1.png") 
-    crosshair = loadImage("crosshair2.png")
+
     
     # 8. Use the crosshair's resize(width, height) method to resize
     # the crosshair to 150, 150 (or whatever size you want it)
-    crosshair.resize(150, 150)
+
 
     # 9. Initialize the 'aliens' variable using the create_aliens() function
-    aliens = create_aliens()
+
 
     
     setup_game()
@@ -46,76 +46,73 @@ def draw():
     
     # 10. Use the image(bg, width/2, heigh/2) function to display the background
     # Do you see the background when you run the code?
-    image(bg, width/2, height/2)
+
     
     # 11. Use the energy_bar's draw() method to display it on the game
     # Do you see the energy bar on the screen?
-    energy_bar.draw()
+
     
     # 12. Call the spawn_aliens() function to generate aliens
     # The aliens don't appear yet! Do the next steps to move and draw them.
-    spawn_aliens()
+
     
     # 13. Use a for loop to iterate though all the aliens
-    for alien in aliens:
+
         
         # 14. Call the move() method for each alien
-        alien.move()
+
         
         # 15. Call the draw() method for each alien
         # Do you see the aliens?
-        alien.draw()        
+
     
     # 16. Use the image(crosshair, mouseX, mouseY) function to draw
     # the crosshair. Do you see it on the game when you run the code?
-    image(crosshair, mouseX, mouseY)
+
     
     # 17. Next is coding the shot when the mouse is pressed.
     # Use an if statement to check the 'mousePressed' variable
-    if mousePressed:
+
         
         # 18. Call the fire_shot() function to shoot
         # The shot won't appear, but it will drain the energy
         # The shots are drawn on the next step
-        fire_shot()
+
     
     # 19. Use a for loop to iterate through all the shots
-    for shot in shots:
+
         
         # 20. Call the draw() method for each shot
         # Do you see the shot when the mouse is clicked?
-        shot.draw()
+
         
         # 21. Now let's check if we shot one of the aliens
         # Use a for loop to iterate through all the aliens
-        for alien in aliens:
+
             
             # 22. Use an if statement and the is_collision(shot, alien) function
             # to check if an alien was shot
-            if is_collision(shot, alien):
+
                 
                 # 23. If the alien was shot, set the alien's 'is_alive' variable to False
                 # The alien won't disapear yet, that's handled later
-                alien.is_alive = False
+
                 
                 # 24. Increase score by 1
                 # The score will be draw later so it won't appear on the game yet
-                score += 1
+
     
     # 25. Call the purge_objects() function to remove aliens and other objects from the game
     # Do you see the aliens disappear when they're shot?
-    purge_objects()
+
     
     # 26. Use the text(str(score), x, y) function to print the 'score' variable
     # on the screen somewhere
     #   Use textSize() and fill() before text() to set the color and size of the message
-    fill(0)
-    textSize(64)
-    text(str(score), 100, 100)
+
 
     # 27. Call the update_timer() function to count down the game's time
     # Do you see the game time counting down?
-    update_timer()
 
     
     
