@@ -37,8 +37,9 @@ def setup():
     # 9. Initialize the 'aliens' variable using the create_aliens() function
 
 
-    
+    # Sets up the game intro screen
     setup_game()
+
 
 def draw():
     global score

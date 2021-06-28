@@ -26,47 +26,40 @@ cell_color = '#C0C0C0'       # color of unrevealed cell
 # First steps are to create the program window, cells, and mines
 #
 def setup():
-    
+    pass
     # 1. Use size(width, height) to set the width and height of the window
-    # Example:
-    size(400, 440)
+    #size(400, 440)
     
     # 2. Use the initialize_game_data() function to set up the game header
-    # Example:
-    initialize_game_data()
+    #initialize_game_data()
     
     # 3. Use the initialize_cells() function to set up the playing grid cells
-    initialize_cells()
     
     # 4. Use the initialize_mines() function to randomly place the mines
-    initialize_mines()
 
 
 def draw():
+    pass
     # 5. Use an if statement to check if the 'game_ready' variable is set to True
-    if game_ready:
         
         # 6. Use background(color) to set the game's background
         # Do you see your color when you run the code?
-        background(255)
         
         # 7. Use the draw_game_header() function to draw the game's header
         # Skip down and complete the draw_game_header() function
-        draw_game_header()
         
         # 8. Complete the instructions in draw_game_header() below FIRST!
 
         # 12. Use a for loop to go through each cell in the 'cells' list variable 
-        for cell in cells:
             
             # 13. Call each cell's draw() method
             # Do you see the grid of cells?
-            cell.draw()
+
         
         # 14. Use the update_game_time() function to count the game seconds
         # when the game starts.
         # Does the game start counting up the seconds when the start button is pressed?
-        update_game_time()
+
         
         # *** ENHANCEMENTS ***
         # * Changing the game background color?
@@ -79,27 +72,20 @@ def draw():
 # Draw top game header with # mines, start button, elapsed time
 #            
 def draw_game_header():
+    pass
     # 9. Use the text("my text", x, y) function to draw the remaining number
     # of mines at the top of window
     #    - num_of_mines variable holds the total number of mines in the game
     #    - mines_flagged variable holds the number of mines that have been flagged
     #    - Use fill(color) to change the text color
     #    - Use textSize(int_size) to change the size of the text
-    textSize(48)
-    fill(0)
-    
-    if num_of_mines - mines_flagged > 0:
-        text( (num_of_mines - mines_flagged), 5, cell_width - 5 )
-    else:
-        text( "0", 5, cell_width - 5 )
-    
+
     # 10. Use the text("my text", x, y) function to draw the game time
-    #    - game_time_sec variable holds the number of seconds since the game started
-    text( game_time_sec, width - 100, cell_width - 5 )
+    #    - the 'game_time_sec' variable holds the number of seconds
+    #      since the game started
     
     # 11. Call draw() from the start_button to draw the start button
     # Do you see the start button, mines left, and game timer?
-    start_button.draw()
 
 
 

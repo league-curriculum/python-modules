@@ -9,7 +9,6 @@ def setup():
     bg = fish = sharks = anchovies = None
     
     # 1. Use the fullScreen() function to make the game window the entire screen
-    fullScreen()
     
     # 2. Initialize the 'bg' variable with one of the four underwater backgrounds
     #    bg = loadImage("underwater_bg1.jpg")
