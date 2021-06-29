@@ -3,45 +3,45 @@ def setup():
     global bg, firework
     
     # 1. Use the size(width, height) function to set the size of your program
-    size(1200, 800)
+
     
     # 2. Use the loadImage() function to initialize the 'bg' variable
     # bg = loadImage('sanDiego.jpg')
     # bg = loadImage('futureCity.jpg')
     # bg = loadImage('space.jpg')
-    bg = loadImage('sanDiego.jpg')
+
     
     # 3. Use the bg variable's resize(width, height) to set the background image
     # to the size of your program
     # bg.resize(width, height)
-    bg.resize(width, height)
+
     
     # 4. Initialize the 'firework' variable to a Firework(x, y)
     # You can choose the values for x and y
     # firework = Firework(500, 500)  
-    firework = Firework(width/2, height/2)
+
 
 
 def draw():
     global firework
     
     # 5. Call the image(bg, 0, 0) function to display your background  
-    image(bg, 0, 0)
+
     
     # 6. Call tint(255, 50)
-    tint(255, 50)
+
     
     # 7. Call the firework variable's draw() method 
     # Do you see the firework when you run the program?
-    firework.draw()
+
     
     # 8. Use an 'if' statement and the mousePressed variable to check if the
     # the mouse is pressed
-    if mousePressed:
+
         
         # 9. Set the 'firework' variable to a new Firework at mouseX and mouseY
         # firework = Firework(mouseX, mouseY)
-        firework = Firework(mouseX, mouseY, '#FD0F0F')
+
 
 
 
