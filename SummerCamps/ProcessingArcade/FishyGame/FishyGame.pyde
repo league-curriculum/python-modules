@@ -31,7 +31,7 @@ def setup():
 
 def draw():
     global fish, sharks, anchovies, anchovies_eaten
-    if display_intro:
+    if display_intro():
         return
 
     # 7. Use the background() function to draw the bg image 
@@ -132,8 +132,8 @@ def display_intro():
         text("Press 's' to start", width/3, height/2)
         textSize(36)
         text("Click and drag the mouse to move\nthe red fish and avoid the sharks", (width/3) + 50, (height/2) + 100)    
-        return False
-    return True
+        return True
+    return False
 
 def setup_game():
     frameRate(30)
