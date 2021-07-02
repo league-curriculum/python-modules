@@ -36,7 +36,7 @@ def setup():
         h = random(height)
         random_color = Firework.get_random_color()
         
-        firework = Firework(w, h, random_color)
+        firework = Firework(w, h, random_color, 'arcade_explode1.mp3')
         #firework.set_multi_colored_firework()
         firework.set_firework_size(5, 50)
         
@@ -95,10 +95,12 @@ class Firework:
     def get_random_color():
         return color(random(255), random(255), random(255))
 
-    def __init__(self, x=None, y=None, firework_colors=None):
+    def __init__(self, x=None, y=None, firework_colors=None, sound=None):
         self.x = x
         self.y = y
         self.firework_colors = firework_colors
+        self.sound = sound
+        self.sound_playing = False
         self.particles = list()
         self.particles_per_firework = 75
         
@@ -120,6 +122,9 @@ class Firework:
   
     def draw(self):
         for p in self.particles:
+            if self.sound is not None and not self.sound_playing:
+                play_sound(self.sound)
+                self.sound_playing = True
             p.update()
             p.draw()
     
@@ -218,6 +223,7 @@ class FireworksDisplay:
     def __init__(self):
         self.fireworks = list()
         self.start_time_ms = None
+        self.sound_playing = False
         
     def add_firework(self, fw, launch_time_ms):
         self.fireworks.append( TimedFirework(fw, launch_time_ms) )
