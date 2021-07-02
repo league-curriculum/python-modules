@@ -176,3 +176,56 @@ class Particle:
         self.new_x += self.x_velocity
         self.new_y += self.y_velocity
         self.y_velocity += self.gravity
+        
+        
+
+add_library("minim")
+global minim
+minim = None
+                
+def play_sound(file_name):
+    global minim
+    if minim is not None:
+        minim.stop()
+    minim=Minim(this)
+    s=minim.loadFile(file_name)
+    s.play()
+
+        
+    
+class FireworksDisplay:
+    def __init__(self):
+        self.fireworks = list()
+        self.start_time_ms = None
+        
+    def add_firework(self, fw, launch_time_ms):
+        self.fireworks.append( TimedFirework(fw, launch_time_ms) )
+
+    def get_duration_ms(self):
+        if self.start_time_ms is None:
+            return 0
+        
+        return millis() - self.start_time_ms
+
+    def launch(self):
+        if self.start_time_ms is None:
+            self.start_time_ms = millis()
+            
+        for fw in self.fireworks:
+            if not fw.has_launched:
+                if self.get_duration_ms() >= fw.launch_time_ms:
+                    fw.firework.draw()
+                    
+                    if not fw.is_active():
+                        self.fireworks[:] = [f for f in self.fireworks if f.is_active()]
+                    
+                    
+    
+class TimedFirework:    
+    def __init__(self, fw, launch_time_ms):
+      self.firework = fw
+      self.launch_time_ms = launch_time_ms
+      self.has_launched = False
+    
+    def is_active(self):
+      return len(self.firework.particles) > 0
