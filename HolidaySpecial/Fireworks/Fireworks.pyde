@@ -3,77 +3,51 @@ def setup():
     global bg, firework
     
     # 1. Use the size(width, height) function to set the size of your program
-    size(1200, 800)
-    fullScreen()
-    
+
     # 2. Use the loadImage() function to initialize the 'bg' variable
     # bg = loadImage('sanDiego.jpg')
     # bg = loadImage('futureCity.jpg')
-    bg = loadImage('space.jpg')
-
+    # bg = loadImage('space.jpg')
     
     # 3. Use the bg variable's resize(width, height) to set the background image
     # to the size of your program
-    bg.resize(width, height)
-
     
     # 4. Initialize the 'firework' variable to a Firework(x, y)
     # You can choose the values for x and y
-    firework = Firework(500, 500)
-    
-    
-    global fireworks
-    fireworks = list()
-
 
 
 def draw():
     global firework
     
     # 5. Call the image(bg, 0, 0) function to display your background  
-    image(bg, 0, 0)
     
     # 6. Call tint(255, 50)
-    tint(255, 50)
     
     # 7. Call the firework variable's draw() method 
     # Do you see the firework when you run the program?
-    firework.draw()
     
     # 8. Use an 'if' statement and the mousePressed variable to check if the
     # the mouse is pressed
     if mousePressed:
-        
+        pass
         # 9. Set the 'firework' variable to a new Firework at mouseX and mouseY
         # firework = Firework(mouseX, mouseY)
-        firework = Firework(mouseX, mouseY)
-        firework.set_multi_colored_firework()
-        firework.set_firework_size(5, 15)
-        
-        fireworks.append(firework)
-
-
-    if keyPressed:
-        
-        if key == 's':
-            
-            for fw in fireworks:
-                fw.draw()
-
-
 
 
 # =================== DO NOT MODIFY THE CODE BELOW ======================
+
 class Firework:
     
     @staticmethod
     def get_random_color():
         return color(random(255), random(255), random(255))
 
-    def __init__(self, x=None, y=None, firework_colors=None):
+    def __init__(self, x=None, y=None, firework_colors=None, sound=None):
         self.x = x
         self.y = y
-        self.firework_colors = firework_colors 
+        self.firework_colors = firework_colors
+        self.sound = sound
+        self.sound_playing = False
         self.particles = list()
         self.particles_per_firework = 75
         
@@ -84,12 +58,10 @@ class Firework:
     def set_multi_colored_firework(self):
         for p in self.particles:
             p.particle_color = Firework.get_random_color();
-
   
     def set_firework_size(self, min_size, max_size):
         for p in self.particles:
             p.particle_size = random(min_size, max_size)
-
 
     def set_sparkle(self, setting):
         for p in self.particles:
@@ -97,6 +69,9 @@ class Firework:
   
     def draw(self):
         for p in self.particles:
+            if self.sound is not None and not self.sound_playing:
+                play_sound(self.sound)
+                self.sound_playing = True
             p.update()
             p.draw()
     
