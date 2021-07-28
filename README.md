@@ -14,7 +14,7 @@ Checkpoints:
 - LEVEL 1 -
   - Module 0: SOC-55070652
   - Module 1: SOC-58313649
-  - Module 2: SOC-58313727
+  - Module 2: SOC-59906559
   - Module 3: 
 
 Module download Links:
@@ -30,7 +30,7 @@ Module download Links:
   - Module 0: https://classroom.github.com/a/whGSUc8C
   - Module 1: https://classroom.github.com/a/CNjT0RQN
   - Module 2: https://classroom.github.com/a/5cub_qf5
-  - MOdule 3: https://classroom.github.com/a/TUnmBUD3
+  - Module 3: https://classroom.github.com/a/TUnmBUD3
 
 How to add a new classroom repo to league-python, e.g. adding new level modules:
 1. Create new repo in /python-modules
