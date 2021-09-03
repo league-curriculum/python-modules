@@ -2,76 +2,50 @@
 Build an anagram game!
 http://anagramica.com/api/
 """
-import random
+import random, json
 import tkinter as tk
 from tkinter import messagebox
 
-import requests
-import json
-
-def generate_file():
-    word_list = read_words_file()
-    anagrams_dict = dict()
-
-    for word in word_list:
-        anagram = get_anagram_from_api(word)
-
-        print('Trying ' + word)
-
-        if len(word) < 4 or len(anagram) < 1:
-            continue
-
-        if len(anagram['best']) > 1:
-            print('--->adding ' + word)
-            anagrams = anagram['best']
-            anagrams.remove(word)
-            anagrams_dict[word] = anagrams
-
-    with open("anagrams.json", "w") as outfile:
-        json.dump(anagrams_dict, outfile)
-
-
-def read_words_file():
-    word_list = list()
-    file_handle = None
-    word_file = "dictionary.txt"
-
-    with open(word_file) as file_handle:
-        word_list = file_handle.read().splitlines()
-
-    word_list.sort()
-
-    return word_list
-
-def get_anagram_from_api(letters):
-    data = {}
-
-    try:
-        url = 'http://www.anagramica.com/best/:' + str(letters)
-        response = requests.get(url)
-        data = response.json()
-
-        # Returned data for the word 'ocean' is in the following dictonary,
-        # format where the key is always the word 'best':
-        # {
-        #   "best": [
-        #     "canoe",
-        #     "ocean"
-        #   ]
-        # }
-    except:
-        pass
-
-    return data
-
-anagram_file = "anagrams.json"
-
-def get_anagram_dict():
-
-    with open(anagram_file, 'r') as file_handle:
-        json_data = json.load(file_handle)
-
-    return json_data
+# TODO Use this dictionary of anagrams to create an anagrams GUI word game
+word_anagrams = {
+    "action": ["cation"],
+    "agree": ["eager"],
+    "calm": ["clam"],
+    "charming": ["marching"],
+    "clean": ["lance"],
+    "cool": ["loco"],
+    "creative": ["reactive"],
+    "delight": ["lighted"],
+    "earnest": ["eastern", "nearest"],
+    "easy": ["ayes", "yeas"],
+    "free": ["reef"],
+    "great": ["grate"],
+    "green": ["genre"],
+    "grin": ["ring"],
+    "hearty": ["earthy"],
+    "idea": ["aide"],
+    "ideal": ["ailed"],
+    "keen": ["knee"],
+    "lively": ["evilly", "vilely"],
+    "lovely": ["volley"],
+    "merit": ["miter", "remit", "timer"],
+    "open": ["nope", "peon", "pone"],
+    "perfect": ["prefect"],
+    "prepared": ["dapperer"],
+    "quiet": ["quite"],
+    "refined": ["definer"],
+    "restored": ["resorted", "rostered"],
+    "reward": ["drawer", "redraw", "warder", "warred"],
+    "rewarding": ["redrawing", "wardering"],
+    "right": ["girth"],
+    "secure": ["rescue"],
+    "simple": ["impels"],
+    "smile": ["limes", "miles", "slime"],
+    "super": ["puers", "purse"],
+    "tops": ["opts", "post", "pots", "spot", "stop"],
+    "unreal": ["neural"],
+    "wonderful": ["underflow"],
+    "zeal": ["laze"]}
 
 class Anagram(tk.Tk):
 
@@ -79,52 +53,81 @@ class Anagram(tk.Tk):
         super().__init__()
 
         self.guesses = 5
-        self.word_list = read_words_file()
-
         self.random_word, self.anagrams = self.get_new_word()
+        self.num_anagrams_to_guess = len(self.anagrams)
 
-        self.label = tk.Label(self, text='Guess the ' + str(len(self.anagrams)) + ' anagrams for the word: ')
-        self.label.place(relx=0, rely=0, relwidth=0.5, relheight=0.5)
+        label_str = 'Guess the ' + str(self.num_anagrams_to_guess)
+        if len(self.anagrams) < 2:
+            label_str += ' anagram for the word: '
+        else:
+            label_str += ' anagrams for the word: '
+        self.label = tk.Label(self, text=label_str)
+        self.label.place(relx=0, rely=0, relwidth=0.5, relheight=0.33)
 
         self.word_label = tk.Label(self, text=self.random_word)
-        self.word_label.place(relx=0.5, rely=0, relwidth=0.25, relheight=0.5)
+        self.word_label.place(relx=0.5, rely=0, relwidth=0.25, relheight=0.33)
 
         self.restart_button = tk.Button(self, bg='light gray', text='Get New Word!')
-        self.restart_button.place(relx=0.75, rely=0, relwidth=0.25, relheight=0.5)
+        self.restart_button.place(relx=0.75, rely=0, relwidth=0.25, relheight=0.33)
 
         self.guess_remaining_label = tk.Label(self, text='Guesses remaining: ' + str(self.guesses))
-        self.guess_remaining_label.place(relx=0, rely=0.5, relwidth=0.5, relheight=0.5)
+        self.guess_remaining_label.place(relx=0, rely=0.33, relwidth=0.5, relheight=0.33)
 
         self.entry_guess = tk.Entry(self)
-        self.entry_guess.place(relx=0.5, rely=0.5, relwidth=0.5, relheight=0.5)
+        self.entry_guess.place(relx=0.5, rely=0.33, relwidth=0.5, relheight=0.33)
+
+        self.correct_guesses_label = tk.Label(self)
+        self.correct_guesses_label.place(relx=0, rely=0.66, relwidth=1, relheight=0.33)
 
         self.entry_guess.bind('<KeyPress>', self.on_guess)
         self.restart_button.bind('<ButtonPress>', self.restart)
 
-    def restart(self, event):
-        if self.anagrams is not None:
+    def restart(self, event=None):
+        if len(self.anagrams) > 0:
             messagebox.showinfo('Answers', 'The anagrams were: ' + repr(self.anagrams))
 
         self.random_word, self.anagrams = self.get_new_word()
         self.guesses = 5
         self.guess_remaining_label.configure(text='Guesses remaining: ' + str(self.guesses))
         self.word_label.configure(text=self.random_word)
+        self.entry_guess.configure(text='')
+
+        label_str = 'Guess the ' + str(self.num_anagrams_to_guess)
+        if len(self.anagrams) < 2:
+            label_str += ' anagram for the word: '
+        else:
+            label_str += ' anagrams for the word: '
+        self.label.configure(text=label_str)
 
     def get_new_word(self):
-        data = get_anagram_dict()
-        random_word = random.choice(list(data.keys()))
-        anagrams = data[random_word]
+        list_of_keys = list(word_anagrams.keys())
+        random_word = random.choice(list_of_keys)
+        anagrams = word_anagrams[random_word]
 
         return random_word, anagrams
 
     def on_guess(self, event):
         key = str(event.keysym)
 
-        if key.lower() == 'return':
+        if key.lower() == 'return' and len(self.anagrams) > 0:
             word_guessed = self.entry_guess.get()
 
             if word_guessed != self.random_word and word_guessed in self.anagrams:
-                print(self.anagrams)
+                anagrams_guessed = self.correct_guesses_label['text'] + word_guessed + '\n'
+                self.correct_guesses_label.configure(text=anagrams_guessed)
+                self.anagrams.remove(word_guessed)
+
+                if len(self.anagrams) == 0:
+                    messagebox.showinfo('WINNER', 'You found all the anagrams!')
+                    self.restart()
+                else:
+                    label_str = 'Guess the ' + str(self.num_anagrams_to_guess)
+                    if len(self.anagrams) < 2:
+                        label_str += ' anagram for the word: '
+                    else:
+                        label_str += ' anagrams for the word: '
+                    self.label = tk.Label(self, text=label_str)
+
             else:
                 self.guesses -= 1
                 self.guess_remaining_label.configure(text='Guesses remaining: ' + str(self.guesses))
@@ -133,10 +136,9 @@ class Anagram(tk.Tk):
                 if self.guesses == 0:
                     print(self.anagram.values())
 
-if __name__ == '__main__':
-    #generate_file()
 
+if __name__ == '__main__':
     game = Anagram()
     game.title('League Anagram Game')
-    game.geometry('400x50')
+    game.geometry('400x100')
     game.mainloop()
