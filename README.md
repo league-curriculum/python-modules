@@ -31,6 +31,7 @@ Module download Links:
   - Module 1: https://classroom.github.com/a/CNjT0RQN
   - Module 2: https://classroom.github.com/a/5cub_qf5
   - Module 3: https://classroom.github.com/a/TUnmBUD3
+  - Module 4: https://classroom.github.com/a/xf1K4MwS
 
 How to add a new classroom repo to league-python, e.g. adding new level modules:
 1. Create new repo in /python-modules
