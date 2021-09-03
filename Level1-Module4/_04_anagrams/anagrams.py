@@ -30,7 +30,6 @@ word_anagrams = {
     "lovely": ["volley"],
     "merit": ["miter", "remit", "timer"],
     "open": ["nope", "peon", "pone"],
-    "perfect": ["prefect"],
     "prepared": ["dapperer"],
     "quiet": ["quite"],
     "refined": ["definer"],
@@ -54,14 +53,9 @@ class Anagram(tk.Tk):
 
         self.guesses = 5
         self.random_word, self.anagrams = self.get_new_word()
-        self.num_anagrams_to_guess = len(self.anagrams)
 
-        label_str = 'Guess the ' + str(self.num_anagrams_to_guess)
-        if len(self.anagrams) < 2:
-            label_str += ' anagram for the word: '
-        else:
-            label_str += ' anagrams for the word: '
-        self.label = tk.Label(self, text=label_str)
+        self.label = tk.Label(self, text='')
+        self.update_label()
         self.label.place(relx=0, rely=0, relwidth=0.5, relheight=0.33)
 
         self.word_label = tk.Label(self, text=self.random_word)
@@ -89,15 +83,10 @@ class Anagram(tk.Tk):
         self.random_word, self.anagrams = self.get_new_word()
         self.guesses = 5
         self.guess_remaining_label.configure(text='Guesses remaining: ' + str(self.guesses))
+        self.correct_guesses_label.configure(text='')
         self.word_label.configure(text=self.random_word)
         self.entry_guess.configure(text='')
-
-        label_str = 'Guess the ' + str(self.num_anagrams_to_guess)
-        if len(self.anagrams) < 2:
-            label_str += ' anagram for the word: '
-        else:
-            label_str += ' anagrams for the word: '
-        self.label.configure(text=label_str)
+        self.update_label()
 
     def get_new_word(self):
         list_of_keys = list(word_anagrams.keys())
@@ -109,24 +98,21 @@ class Anagram(tk.Tk):
     def on_guess(self, event):
         key = str(event.keysym)
 
-        if key.lower() == 'return' and len(self.anagrams) > 0:
+        if key.lower() == 'return' and len(self.anagrams) > 0 and self.guesses > 0:
             word_guessed = self.entry_guess.get()
 
             if word_guessed != self.random_word and word_guessed in self.anagrams:
-                anagrams_guessed = self.correct_guesses_label['text'] + word_guessed + '\n'
+                anagrams_guessed = self.correct_guesses_label['text'] + word_guessed + ', '
                 self.correct_guesses_label.configure(text=anagrams_guessed)
                 self.anagrams.remove(word_guessed)
 
                 if len(self.anagrams) == 0:
                     messagebox.showinfo('WINNER', 'You found all the anagrams!')
+                    self.correct_guesses_label.configure(text='')
+                    self.entry_guess.configure(text='')
                     self.restart()
                 else:
-                    label_str = 'Guess the ' + str(self.num_anagrams_to_guess)
-                    if len(self.anagrams) < 2:
-                        label_str += ' anagram for the word: '
-                    else:
-                        label_str += ' anagrams for the word: '
-                    self.label = tk.Label(self, text=label_str)
+                    self.update_label()
 
             else:
                 self.guesses -= 1
@@ -134,8 +120,15 @@ class Anagram(tk.Tk):
                 messagebox.showerror('', 'INCORRECT!')
 
                 if self.guesses == 0:
-                    print(self.anagram.values())
+                    messagebox.showinfo('Answers', 'The anagrams were: ' + repr(self.anagrams))
 
+    def update_label(self):
+        label_str = 'Guess the ' + str(len(self.anagrams))
+        if len(self.anagrams) < 2:
+            label_str += ' anagram for the word: '
+        else:
+            label_str += ' anagrams for the word: '
+        self.label.configure(text=label_str)
 
 if __name__ == '__main__':
     game = Anagram()
