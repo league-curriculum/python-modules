@@ -15,7 +15,8 @@ Checkpoints:
   - Module 0: SOC-55070652
   - Module 1: SOC-58313649
   - Module 2: SOC-59906559
-  - Module 3: 
+  - Module 3: SOC-59920536
+  - Module 4: SOC-60677213
 
 Module download Links:
 - LEVEL 0 -
