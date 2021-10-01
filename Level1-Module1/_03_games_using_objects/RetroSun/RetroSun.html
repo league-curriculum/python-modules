@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<title>Level 3 - Retro Sun (Processing)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+   #moduleIndex {
+   padding: 0;
+}
+</style>
+<script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>
+<body>
+    <div id ="wrap">
+        <div id ="main">
+            <div id="header">
+                <script>addRecipeHeader();</script>
+            </div>
+            <div id = "moduleIndex">
+                <h1>Retro Sun (Processing)</h1>
+                <br>
+                <div style="align-content: center">
+                <img alt="" src="./images/retro_sun.gif" style="width: 600px; height: 330px;">
+            </div>
+
+            <br><br>
+
+            <h3 style="text-align:left">Part 1: Drawing the Sun
+            </h3>
+            <br>
+            <div style="align-content: center">
+            <img alt="" src="./images/1_sun.png" style="width: 400px; height: 330px;">
+            <p class="normal">
+                Open the starter code in Processing.
+                Draw and fill a solid color ellipse to be the sun.
+            </p>
+            <br>
+
+            <h3 style="text-align:left">Part 2: Drawing a color gradient on the sun
+            </h3>
+            <br>
+            <div style="align-content: center">
+            <img alt="" src="./images/2_gradient.png" style="width: 400px; height: 180px;">
+            <p class="normal">
+                Change the sun-colored pixels in your sketch make the sun have gradually different colors from the top to bottom.
+                
+                Use the <b>interpolate_color()</b> function to find which color to change the pixel.
+            </p>
+            <pre>
+# Input variable 'step' is a value from 0.0 to 1.0, where
+# 0.0 is the top of the sun and 1.0 is the bottom
+interpolate_color(color_list, step)
+            </pre>
+            <br>
+
+            <h3 style="text-align:left">Part 3: Drawing the missing sections at the bottom of the sun
+            </h3>
+            <br>
+            <div style="align-content: center">
+            <img alt="" src="./images/3_missing_sun_section.png" style="width: 400px; height: 180px;">
+            <p class="normal">
+                The missing parts of the sun are created by drawing rectangles over the sun with the same color as the background.
+            </p>
+            <br>
+
+            <h3 style="text-align:left">Part 4: Moving the missing sun sections
+            </h3>
+            <br>
+            <div style="align-content: center">
+            <img alt="" src="./images/4b_resizing_section.gif" style="width: 400px; height: 330px;">
+            <p class="normal">
+                To move a section upwards each rectangle's y value needs to decrease.<br>
+                To make the section get smaller, its height value needs to also decrease.
+            </p>
+            <br>
+
+            <h3 style="text-align:left">Part 5: Managing the missing sun sections
+            </h3>
+            <br>
+            <div style="align-content: center">
+            <img alt="" src="./images/5_multiple_sections.gif" style="width: 400px; height: 225px;">
+            <p class="normal">
+                Using a List to manage moving multiple missing sun sections
+            </p>
+            <br>
+
+            <h3 style="text-align:left">Part 6: Adding reflections, stars, and other extras
+            </h3>
+            <br>
+            <div style="align-content: center">
+            <img alt="" src="./images/6_retro_sun_extras.gif" style="width: 400px; height: 225px;">
+            <p class="normal">
+                If you want to make your retro sun look more unique, try adding reflections and stars. You may use the example classes below.
+            </p>
+            <br>
+            <pre>
+class Star:
+    def __init__(self, x, y, col):
+        self.x = x
+        self.y = y
+        self.star_color = col
+        self.diameter = random(0.1, 3)
+        self.start_alpha = random(1, 200)
+        self.alpha = self.start_alpha
+
+    def setAlpha(self, new_alpha):
+        self.alpha = constrain(new_alpha, self.start_alpha, 255)
+
+    def draw(self):
+        noStroke()
+        fill(self.star_color, self.alpha)
+        blink = random(0, 0.8)
+        ellipse(self.x, self.y, self.diameter + blink, self.diameter + blink)
+            </pre>
+            <br>
+            <pre>
+class Reflection:
+    # RGB colors
+    bar_colors = [
+        color(45, 2, 59),   
+        color(109, 0, 88),  
+        color(154, 51, 86), 
+        color(158, 79, 62), 
+        color(154, 51, 86), 
+        color(109, 0, 88),  
+        color(45, 2, 59)    
+    ]
+
+    def __init__(self, sun_radius, num_bars, top_x, top_y, speed):
+        self.sun_radius = sun_radius;
+        self.top_x = top_x;
+        self.top_y = top_y;
+        self.speed = speed;
+        self.num_bars = num_bars
+    
+        self.top_width = 2 * (self.sun_radius + self.sun_radius/3)
+        self.max_height = 10
+        self.bottom_y = self.top_y + (self.num_bars * 2 * self.max_height)
+        self.bars = list()
+    
+        self.initialize()
+
+    def initialize(self):
+        # Setup bottom relection bars
+        x = self.top_x
+        y = self.top_y
+        w = self.top_width
+        h = self.max_height
+        
+        for i in range(self.num_bars):   
+            y += (self.bottom_y - self.top_y) / self.num_bars;
+            x += self.sun_radius / 16;
+            w -= 2 * (self.sun_radius / 16);
+
+            r = Rectangle(x, y, w, h);
+            self.bars.append(r);
+  
+    def draw(self):
+        strokeWeight(1)
+    
+        for bar in self.bars:
+            for i in range(bar.w):
+                alpha_max = -255 - (bar.y - self.top_y)
+                alpha_min =  255 + (bar.y - self.top_y)
+                alpha = map(bar.x + i, bar.x, bar.x + bar.w, alpha_min, alpha_max)
+                step = map(bar.x + i, bar.x, bar.x + bar.w, 0, 1)
+                lc = interpolate_color(Reflection.bar_colors, step)
+    
+                stroke(lc, 255 - abs(alpha))
+                line(i, bar.y, bar.x + i, bar.y + bar.h)
+
+            bar.y += self.speed
+            bar.x += self.speed
+            bar.w -= 2 * self.speed
+
+            if bar.y > self.bottom_y:
+                # Bar at bottom, reset to top
+        
+                bar.x = self.top_x;
+                bar.y = self.top_y + self.max_height;
+                bar.w = self.top_width;
+                bar.h = 1;
+            elif bar.y > self.bottom_y - self.max_height:
+               # Bar near bottom
+        
+                bar.h -= self.speed
+            elif bar.h < self.max_height:
+                # Bar height just reset and at top
+        
+                bar.y -= self.speed;
+                bar.h += self.speed;
+            </pre>
+
+            <a href="https://processing.org/reference">
+            <img src="https://league-level0.github.io/p3logo.jpeg" class="footer" alt="Processing Reference"></a>
+        </div>
+    </div>
+</div>
+<div id="footer">
+<script>addFooter();</script>
+</div>
+
+</body>
+</html>
