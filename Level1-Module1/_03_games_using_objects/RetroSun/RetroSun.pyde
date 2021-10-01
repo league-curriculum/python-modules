@@ -114,18 +114,10 @@ def setup():
         h = map(y, (height/2) - (sun_radius/4), (height/2) + sun_radius, 1, 40)
 
 
-    global ref
-    ref = Reflection(sun_radius, 4, (width/2) - sun_radius, (height/2) + sun_radius, 1)
-    
-    global stars
-    stars = list()
-    for i in range(100):
-        stars.append(Star(random(width), random(height), 255))
-
 def draw():
     pass
-    #global y, h
-    #noLoop()
+    global y, h
+
     """
     * PART III: Drawing the missing sections at the bottom of the sun
     * See 3rd image
@@ -136,6 +128,9 @@ def draw():
 
     # Call updatePixels() to redraw the background and sun
     updatePixels()
+    
+    # Set the fill() color to bg_color
+    fill(bg_color)
 
     # To draw each rectangle we need to find its x, y, width, height
     # *The y position can be any value within the sun:
@@ -148,9 +143,9 @@ def draw():
     #   w = 2 * sun_radius
    
     # Do you see a section missing from the sun like in the 3rd image?
-    #x = (width/2) - sun_radius
-    #w = 2 * sun_radius
-    #rect(x, y, w, h)
+    x = (width/2) - sun_radius
+    w = 2 * sun_radius
+    rect(x, y, w, h)
 
     """
     * PART IV: Moving the missing sun sections
@@ -164,7 +159,7 @@ def draw():
     # function AND initialize it in the setup() function.
     # *HINT* You will have to put 'global y', where y is your variable,
     #        in setup() and draw()
-    #y -= 1
+    y -= 1
    
     # Do you see the rectangle moving upwards?
     # See image 4
@@ -172,16 +167,16 @@ def draw():
     # Pick a y positon to be the location when the sections stop moving up.
     # If the rectangle's y positon is above this, move the rectangle's
     # y position back to the bottom of the sun.
-    #if y < (height / 2) - (sun_radius / 4):
-    #    y = (height / 2) + sun_radius
-    #    h = 40
+    if y < (height / 2) - (sun_radius / 4):
+        y = (height / 2) + sun_radius
+        h = 40
    
     # Does the rectangle move back to the bottom?
    
     # Decrease the the height of the rectangle as it moves upwards.
     # Similar to the y positon, a variable for the height needs to be
     # created if it doesn't already exist.
-    #h -= 40.0 / (sun_radius + (sun_radius/4))
+    h -= 40.0 / (sun_radius + (sun_radius/4))
 
     # Adjust the amount to decrease so that it disappears close to the top.
     
@@ -199,21 +194,14 @@ def draw():
     # code you wrote for the 1 missing sun section.
     # *HINT* You can use the Rectangle class defined below to create
     #        a list of rectangles and a loop to iterate through each one.
-    for r in rectangles:
-        r.update()
-        r.draw()
-   
-    for s in stars:
-        s.draw()
+
 
     """
     * PART VI: Adding extras
     *
     * If you want to make your retro sun look more unique, try adding
     * reflections and stars.
-    """
-    ref.draw()
-    
+    """    
 
 
 # Variable step should be between 0 and 1, inclusive
@@ -254,99 +242,3 @@ class Rectangle:
         if self.y < (height / 2) - (sun_radius / 4):
             self.y = (height / 2) + sun_radius
             self.h = 40
-            
-            
-class Star:
-    def __init__(self, x, y, col):
-        self.x = x
-        self.y = y
-        self.star_color = col
-        self.diameter = random(0.1, 3)
-        self.start_alpha = random(1, 200)
-        self.alpha = self.start_alpha
-
-    def setAlpha(self, new_alpha):
-        self.alpha = constrain(new_alpha, self.start_alpha, 255)
-
-    def draw(self):
-        noStroke()
-        fill(self.star_color, self.alpha)
-        blink = random(0, 0.8)
-        ellipse(self.x, self.y, self.diameter + blink, self.diameter + blink)
-
-
-class Reflection:
-    # RGB colors
-    bar_colors = [
-        color(45, 2, 59),   
-        color(109, 0, 88),  
-        color(154, 51, 86), 
-        color(158, 79, 62), 
-        color(154, 51, 86), 
-        color(109, 0, 88),  
-        color(45, 2, 59)    
-    ]
-
-    def __init__(self, sun_radius, num_bars, top_x, top_y, speed):
-        self.sun_radius = sun_radius;
-        self.top_x = top_x;
-        self.top_y = top_y;
-        self.speed = speed;
-        self.num_bars = num_bars
-    
-        self.top_width = 2 * (self.sun_radius + self.sun_radius/3)
-        self.max_height = 10
-        self.bottom_y = self.top_y + (self.num_bars * 2 * self.max_height)
-        self.bars = list()
-    
-        self.initialize()
-
-    def initialize(self):
-        # Setup bottom relection bars
-        x = self.top_x
-        y = self.top_y
-        w = self.top_width
-        h = self.max_height
-        
-        for i in range(self.num_bars):   
-            y += (self.bottom_y - self.top_y) / self.num_bars;
-            x += self.sun_radius / 16;
-            w -= 2 * (self.sun_radius / 16);
-
-            r = Rectangle(x, y, w, h);
-            self.bars.append(r);
-  
-    def draw(self):
-        strokeWeight(1)
-    
-        for bar in self.bars:
-            for i in range(bar.w):
-                alpha_max = -255 - (bar.y - self.top_y)
-                alpha_min =  255 + (bar.y - self.top_y)
-                alpha = map(bar.x + i, bar.x, bar.x + bar.w, alpha_min, alpha_max)
-                step = map(bar.x + i, bar.x, bar.x + bar.w, 0, 1)
-                lc = interpolate_color(Reflection.bar_colors, step)
-    
-                stroke(lc, 255 - abs(alpha))
-                line(i, bar.y, bar.x + i, bar.y + bar.h)
-
-            bar.y += self.speed
-            bar.x += self.speed
-            bar.w -= 2 * self.speed
-
-            if bar.y > self.bottom_y:
-                # Bar at bottom, reset to top
-        
-                bar.x = self.top_x;
-                bar.y = self.top_y + self.max_height;
-                bar.w = self.top_width;
-                bar.h = 1;
-            elif bar.y > self.bottom_y - self.max_height:
-               # Bar near bottom
-        
-                bar.h -= self.speed
-            elif bar.h < self.max_height:
-                # Bar height just reset and at top
-        
-                bar.y -= self.speed;
-                bar.h += self.speed;
