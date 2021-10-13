@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae773713-f491-4ef4-ae17-6689f65870d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Level0-Module0/_01_drawing/first" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Level0-Module0/_01_drawing/first.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Level0-Module0/_01_drawing/_b_tashe_me.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level0-Module0/_01_drawing/_b_tashe_me.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Level0-Module0/_03_print_and_popups/_a_greeter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level0-Module0/_03_print_and_popups/_a_greeter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Level0-Module0/_03_print_and_popups/_b_mad_libs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level0-Module0/_03_print_and_popups/_b_mad_libs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_a_ChuckleClicker/chuckle_clicker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_a_ChuckleClicker/chuckle_clicker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_b_TypingTutor/typing_tutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_b_TypingTutor/typing_tutor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_c_PigLatinTranslator/pig_latin_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_c_PigLatinTranslator/pig_latin_translator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_d_WhackAMole/whack_a_mole.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_d_WhackAMole/whack_a_mole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_e_Jeopardy/jeopardy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_e_Jeopardy/jeopardy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,20 +38,20 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python._b_tashe_me">
-    <configuration name="FirstProject" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python-modules-L0M2" />
+  <component name="RunManager" selected="Python.jeopardy">
+    <configuration name="chuckle_clicker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level0-Module0" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\dence\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_a_ChuckleClicker" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level0-Module0/FirstProject.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_a_ChuckleClicker/chuckle_clicker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -59,19 +60,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="_a_greeter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python-modules-L0M2" />
+    <configuration name="jeopardy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level0-Module0/_03_print_and_popups" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\dence\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_e_Jeopardy" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level0-Module0/_03_print_and_popups/_a_greeter.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_e_Jeopardy/jeopardy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,19 +81,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="_b_tashe_me" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python-modules-L0M2" />
+    <configuration name="pig_latin_translator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level0-Module0/_01_drawing" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\dence\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_c_PigLatinTranslator" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level0-Module0/_01_drawing/_b_tashe_me.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_c_PigLatinTranslator/pig_latin_translator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -101,19 +102,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="first" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python-modules-L0M2" />
+    <configuration name="typing_tutor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level0-Module0/_01_drawing" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\dence\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_b_TypingTutor" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level0-Module0/_01_drawing/first.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_b_TypingTutor/typing_tutor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,19 +123,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python-modules-L0M2" />
+    <configuration name="whack_a_mole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level1-Module1" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\dence\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_d_WhackAMole" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level1-Module1/test.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Level1-Module3/_02_gui_app_bindings/_d_WhackAMole/whack_a_mole.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -145,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python._b_tashe_me" />
-        <item itemvalue="Python.first" />
-        <item itemvalue="Python._a_greeter" />
-        <item itemvalue="Python.FirstProject" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.jeopardy" />
+        <item itemvalue="Python.whack_a_mole" />
+        <item itemvalue="Python.pig_latin_translator" />
+        <item itemvalue="Python.typing_tutor" />
+        <item itemvalue="Python.chuckle_clicker" />
       </list>
     </recent_temporary>
   </component>
