@@ -32,6 +32,7 @@ def move_turtle_to_start(my_turtle=None):
     if my_turtle is None:
         my_turtle = turtle.Turtle()
     my_turtle.penup()
+    my_turtle.speed(0)
     my_turtle.hideturtle()
     my_turtle.shape('turtle')
     my_turtle.goto(-95, -265)
