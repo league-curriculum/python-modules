@@ -49,14 +49,12 @@ if __name__ == '__main__':
     # ====================== DO NOT EDIT THE CODE ABOVE ===========================
 
     # TODO 1) Create a Turtle object using turtle.Turtle()
-    t = turtle.Turtle()
 
     # TODO 2) Move the turtle to start of the maze using move_turtle_to_start()
-    move_turtle_to_start(t)
 
-    # TODO 2) Open the 'turtle_gps.txt' for reading
-    with open('turtle_gps.txt', mode='r') as fh:
-        # TODO 3) Read each line and move your turtle according to the direction
+    # TODO 3) Open the 'turtle_gps.txt' for reading
+
+        # TODO 4) Read each line and move your turtle according to the direction
         #  and distance specified. For example if a line contains:
         #  FORWARD 50
         #  Your turtle should move forward 50 pixels, my_turtle.forwards(50)
@@ -64,26 +62,9 @@ if __name__ == '__main__':
         #  Examples of the other directions are:
         #  LEFT 90      # Turn your turtle left by 90 degrees
         #  RIGHT 45     # Turn your turtle right by 45 degrees
-        for line in fh:
-            # Method 1
-            #direction, dist = line.rstrip().split(' ')
-            #dist = int(dist)
 
-            # Method 2
-            line = line.rstrip()    # remove '\n'
-            line = line.split()
-            direction = line[0]
-            dist = int(line[1])
+    # TODO 5) Call check_escape() to see if your turtle escaped the maze!!!
 
-            if direction.lower() == 'forward':
-                t.forward(dist)
-            elif direction.lower() == 'right':
-                t.right(dist)
-            elif direction.lower() == 'left':
-                t.left(dist)
-
-    # TODO 4) Call check_escape() to see if your turtle escaped the maze!!!
-    check_escape(t)
 
     # ===================== DO NOT EDIT THE CODE BELOW ============================
 

@@ -22,25 +22,7 @@ from tkinter import messagebox
 #      '800203009',
 #      '005010300]
 def open_sudoku_file(sudoku_grids_file):
-    sudoku_grid = list()
-
-    grid_num = str(random.randint(1, 50)).zfill(2)
-
-    with open(file=sudoku_grids_file, mode='r') as file_handle:
-        start = False
-
-        for line in file_handle:
-            if 'Grid ' + grid_num in line:
-                start = True
-            elif 'Grid' in line:
-                start = False
-
-            if start:
-                sudoku_grid.append(line.rstrip())
-
-    sudoku_grid = sudoku_grid[1:]
-
-    return sudoku_grid
+    return None
 
 # TODO 2) Complete the function below with the following requirements:
 #  1. Give the save_file input variable a default string
@@ -60,11 +42,7 @@ def open_sudoku_file(sudoku_grids_file):
 #       005010300
 #  *NOTE: DON'T forget the new line ('\n') at the end!
 def on_save_button(sudoku_grid_list, save_file='saved.txt'):
-    print('Saving: ' + save_file)
-
-    with open(file=save_file, mode='w') as file_handle:
-        for row in sudoku_grid_list:
-            file_handle.write(str(row) + '\n')
+    return None
 
 # TODO 3) Complete the function below with the following requirements:
 #  1. Give the saved_file input variable a default string
@@ -73,19 +51,7 @@ def on_save_button(sudoku_grid_list, save_file='saved.txt'):
 #     each row, similar to TODO 1) open_sudoku_file()
 #  4. If the file could not be found, return None and an error message
 def on_load_button(saved_file='saved.txt'):
-    print('Loading: ' + saved_file)
-    path = Path(saved_file)
-
-    if not path.is_file():
-        messagebox.showerror('File Not Found', 'ERROR: ' + str(saved_file) + ' was not found!')
-        return None
-
-    sudoku_grid = list()
-    with open(file=saved_file, mode='r') as file_handle:
-        for line in file_handle:
-            sudoku_grid.append(line)
-
-    return sudoku_grid
+    return None
 
 class Sudoku(tk.Tk):
     sudoku_grids_file = 'sudoku_grids.txt'
