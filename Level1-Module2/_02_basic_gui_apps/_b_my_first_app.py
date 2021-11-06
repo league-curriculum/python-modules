@@ -20,7 +20,7 @@ def create_image(filename, width, height):
 # ======================= DO NOT EDIT THE CODE ABOVE =========================
 
 # TODO 1) Make a new class and put tk.Tk in the parenthesis, for example:
-#  FirstApp(tk.TK):
+# class FirstApp(tk.Tk):
 
     # TODO 2) Make a constructor
 
