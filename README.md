@@ -11,7 +11,7 @@ Checkpoints:
   - Module 4: SOC-56570281
   - Module 5: SOC-56715803
 
-- LEVEL 1 -
+- LEVEL 1 - Written Test = SOC-62908789
   - Module 0: SOC-55070652
   - Module 1: SOC-58313649
   - Module 2: SOC-59906559
