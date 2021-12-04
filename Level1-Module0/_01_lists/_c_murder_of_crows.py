@@ -8,7 +8,11 @@ def find_the_diamond(the_murder=None):
     pass
     # TODO 1) One of the Crows has eaten the diamond. You need to search
     #  through the stomach of each Crow, then print the name of the
-    #  guilty Crow. The input parameter contains the list of Crow objects.
+    #  guilty Crow.
+    #  * The input parameter, the_murder, contains the list of Crow objects.
+    #  * The stomach of each Crow object can be accessed using the
+    #    Crow's stomach_contents variable
+    #  * The name of each Crow object can be accessed using the Crow's name variable.
 
     # TODO 2) How many innocent crows had to die before the diamond was found?
     #  For example, if you had to look through the stomachs of 3 crows to find
