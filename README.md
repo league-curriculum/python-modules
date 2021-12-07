@@ -29,6 +29,8 @@ Module download Links:
   - Module 3: https://classroom.github.com/a/akxpn7fg
   - Module 4: https://classroom.github.com/a/opBCapC6
   - Module 5: https://classroom.github.com/a/aEcM-DUA
+  - Written Exam A: SOC-62939644
+  - Written Exam B: SOC-62939646
 
 - LEVEL 1 -
   - Module 0: https://classroom.github.com/a/whGSUc8C
