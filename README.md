@@ -11,12 +11,13 @@ Checkpoints:
   - Module 4: SOC-56570281
   - Module 5: SOC-56715803
 
-- LEVEL 1 - Written Test = SOC-62908789
+- LEVEL 1 -
   - Module 0: SOC-55070652
   - Module 1: SOC-58313649
   - Module 2: SOC-59906559
   - Module 3: SOC-59920536
   - Module 4: SOC-60677213
+  - Written Exam A = SOC-62908789
 
 - LEVEL 2 -
   - Module 0: SOC-61954793
@@ -38,6 +39,8 @@ Module download Links:
   - Module 2: https://classroom.github.com/a/5cub_qf5
   - Module 3: https://classroom.github.com/a/TUnmBUD3
   - Module 4: https://classroom.github.com/a/xf1K4MwS
+  - Practice Written Exam: SOC-62971031
+  - Written Exam A: SOC-62908789
 
 - LEVEL 2 -
   - Module 0: https://classroom.github.com/a/uQGg-7BT
