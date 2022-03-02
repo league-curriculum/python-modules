@@ -1,4 +1,7 @@
-class Paddle():
+if False:
+    from ...libraries.Processing3 import *
+
+class Paddle:
     def __init__(self, x, y=None, paddle_width=100, paddle_height=20):
         self.x = x
         self.y = height - paddle_height
@@ -14,7 +17,7 @@ class Paddle():
             self.x += self.x_speed
         
     def draw(self):
-        push()
+        pushStyle()
         fill(255)
         rect(self.x, self.y, self.width, self.height)
-        pop()
+        popStyle()

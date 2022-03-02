@@ -1,9 +1,12 @@
+if False:
+    from ...libraries.Processing3 import *
+
 from Paddle import Paddle
 
 color_progression = ['#FFFFFF', '#FFFF00', '#FFFA00', '#FF0000',
                      '#800080', '#0000FF']
 
-class Ball():
+class Ball:
     def __init__(self, x=0, y=0, ball_speed=5, radius=20):
         self.x = x
         self.y = y
@@ -26,7 +29,7 @@ class Ball():
         self.y += self.y_speed
         
     def draw(self):
-        push()
+        pushStyle()
         
         strokeWeight(5)
         if self.color_index >= len(color_progression):
@@ -35,7 +38,7 @@ class Ball():
             fill(color_progression[self.color_index])
         ellipse(self.x, self.y, 2 * self.radius, 2 * self.radius)
         
-        pop()
+        popStyle()
 
     def collision(self, paddle):
         side = None
@@ -57,7 +60,7 @@ class Ball():
             edge_y = paddle.y + paddle.height  # Ball is below the paddle
             side = 'bottom'
 
-        # Get distance from pythagoream theorem
+        # Get distance from Pythagoream theorem
         dist_x = self.x - edge_x
         dist_y = self.y - edge_y
         distance = sqrt( (dist_x * dist_x) + (dist_y * dist_y) )
