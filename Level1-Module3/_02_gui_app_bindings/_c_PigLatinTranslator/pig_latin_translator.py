@@ -19,18 +19,18 @@ class PigLatinTranslator(tk.Tk):
         # TODO: Look at the example image () and place all the
         #  components in the same order
 
-        # TODO: Call the label's bind() method to call the on_key_release()
-        #  method when a key is released
+        # TODO: Call the label's bind() method to call the on_press()
+        #  method when the mouse is pressed
 
 
-    def on_key_press(self, event):
+    def on_press(self, event):
         print('button pressed!')
 
-        # TODO: Use the _c_PigLatinTranslator.translate() method to translate
+        # TODO: Use the PigLatinConverter.translate() method to translate
         #  the text in the input entry and set the text in the output entry
 
 
 if __name__ == '__main__':
     pass
-    # TODO: Create a new _c_PigLatinTranslator object and set the title and geometry.
+    # TODO: Create a new PigLatinTranslator object and set the title and geometry.
     #  Remember to call mainloop() at the end
