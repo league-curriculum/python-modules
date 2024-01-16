@@ -24,7 +24,7 @@ Checkpoints:
 
 Module download Links:
 - LEVEL 0 -
-  - Module 0: https://classroom.github.com/a/8neTFR0_
+  - Module 0: [https://classroom.github.com/a/8neTFR0_](https://classroom.github.com/a/8neTFR0_)
   - Module 1: https://classroom.github.com/a/RIhi_CY7
   - Module 2: https://classroom.github.com/a/kJxwZ7qI
   - Module 3: https://classroom.github.com/a/akxpn7fg
