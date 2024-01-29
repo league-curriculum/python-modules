@@ -17,19 +17,25 @@ ignore_list = ['__init__.py', '_init.py', 'init.py', '.pyproject', '.project',
 def create_new_structure(original_path, new_path):
     stack = [(original_path, new_path)]
 
+    # Add all of the files in the original path that don't start with 'Level'
+    ignore_list_extra = set( ignore_list + [ e for e in os.listdir(original_path) if not e.startswith('Level') ] )
+
     while stack:
+
         current_original, current_new = stack.pop()
 
         # Use glob for a simpler way to get files and directories
         entries = glob.glob(os.path.join(current_original, '*')) + glob.glob(os.path.join(current_original, '.*'))
-        
+
         for item_path in entries:
             entry_name = os.path.basename(item_path)
+
             if entry_name.startswith('.'):
-                logger.debug(f'Renaming dot file: {entry_name}')
-                entry_name = entry_name[1:]
+                # we don't need to process dot files
+                continue
+                #entry_name = entry_name[1:]
             
-            if os.path.isdir(item_path) and entry_name not in ignore_list:
+            if os.path.isdir(item_path) and entry_name not in ignore_list_extra:
                 # Handle directories
                 if "Level" in entry_name or "Module" in entry_name or "module" in entry_name:
                     if "-" in entry_name:
@@ -53,7 +59,7 @@ def create_new_structure(original_path, new_path):
 
             else:
                 # Handle files                
-                if entry_name not in ignore_list:
+                if entry_name not in ignore_list_extra:
                     if entry_name.startswith('_'):
                         entry_name = entry_name[1:]
                     
