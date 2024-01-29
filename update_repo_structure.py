@@ -1,9 +1,18 @@
 import os
 import shutil
 import glob
+import click
+import os
+
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 # List of directories and files to ignore
-ignore_list = ['__init__.py', '_init.py', 'init.py', '.pyproject', '.project', '.gitignore', '.git', '.vscode', 'LICENSE', 'update_repo_structure.py', '.mypy_cache', '.pydevproject']
+ignore_list = ['__init__.py', '_init.py', 'init.py', '.pyproject', '.project',
+               '.gitignore', '.git', '.vscode', 'LICENSE', 'update_repo_structure.py',
+               '.mypy_cache', '.pydevproject', '_out']
 
 def create_new_structure(original_path, new_path):
     stack = [(original_path, new_path)]
@@ -17,6 +26,7 @@ def create_new_structure(original_path, new_path):
         for item_path in entries:
             entry_name = os.path.basename(item_path)
             if entry_name.startswith('.'):
+                logger.debug(f'Renaming dot file: {entry_name}')
                 entry_name = entry_name[1:]
             
             if os.path.isdir(item_path) and entry_name not in ignore_list:
@@ -85,12 +95,23 @@ def remove_underscore_from_files(directory_path):
 
 
 
+@click.command()
+@click.option('--original_path', '-o', default=os.getcwd(), help='Path to the original directory')
+@click.option('--new_path', '-n', default='_out', help='Path to the new directory')
+@click.option('--verbose', '-v', is_flag=True, help='Enable verbose logging')
 
-# Add the path to the original directory and the path to the new directory
-orignial_path = "Path\\to\\original\\directory"
-new_path = "Path\\to\\new\\directory"
+def main(original_path: str , new_path: str, verbose: bool):
 
+    if verbose:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
 
-create_new_structure(original_path, new_path)
+    logger.info(f'Source path: {original_path}')
+    logger.info(f'Destination path: {new_path}')
+    create_new_structure(original_path, new_path)
+    remove_underscore_from_files(new_path)
 
-remove_underscore_from_files(new_path)
+if __name__ == '__main__':
+    main()
+
