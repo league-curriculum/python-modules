@@ -3,7 +3,7 @@ import shutil
 import glob
 import click
 import os
-
+from pathlib import Path
 import logging
 
 logger = logging.getLogger(__name__)
@@ -91,19 +91,29 @@ def create_new_structure(original_path, new_path):
 
 
 def remove_underscore_from_files(directory_path):
-    for root, dirs, files in os.walk(directory_path):
-        for file in files:
-            if file.startswith('_'):
-                new_file_name = file[1:]
-                old_file_path = os.path.join(root, file)
-                new_file_path = os.path.join(root, new_file_name)
-                os.rename(old_file_path, new_file_path)
+
+    import re
 
 
+    file_p = re.compile(r'^(_\d+_|_[a-z]_|_|[a-z]_)')
+    dir_p = re.compile(r'^(_|[a-z]_)')
+
+    path = Path(directory_path)
+
+    # Traverse through all files and directories
+    for item in path.rglob('*'):  # rglob('*') will match all files and directories
+        if item.is_file() and file_p.match(item.name):
+            logger.debug(f"Matched file: {item.name}")
+            item.rename(item.with_name(file_p.sub('', item.name)))
+        elif item.is_dir() and dir_p.match(item.name):
+            logger.debug(f"Matched dir: {item.name}")
+            item.rename(item.with_name(dir_p.sub('', item.name)))
+
+def_path = Path('./_out')
 
 @click.command()
 @click.option('--original_path', '-o', default=os.getcwd(), help='Path to the original directory')
-@click.option('--new_path', '-n', default='_out', help='Path to the new directory')
+@click.option('--new_path', '-n', default=def_path, help='Path to the new directory')
 @click.option('--verbose', '-v', is_flag=True, help='Enable verbose logging')
 
 def main(original_path: str , new_path: str, verbose: bool):
@@ -113,9 +123,14 @@ def main(original_path: str , new_path: str, verbose: bool):
     else:
         logging.basicConfig(level=logging.INFO)
 
+    if def_path.exists() and str(new_path) == str(def_path):
+        logger.info(f"Removing existing directory: {new_path}")
+        shutil.rmtree(new_path)
+
     logger.info(f'Source path: {original_path}')
     logger.info(f'Destination path: {new_path}')
     create_new_structure(original_path, new_path)
+
     remove_underscore_from_files(new_path)
 
 if __name__ == '__main__':
