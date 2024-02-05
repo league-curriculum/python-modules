@@ -5,3 +5,5 @@ Level1-Module3/_01_gui_app_bindings/_c_PigLatinTranslator/__pycache__/PigLatinCo
 *.iml
 *.xml
 *.pyc
+
+.DS_Store
