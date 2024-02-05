@@ -3,39 +3,92 @@ def setup():
     global bg, firework
     
     # 1. Use the size(width, height) function to set the size of your program
-
+    size(1200, 800)
+    fullScreen()
+    
     # 2. Use the loadImage() function to initialize the 'bg' variable
     # bg = loadImage('sanDiego.jpg')
     # bg = loadImage('futureCity.jpg')
-    # bg = loadImage('space.jpg')
+    bg = loadImage('space.jpg')
+
     
     # 3. Use the bg variable's resize(width, height) to set the background image
     # to the size of your program
+    bg.resize(width, height)
+
     
     # 4. Initialize the 'firework' variable to a Firework(x, y)
     # You can choose the values for x and y
+    firework = Firework(500, 500)
+    
+    
+    global fireworks
+    fireworks = list()
+    
+    global finale
+    finale = False
+    
+    global display
+    display = FireworksDisplay()
+    
+    for i in range(10):
+        w = random(width)
+        h = random(height)
+        random_color = Firework.get_random_color()
+        
+        firework = Firework(w, h, random_color, 'arcade_explode1.mp3')
+        #firework.set_multi_colored_firework()
+        firework.set_firework_size(5, 50)
+        
+        display.add_firework(firework, i * 1000)
 
 
 def draw():
-    global firework
+    global firework, start_time
     
     # 5. Call the image(bg, 0, 0) function to display your background  
+    image(bg, 0, 0)
     
     # 6. Call tint(255, 50)
+    tint(255, 50)
     
     # 7. Call the firework variable's draw() method 
     # Do you see the firework when you run the program?
+    firework.draw()
     
     # 8. Use an 'if' statement and the mousePressed variable to check if the
     # the mouse is pressed
     if mousePressed:
-        pass
+        
         # 9. Set the 'firework' variable to a new Firework at mouseX and mouseY
         # firework = Firework(mouseX, mouseY)
+        firework = Firework(mouseX, mouseY)
+        firework.set_multi_colored_firework()
+        firework.set_firework_size(5, 50)
+
+        #play_sound('arcade_explode2.mp3')
+        play_sound('arcade_bomb1.mp3')
+
+        fireworks.append(firework)
+
+
+
+    if keyPressed:
+        if key == 'l':
+            display.launch()
+        
+        if key == 's':
+            for fw in fireworks:
+                fw.draw()
+            
+            if not finale:
+                play_sound('arcade_bomb1.mp3')
+                global finale
+                finale = True
+
 
 
 # =================== DO NOT MODIFY THE CODE BELOW ======================
-
 class Firework:
     
     @staticmethod
@@ -151,9 +204,7 @@ class Particle:
         self.new_x += self.x_velocity
         self.new_y += self.y_velocity
         self.y_velocity += self.gravity
-        
-        
-
+    
 add_library("minim")
 global minim
 minim = None
@@ -165,13 +216,14 @@ def play_sound(file_name):
     minim=Minim(this)
     s=minim.loadFile(file_name)
     s.play()
-
-        
+    
+    
     
 class FireworksDisplay:
     def __init__(self):
         self.fireworks = list()
         self.start_time_ms = None
+        self.sound_playing = False
         
     def add_firework(self, fw, launch_time_ms):
         self.fireworks.append( TimedFirework(fw, launch_time_ms) )

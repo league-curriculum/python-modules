@@ -1,0 +1,10 @@
+___
+level: int 0
+    - module: int 0
+      - lessons:
+        - logical_thinking_deductive.py
+        - logical_thinking_inductive.py
+        - logical_thinking_abductive.py
+        - logical_thinking_abductive.py
+      - name: "Logical Thinking"
+      

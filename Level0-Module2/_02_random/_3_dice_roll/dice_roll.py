@@ -1,81 +1,49 @@
-"""
-Use a Random object to generate random integers so your code can roll different
-numbers on a dice.
-"""
-import tkinter as tk
-from PIL import Image, ImageTk
 import random
+from tkinter import Label, Button, Tk
+
+from PIL import ImageTk
 
 
-def get_random_dice_image():
-    random_image = None
+def onclick(args):
+    if args == "button":
+        # TODO 1) Make random_choice equal to a random number between 1 and 6
+        random_choice = random.randint(1,6)
 
-    # TODO Run the code and click the button. Notice that only 1 side of
-    #  the die is shown.
-
-    # TODO Change the line of code below to a random number from 1 to 6
-    #  (1 and 6 included) so all 6 sides of the die are randomly shown.
-    rand_num = 1
-
-    if rand_num == 1:
-        random_image = create_image('dice 1.png', 400, 400)
-    elif rand_num == 2:
-        random_image = create_image('dice 2.png', 400, 400)
-    elif rand_num == 3:
-        random_image = create_image('dice 3.png', 400, 400)
-    elif rand_num == 4:
-        random_image = create_image('dice 4.png', 400, 400)
-    elif rand_num == 5:
-        random_image = create_image('dice 5.png', 400, 400)
-    elif rand_num == 6:
-        random_image = create_image('dice 6.png', 400, 400)
-    else:
-        print("ERROR: Invalid random number!")
-
-    return random_image
-
-# ======================= DO NOT EDIT THE CODE BELOW =========================
-
-
-def create_image(filename, width, height):
-    image_obj = None
-
-    try:
-        image = Image.open(filename)
-        image = image.resize((width, height), Image.ANTIALIAS)
-        image_obj = ImageTk.PhotoImage(image=image)
-    except FileNotFoundError as fnf:
-        print("ERROR: Unable to find file " + filename)
-
-    return image_obj
-
-
-class DiceRoll(tk.Tk):
-
-    def __init__(self):
-        super().__init__()
-
-        random_image = get_random_dice_image()
-        self.label_image = tk.Label(self, image=random_image)
-        self.label_image.image = random_image   # To prevent garbage collection of image
-        self.label_image.pack()
-
-        self.button = tk.Button(self, text='Roll!', command=self.on_button_press)
-        self.button.pack()
-
-    def on_button_press(self):
-        random_image = get_random_dice_image()
-        self.label_image.config(image=random_image)
-        self.label_image.image = random_image   # To prevent garbage collection of image
+        # TODO 2) Fix the code below so that it displays the correct image
+        if random_choice == 1:
+            label.configure(image=dice1)
+            label.photo_ref = dice1
+        elif random_choice == 2:
+            label.configure(image=dice2)
+            label.image = dice2
+        elif random_choice == 3:
+            label.configure(image=dice3)
+            label.image = dice3
+        elif random_choice == 4:
+            label.configure(image=dice4)
+            label.image = dice4
+        elif random_choice == 5:
+            label.configure(image=dice5)
+            label.image = dice5
+        else:
+            label.configure(image=dice6)
+            label.image = dice6
 
 
 if __name__ == '__main__':
-    # Create a new object of the class
-    app = DiceRoll()
-    app.title('Dice Roll')
+    window = Tk()
+    window.title("Roll the Dice!")
 
-    # Sets the size of the app window
-    app.geometry('500x450')
+    dice1 = ImageTk.PhotoImage(file="dice 1.png")
+    dice2 = ImageTk.PhotoImage(file="dice 2.png")
+    dice3 = ImageTk.PhotoImage(file="dice 3.png")
+    dice4 = ImageTk.PhotoImage(file="dice 4.png")
+    dice5 = ImageTk.PhotoImage(file="dice 5.png")
+    dice6 = ImageTk.PhotoImage(file="dice 6.png")
 
-    app.mainloop()
+    Button(window, text="CLICK HERE TO ROLL", command=lambda: onclick("button")).pack(side="left")
 
+    label = Label(window, image=dice1).pack(side="left")
+
+    # Start the GUI
+    window.mainloop()

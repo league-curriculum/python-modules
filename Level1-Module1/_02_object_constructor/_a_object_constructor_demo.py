@@ -12,16 +12,15 @@ class Student:
         self.name = name_input
 
 # * The variable 'student_name' can be used anywhere in the file
-# * The variable 'name' within the class Student can only be used outside the
-#   class if an object of Student is created
+# * The variable 'name' within the class Student can only be used if an object
+#   of Student is created
 print(student_name)         # No error. Prints Kevin
 # print(name)               # ERROR, name variable not defined outside of class
 student_1 = Student("Javier")
 print(student_1.name)       # No error. Prints Javier
 
-# The name variable in the class is called a member variable. The best place
-# for Member variables to be created are in a special function called the
-# constructor, __init__(self):
+# The name variable in the class is called a member variable. Member variables
+# are created in a special function called the constructor, __init__(self):
 #   def __init__(self):
 #       self.member_var = 0     # create member variable 'member_var'
 

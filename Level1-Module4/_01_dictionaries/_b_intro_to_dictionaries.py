@@ -5,34 +5,63 @@ import unittest
 
 # TODO: Return a dictionary with 4 key-value pairs
 def initialize_dictionary():
-
-    return dict()
+    return {1 : 1, 2 : 2, 3 : 3, 4 : 4}
+    #return dict()
 
 # TODO: Return a dictionary using the two input parameter lists.
 #  The first element in both lists should be a key-value pair, same
 #  for the second, etc. Assume both input parameters have the same length.
 def initialize_dictionary_from_lists(keys, values):
+    d = dict()
+    # Method #1
+    for key, value in zip(keys, values):
+        d[key] = value
 
-    return dict()
+    # Method #2
+    #for index in range(len(keys)):
+    #    d[keys[index]] = values[index]
+
+    # Method #3
+    #for index, key in enumerate(keys):
+    #    d[key] = values[index]
+
+    return d
+    #return dict()
 
 # TODO: Return a dictionary with the specified key's value updated to the new
 #  value. If the key does not exist in the dictionary, do not change the
 #  dictionary.
 def dictionary_update(dictionary, key, new_value):
 
-    return dict()
+    if key in dictionary:
+        dictionary[key] = new_value
+
+    return dictionary
+    #return dict()
 
 # TODO: Return a dictionary with the input dictionary's keys and values
 #  reversed.
 def reverse_key_values(dictionary):
+    d = dict()
 
-    return dict()
+    for key, value in dictionary.items():
+        d[value] = key
+
+    return d
+    #return dict()
 
 # TODO Return a dictionary containing the matching key-value pairs from
 #  dict_1 and dict_2:
 def dictionary_overlap(dict_1, dict_2):
+    d = dict()
 
-    return dict()
+    for key, value in dict_1.items():
+        if key in dict_2:
+            if dict_2[key] == dict_1[key]:
+                d[key] = value
+
+    return d
+    #return dict()
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 

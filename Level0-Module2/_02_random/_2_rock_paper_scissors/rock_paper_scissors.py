@@ -1,16 +1,15 @@
 import random
 from tkinter import Tk, Label, Button, messagebox
+
 from PIL import ImageTk
 
 
 def onclick(args):
-    # TODO 1) Run the program and play many rounds of Rock Paper Scissors.
-    #  Does the computer always choose the same thing?
+    # TODO 1) Run the program and play many rounds of Rock Paper Scissors. Does the computer always choose the same thing?
 
-    # TODO 2) Change the value of opponent_selection to be a random number
-    #  between 1 and 3
+    # TODO 2) Change the value of opponent_selection to be a random number between 1 and 3
     opponent_selection = 1
-
+    opponent_selection = random.randint(1,3)
     # TODO 3) Run the program again. Is the result different?
 
     selection = 1
@@ -20,7 +19,7 @@ def onclick(args):
     elif args == "SCISSORS":
         selection = 3
 
-    messagebox.showinfo(None, "You chose: " + args + ".\n"
+    messagebox.showinfo(None, "You chose: " + str(args) + ".\n"
                         + "The computer chose: " + opp_select(opponent_selection) + ".\n")
 
     if selection == opponent_selection:
@@ -35,15 +34,15 @@ def onclick(args):
 def opp_select(s):
     if s == 1:
         return "ROCK"
-    elif s == 2:
+    if s == 2:
         return "PAPER"
-    elif s == 3:
+    if s == 3:
         return "SCISSORS"
 
 
 if __name__ == '__main__':
     window = Tk()
-    window.title("Rock, Paper, Scissors")
+    window.title("Rock Paper Scissors")
     window.geometry("1075x250")
     window.configure(background="grey")
 

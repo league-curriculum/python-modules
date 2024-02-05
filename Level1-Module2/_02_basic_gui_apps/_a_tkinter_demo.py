@@ -45,7 +45,7 @@ class GuiAppDemo(tk.Tk):
         # *NOTE* you must save the image into a member variable and not a
         # local variable. The local variable gets garbage collected and will
         # not appear on the app:
-        #   DO NOT create a local variable:: img = create_image('python.png', 200, 200)
+        #       DO NOT DO THIS => img = create_image('python.png', 200, 200)
         self.img = create_image('python.png', 200, 200)
         self.label_image = tk.Label(self, image=self.img)
 

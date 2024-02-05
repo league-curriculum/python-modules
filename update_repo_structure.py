@@ -4,6 +4,8 @@ import os
 import shutil
 from pathlib import Path
 import textwrap
+import re
+import yaml
 
 import click
 
@@ -169,6 +171,40 @@ def process_python_files(directory):
 
 
 
+
+def create_yaml_file(path, level, module, lesson, title):
+    data = {
+        'level': level,
+        'module': module,
+        'lesson': lesson,
+        'title': title,
+        'description': ''
+    }
+
+    yaml_file_path = path / '.assignment.yaml'
+    with open(yaml_file_path, 'w') as file:
+        yaml.dump(data, file, sort_keys=False)
+
+def create_assignment_data(root_path):
+    root = Path(root_path)
+    level_pattern = re.compile(r'Level(\d+)')
+    module_pattern = re.compile(r'Module(\d+)')
+
+    for level_dir in root.iterdir():
+        if level_dir.is_dir() and level_pattern.match(level_dir.name):
+            level = int(level_pattern.search(level_dir.name).group(1))
+            for module_dir in level_dir.iterdir():
+                if module_dir.is_dir() and module_pattern.match(module_dir.name):
+                    module = int(module_pattern.search(module_dir.name).group(1))
+                    for lesson_dir in module_dir.iterdir():
+                        if lesson_dir.is_dir():  # Assuming all subdirectories in module are lessons
+                            lesson = lesson_dir.name
+                            for assignment_dir in lesson_dir.iterdir():
+                                if assignment_dir.is_dir():  # Assuming all subdirectories in lesson are assignments
+                                    title = assignment_dir.name
+                                    create_yaml_file(assignment_dir, level, module, lesson, title)
+
+
 def_path = Path('./_out')
 
 
@@ -194,6 +230,7 @@ def main(original_path: str, new_path: str, verbose: bool):
 
     process_python_files(new_path)
 
+    create_assignment_data(new_path)
 
 if __name__ == '__main__':
     main()

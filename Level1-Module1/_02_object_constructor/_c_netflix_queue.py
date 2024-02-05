@@ -51,3 +51,22 @@ if __name__ == '__main__':
     # TODO 6) Use your NetflixQueue object to finish the sentence "the best movie is...."
     # TODO 7) Use your NetflixQueue to finish the sentence "the second best movie is...."
 
+    The_Godfather = Movie("The Godfather", 5)
+    Spiderman = Movie("Spiderman", 4)
+    Infinity_War = Movie("Infinity War", 4)
+    Mission_Impossible = Movie("Mission Impossible", 4)
+    Elf = Movie("Elf", 3)
+
+    print('The price to see' + Elf.title() + ' is ' + Elf.get_ticket_price())
+
+    queue = NetflixQueue()
+    queue.add_movie(The_Godfather)
+    queue.add_movie(Spiderman)
+    queue.add_movie(Infinity_War)
+    queue.add_movie(Mission_Impossible)
+    queue.add_movie(Elf)
+
+    queue.print_movies()
+
+    print("The best movie is " + queue.get_best_movie().to_string())
+    print("The second best movie is " + queue.get_movie(1).to_string())

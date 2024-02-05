@@ -1,16 +1,27 @@
 import random
-from tkinter import messagebox, Tk
+from tkinter import messagebox,Tk
 
 if __name__ == '__main__':
     window = Tk()
     window.withdraw()
 
-    random_number = random.randint(1, 5)
+    for i in range(10):
+        randomNumber = random.randint(1, 5)
 
-    print(random_number)
+        print(randomNumber)
 
-    # TODO 1) Use each value of random_number to give the user a random compliment
+        # TODO 1) Use each value of randomNumber to give the user a random compliment
+        if randomNumber == 1:
+            messagebox.showinfo(None, "You are awesome")
+        elif randomNumber == 2:
+            messagebox.showinfo(None, "You are smart")
+        elif randomNumber == 3:
+            messagebox.showinfo(None, "I like your shirt")
+        elif randomNumber == 4:
+            messagebox.showinfo(None, "You are funny")
+        else:
+            messagebox.showinfo(None, "I like your shoes")
 
-    # TODO 2) Repeat all the code above 10 times
+        # TODO 2) Repeat all the code above 10 times
 
-    # TODO 3) Find someone to test out your program. They will like it :)
+        # TODO 3) Find someone to test out your program. They will like it :)

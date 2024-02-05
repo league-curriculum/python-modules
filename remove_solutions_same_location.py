@@ -12,7 +12,7 @@ def remove_lines_with_special_comment(file_path):
         lines = file.readlines()
 
     # Filter lines that don't end with '#;'
-    filtered_lines = [line for line in lines if not line.rstrip().endswith('#;')]
+    filtered_lines = [line for line in lines if not line.rstrip().endswith('# ;')]
 
     # Write the modified content back to the file
     with open(file_path, 'w') as file:

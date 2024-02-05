@@ -33,30 +33,48 @@ if __name__ == '__main__':
     draw_background()
 
     # TODO 1) Create an empty list of turtles
+    turtles = list()
 
-    # TODO 2) Create a new turtle and set its shape to 'turtle
+    for i in range(8):
+        # TODO 2) Create a new turtle and set its shape to 'turtle
+        t = turtle.Turtle()
+        t.shape('turtle')
+        t.color('yellow')
 
-    # TODO 3) Set the turtle's speed to 3
+        # TODO 3) Set the turtle's speed to 3
+        t.speed(3)
 
-    # TODO 4) Set the turtle's pen up
+        # TODO 4) Set the turtle's pen up
+        t.penup()
 
-    # TODO 5) Use the turtle's goto() method to set its position on the left
-    #  side of the screen
+        # TODO 5) Use the turtle's goto() method to set its position on the left
+        #  side of the screen
+        t.goto(-300, 190 - (i*55))
 
-    # TODO 6) use a loop to repeat the previous instructions and create
-    #  8 turtles lined up on the left side of the screen
-    #  *HINT* click on the window to print the corresponding x, y location
+        # TODO 6) use a loop to repeat the previous instructions and create
+        #  8 turtles lined up on the left side of the screen
+        #  *HINT* click on the window to print the corresponding x, y location
+        turtles.append(t)
 
-    # TODO 7) Move each turtle forward a random distance between 1 and 20
+    go = True
+    while go:
 
-    # TODO 8) Create a loop to keep moving each turtle until a turtle
-    #  crosses the finish line
-    #  *HINT* click on the window to print the corresponding x, y location
+        # TODO 7) Move each turtle forward a random distance between 1 and 20
+        for index, each_turtle in enumerate(turtles):
+            each_turtle.forward(random.randint(1, 20))
 
-    # TODO 9) When a turtle crosses the finish line, stop the race and
-    #  indicate which turtle won the race.
+        # TODO 8) Create a loop to keep moving each turtle until a turtle
+        #  crosses the finish line
+        #  *HINT* click on the window to print the corresponding x, y location
 
-    # EXTRA: Create different colors for each turtle and code a special
-    # dance for the winning turtle!
+        # TODO 9) When a turtle crosses the finish line, stop the race and
+        #  indicate which turtle won the race.
+            if each_turtle.xcor() > 330:
+                go = False
+                each_turtle.write('turtle #' + str(index) + ' won the race!')
+                break
+
+        # EXTRA: Create different colors for each turtle and code a special
+        # dance for the winning turtle!
 
     turtle.done()

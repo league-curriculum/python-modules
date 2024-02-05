@@ -12,4 +12,19 @@ if __name__ == '__main__':
     #     is prime.
     #  3. If the number is divisible by any number other than 1 or itself,
     #     the number is not prime.
-    pass
+    window = Tk()
+    window.withdraw()
+
+    number = simpledialog.askinteger(None, 'Enter a positive integer')
+
+    is_prime = True
+
+    for i in range(number):
+        if i > 1 and number % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        messagebox.showinfo(None, 'That number IS prime!')
+    else:
+        messagebox.showinfo(None, 'That number IS NOT prime!')
