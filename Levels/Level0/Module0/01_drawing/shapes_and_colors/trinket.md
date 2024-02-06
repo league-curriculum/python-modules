@@ -9,6 +9,6 @@ what your turtle will be able to do by the end of this lesson:
 
 Read each of  the comments in the code carefully for instructions. 
 
-{{ trinket("shapes_and_colors.py", width="100%", height="400", embed_type="python") | safe }}
+{{ trinket("shapes_and_colors.py", width="100%", height="600", embed_type="python") | safe }}
 
 Have fun!
