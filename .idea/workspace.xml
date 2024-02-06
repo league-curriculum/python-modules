@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae773713-f491-4ef4-ae17-6689f65870d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/pentagon_crazy/trinket.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/turtle_spiral/trinket.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/shapes_and_colors/trinket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/shapes_and_colors/trinket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/tina_the_turtle/trinket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/tina_the_turtle/trinket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star/.assignment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star/.assignment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star/PentagonCrazy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/pentagon_crazy/PentagonCrazy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star/trinket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star/trinket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/resources/FlamingNinjaStar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star/FlamingNinjaStar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/turtle_spiral/.assignment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/turtle_spiral/.assignment.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +37,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "esb",
-    "last_opened_file_path": "/Users/eric/proj/league-projects/curriculum/python-modules/Levels/Level0/Module0/02_code_flow/pentagon_crazy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;esb&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/eric/proj/league-projects/curriculum/python-modules/Levels/Level0/Module0/02_code_flow/pentagon_crazy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/pentagon_crazy" />
@@ -338,12 +329,12 @@
     <SUITE FILE_PATH="coverage/python_modules$pentagon_crazy.coverage" NAME="pentagon_crazy Coverage Results" MODIFIED="1707170001711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/pentagon_crazy" />
     <SUITE FILE_PATH="coverage/python_modules$intro.coverage" NAME="intro Coverage Results" MODIFIED="1707170307859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module2/01_string_conversion/intro" />
     <SUITE FILE_PATH="coverage/python_modules$magic_8_ball.coverage" NAME="magic_8_ball Coverage Results" MODIFIED="1707169395965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module2/02_random/5_magic_8_ball/magic_8_ball" />
-    <SUITE FILE_PATH="coverage/python_modules$tashe_me.coverage" NAME="tashe_me Coverage Results" MODIFIED="1707201367912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/tashe_me" />
+    <SUITE FILE_PATH="coverage/python_modules$tashe_me.coverage" NAME="tashe_me Coverage Results" MODIFIED="1707169026065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/tashe_me" />
     <SUITE FILE_PATH="coverage/python_modules$flaming_ninja_star.coverage" NAME="flaming_ninja_star Coverage Results" MODIFIED="1707169327909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/02_code_flow/flaming_ninja_star" />
-    <SUITE FILE_PATH="coverage/python_modules$.coverage" NAME=" Coverage Results" MODIFIED="1707171164962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level1/Module2/01_writing_classes/intro_to_writing_classes" />
-    <SUITE FILE_PATH="coverage/python_modules$logical_turtle.coverage" NAME="logical_turtle Coverage Results" MODIFIED="1707201275192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/logical_turtle" />
-    <SUITE FILE_PATH="coverage/python_modules$logical_dot.coverage" NAME="logical_dot Coverage Results" MODIFIED="1707201287947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/logical_dot" />
-    <SUITE FILE_PATH="coverage/python_modules$shapes_and_colors.coverage" NAME="shapes_and_colors Coverage Results" MODIFIED="1707201875172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/shapes_and_colors" />
+    <SUITE FILE_PATH="coverage/python_modules$.coverage" NAME=" Coverage Results" MODIFIED="1707171127601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level1/Module2/01_writing_classes/intro_to_writing_classes" />
+    <SUITE FILE_PATH="coverage/python_modules$logical_dot.coverage" NAME="logical_dot Coverage Results" MODIFIED="1707168987463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/logical_dot" />
+    <SUITE FILE_PATH="coverage/python_modules$logical_turtle.coverage" NAME="logical_turtle Coverage Results" MODIFIED="1707169000923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/logical_turtle" />
+    <SUITE FILE_PATH="coverage/python_modules$shapes_and_colors.coverage" NAME="shapes_and_colors Coverage Results" MODIFIED="1707169313879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module0/01_drawing/shapes_and_colors" />
     <SUITE FILE_PATH="coverage/python_modules$dice_roll.coverage" NAME="dice_roll Coverage Results" MODIFIED="1707169369248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Levels/Level0/Module2/02_random/3_dice_roll/dice_roll" />
   </component>
 </project>
