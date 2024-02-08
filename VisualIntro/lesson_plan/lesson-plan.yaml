@@ -1,0 +1,23 @@
+title: The League's Hour of Python
+description: The League's Hour of Python
+pages:
+  - index.md
+  - about.md
+  - intro.md
+resources:
+  - flag.png
+  - word-logo.png
+sidebar:
+  - path: /intro
+    title: Introduction
+lessons:
+  turtles:
+    text: turtles.md
+    resources:
+      - flag.png
+    assignments:
+      - 01_turtles/welcome
+      - 01_turtles/tina_the_turtle
+      - 01_turtles/reading_a_program
+      - 01_turtles/draw_circles
+      
