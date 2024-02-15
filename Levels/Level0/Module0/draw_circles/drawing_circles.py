@@ -10,3 +10,5 @@ tina.goto(0,0)
 # Draw a smaller white circle 
 
 # Draw a small black circle 
+
+turtle.mainloop()

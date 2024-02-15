@@ -1,48 +1,40 @@
-# Imports go at the top
-from microbit import *
-from random import randint
-from time import sleep
+# First up, we need to get turtle into the game. It's like summoning your drawing buddy.
+import turtle
 
-# Matrix in column major format
-column = [[0]*5]
-m = column * 5
+# Let's make a turtle and name it Tina because why not? Tina's going to be our artist.
+tina = turtle.Turtle()
 
-m = [
- (0, 0, 3, 0, 0),
- (0, 3, 6, 3, 0),
- (3, 6, 9, 6, 3),
- (0, 3, 6, 3, 0),
- (0, 0, 3, 0, 0)
-]
+# Making Tina look like a turtle because, honestly, it's just more fun that way.
+tina.shape('turtle')
 
-def add_col(m, c):
-    """ Add a column to the front, remove one from the rear"""
-    return [c]+m[0:4]
+# Before we draw, let’s get Tina to the center. This is where we’ll start our masterpiece.
+tina.penup() # Picking up the pen so we don't draw anything while moving to the starting point.
+tina.goto(0,-100) # Moving to the spot. We’re starting at the bottom of the big circle.
+tina.pendown() # Now we’re ready to draw.
 
-def make_image(m):
+# Time for the big red circle. It’s the outermost part of our target.
+tina.color('red') # Changing Tina's pen to red.
+tina.begin_fill() # We're filling this circle with color, so let’s start that.
+tina.circle(100) # This tells Tina to draw a circle with a radius of 100.
+tina.end_fill() # Done with the red circle.
 
-    def row(r):
-        return ''.join(str(e) for e in r) + ":"
+# Now, let’s go for the smaller white circle inside the red one.
+tina.penup() # Gotta lift the pen before moving.
+tina.goto(0, -80) # Adjusting the position for the white circle.
+tina.pendown() # And we draw again.
+tina.color('white') # Switching to white color now.
+tina.begin_fill()
+tina.circle(80) # Smaller circle, so a radius of 80 this time.
+tina.end_fill()
 
-    t = list(zip(*m))
-    return Image(''.join(row(r) for r in t)  )
+# Finally, the smallest circle, the bullseye, in black.
+tina.penup() # Up with the pen again.
+tina.goto(0, -60) # Getting in position for the final circle.
+tina.pendown() # Down goes the pen.
+tina.color('black') # The color for our bullseye.
+tina.begin_fill()
+tina.circle(60) # The smallest circle, so it’s got a radius of 60.
+tina.end_fill()
 
-def int_to_row(v):
-    v = min(v, 44)
-    n = v // 9
-    r = v - (n*9)
-    row = [9]*n + [r]
-    
-    return (row + ([0] * (5-len(row))))[::-1]
-
-
-while True:
-
-    v = pin0.read_analog()
-    s = scale(v, from_=(0,1024), to=(0,44))
-    m = add_col(m, int_to_row(s))
-    print(v,s )
-    i = make_image(m)
-    display.show(i)
-    sleep(.1)
-    
+# And that’s it! We’ve got ourselves a target. Time to admire our work.
+turtle.mainloop() # This keeps the window open so we can actually see what we’ve done.
