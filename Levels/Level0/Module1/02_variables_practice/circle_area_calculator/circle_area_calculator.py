@@ -6,7 +6,7 @@ window = Tk()
 window.withdraw()
 
 # Ask the user for the radius in pixels and store it in a variable
-# simpledialog.askinteger()
+# simpledialog.askinteger(None, "enter a radius")
 radius = simpledialog.askinteger(None, "enter a radius")  # ;
 
 # Make a new turtle

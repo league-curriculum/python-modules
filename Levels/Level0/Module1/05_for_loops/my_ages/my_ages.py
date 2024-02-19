@@ -9,7 +9,7 @@ window.withdraw()
 age = simpledialog.askinteger(None, "How old are you?")  # ;
 
 for i in range(age):  # ;
-    print("In " + str(2023 - i) + ", I was " + str(age - i) + " years old.")  # ;
+    print("In " + str(2024 - i) + ", I was " + str(age - i) + " years old.")  # ;
 
 window.mainloop()  # ;
 
@@ -18,5 +18,5 @@ window.mainloop()  # ;
 
 # for i in range(age):  # ;
 #     messagebox.showinfo(  # ;
-#         None, "In " + str(2020 - i) + ", I was " + str(age - i) + " years old."  # ;
+#         None, "In " + str(2024 - i) + ", I was " + str(age - i) + " years old."  # ;
 #     )  # ;
