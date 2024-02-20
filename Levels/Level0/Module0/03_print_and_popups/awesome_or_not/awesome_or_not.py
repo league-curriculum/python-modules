@@ -34,7 +34,8 @@ elif randNum == 2:  # ;
     message = "That's pretty boring"  # ;
 
 # 7. If your variable is  3
-elif randNum == 3:  # ;
+else:
+    # randNum == 3:  # ;
     # -- invent your own message to give to the user (be nice).
     message = "While I don't agree with you, I will defend to the death your right to say it."  # ;
 
