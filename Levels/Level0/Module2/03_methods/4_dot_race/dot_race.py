@@ -1,5 +1,23 @@
 import tkinter as tk
 
+import os
+import simpleaudio as sa
+
+
+# Function to load audio file
+# Do Not Change Anything in this function
+def get_audio_file(file):
+    file_path = os.path.join(os.path.dirname(__file__), file)
+    return sa.WaveObject.from_wave_file(file_path)
+
+
+# Function to play sound
+# Do Not Change Anything in this function
+def play_sound(file):
+    audio_file = get_audio_file(file)
+    play_obj = audio_file.play()
+    play_obj.wait_done()
+
 
 # This is the setup function that will be called when the program starts
 # This function will create the window and canvas and initialize the variables
@@ -11,7 +29,6 @@ def setup():
     canvas = tk.Canvas(window, width=800, height=200, bg="white")
     canvas.pack()
 
-    # Initialize variables
     x = [50]  # Store x in a list to pass by reference
 
     # Bind mouse press event to move the ellipse
@@ -46,14 +63,14 @@ def draw(canvas, x):  # ;
     canvas.after(50, draw, canvas, x)  # ;
 
 
-# The below function is called when the mouse is pressed
-# Update x[0] to change the x coordinate
-# This function is called when the mouse is pressed
 # Do Not call this function directly
 # It is called by the system when the mouse is pressed
 # Do Not Change Anything in this function
 def on_mouse_press(event, canvas, x):
-    x[0] += 10  # Update x[0] to change the x coordinate
+    x[0] += 50  # Update x[0] to change the x coordinate
+    if x[0] >= 800:
+        play_sound("ding.wav")
+        x[0] = 50
 
 
 # Call the setup function to start the program
