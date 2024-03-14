@@ -45,10 +45,12 @@ window.title("Slippery Dot")
 
 canvas = tk.Canvas(window, width=500, height=500, bg="blue")
 canvas.pack()
+
 # TODO 6. Create a variable called sketch and set it to an instance of the Sketch class with the canvas as a parameter
 sketch = Sketch(canvas)  # ;
 
 canvas.bind("<Button-1>", sketch.mousePressed)
+
 # TODO 7. Call the mainloop method of the window object
 window.mainloop()  # ;
 
