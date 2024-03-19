@@ -13,12 +13,12 @@
 #   1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz
 
 
-for i in range(1,21):
-    if i%15 == 0:
-        print("FizzBuzz")
-    elif i%3 == 0:
-        print("Fizz")
-    elif i%5 == 0:
-        print("Buzz")
-    else:
-        print(i)
+for i in range(1, 21):  # ;
+    if i % 15 == 0:  # ;
+        print("FizzBuzz")  # ;
+    elif i % 3 == 0:  # ;
+        print("Fizz")  # ;
+    elif i % 5 == 0:  # ;
+        print("Buzz")  # ;
+    else:  # ;
+        print(i)  # ;
