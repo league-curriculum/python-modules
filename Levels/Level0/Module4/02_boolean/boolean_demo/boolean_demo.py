@@ -5,7 +5,7 @@ Boolean Variable Demo
 # Boolean is a variable type that has two values:
 #   True
 #   False
-# Just like int, double, and string variables, boolean variables can be
+# Just like int, float, and string variables, boolean variables can be
 # created by writing the variable name followed by = True or = False
 #   boolean_var = True
 #   boolean_var = False
@@ -33,15 +33,28 @@ boolean_var2 = False
 
 # NOTE - boolean_var1 == True is not necessary
 if boolean_var1:
-    print('boolean_var1 is True!')
+    print("boolean_var1 is True!")
     if boolean_var2:
-        print('boolean_var2 is True!')
+        print("boolean_var2 is True!")
     else:
-        print('boolean_var2 is False!')
+        print("boolean_var2 is False!")
 else:
-    print('boolean_var1 is False!')
+    print("boolean_var1 is False!")
 
 boolean_var3 = True
 for i in range(4):
-    print('boolean_var3 is: ' + str(boolean_var3))
+    print("boolean_var3 is: " + str(boolean_var3))
+    # The = not boolean_var3 line toggles the value of boolean_var3 from True to False or False to True
     boolean_var3 = not boolean_var3
+
+
+# Boolean variables can be used to control the flow of a program such as a while loop.  The while loop will continue to run as long as the boolean variable is True or False depending on how the loop is set up. for example:
+loop_boolean_var = True
+counter = 0
+while loop_boolean_var:
+    if counter < 3:
+        print(f"This is the while loop counter: {counter}")
+        counter += 1
+    else:
+        print("The counter is greater than 3 and the loop will stop.")
+        loop_boolean_var = False
