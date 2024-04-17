@@ -1,6 +1,7 @@
 """
 while loops and the break keyword Demo
 """
+
 from tkinter import messagebox, simpledialog, Tk
 
 # While loops are similar to for loops. Both repeat the code inside the loop.
