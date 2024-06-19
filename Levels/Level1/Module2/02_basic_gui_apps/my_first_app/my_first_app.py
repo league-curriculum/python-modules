@@ -10,7 +10,7 @@ def create_image(filename, width, height):
 
     try:
         image = Image.open(filename)
-        image = image.resize((width, height), Image.ANTIALIAS)
+        image = image.resize((width, height), Image.Resampling.LANCZOS)
         image_obj = ImageTk.PhotoImage(image=image)
     except FileNotFoundError as fnf:
         print("ERROR: Unable to find file " + filename)
