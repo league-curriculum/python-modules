@@ -43,8 +43,10 @@ def create_new_structure(original_path, new_path):
                 if "Level" in entry_name or "Module" in entry_name or "module" in entry_name:
                     if "-" in entry_name:
                         dir_to_add, sub_dir_to_add = entry_name.split('-', 1)
-                    else:
+                    elif "_" in entry_name:
                         dir_to_add, sub_dir_to_add = entry_name.split('_', 1)
+                    else:
+                        continue
 
                     new_directory_path = os.path.join(current_new, dir_to_add, sub_dir_to_add)
                     try:
@@ -225,7 +227,7 @@ def main(original_path: str, new_path: str, verbose: bool):
 
     logger.info(f'Source path: {original_path}')
     logger.info(f'Destination path: {new_path}')
-    create_new_structure(original_path, new_path)
+    #create_new_structure(original_path, new_path)
 
     remove_underscore_from_files(new_path)
 
