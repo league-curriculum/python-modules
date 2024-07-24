@@ -18,40 +18,21 @@ def walk_images(levels_dir):
 
 
 def get_lmla(dir_=None):
+
     """Get level, module, lesson, assignment from a directory"""
     if dir_ is None:
         p = Path('.')
     else:
         p = Path(dir_)
 
-    p = str(p.absolute())
+    _, level, module, *parts = str(p).split('/')
 
-
-    if re.search('/Level\d+/Module\d+/.*\.py', p):
-        # Form of:  levels/Level1/Module4/01_dictionaries
-        # Extract the level and module names with regex,
-        # then the next is the lesson, and after that is the assignment.
-        # If there are only 3 parts, then the lesson is the assignment.
-
-        # Regex to extract Lesson and Module
-        lm = re.search(r'Level\d+/Module\d+', p).group()
-        l, m = lm.split('/')
-
-        # Extract the lesson and assignment
-        parts = p.split('/')
-
-        if len(parts) > parts.index(m) + 2:
-            ls = parts[parts.index(m) + 1]
-            a = parts[parts.index(m) + 2]
-        else:
-            ls = a = parts[parts.index(m) + 1]
-
-        return l, m, ls, a
-
-
-
+    if len(parts) == 1:
+        ls, a = parts[0], parts[0]
+    elif len(parts) == 2:
+        ls, a = parts
     else:
+        assert(False)
 
-        return None, None, None, None
-
+    return level, module, ls, a
 

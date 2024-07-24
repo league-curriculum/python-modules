@@ -43,11 +43,13 @@ def main_entry():
 @click.option('-l', '--level_dir', default='levels', help="Root directory to levels")
 def meta(level_dir='levels'):
 
-    for p in walk_python(Path(level_dir)):
+    for p, n in walk_python(Path(level_dir)):
+        #print(n, p)
 
-        if '.png' in p.name:
-            print(p)
+    
+        l,m,ls, a = get_lmla(Path(p))
 
+        print(f"{n} {p} Level: {l}, Module: {m}, Lesson: {ls}, Assignment: {a}")
 
 @main.command(name='rename', help='Regenerate meta.yaml')
 @click.option('-l', '--level_dir', default='levels', help="Root directory to levels")
@@ -73,7 +75,6 @@ def rename(level_dir='levels'):
             p.rename(n)
             print(f"Renamed {p} to {n}")
             
-
 
 if __name__ == '__main__':
     main_entry()

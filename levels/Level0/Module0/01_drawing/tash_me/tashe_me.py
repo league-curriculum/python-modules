@@ -12,7 +12,7 @@ def setBackground(filename):
         image = Image.open(file_path)
     except:
         print("ERROR: Unable to find file " + file_path)
-        return
+        raise
 
     window.setup(image.width, image.height, startx=0, starty=0)
     window.bgpic(file_path)
@@ -30,7 +30,7 @@ def addMoustache(filename):
         window.addshape(file_path)
     except turtle.TurtleGraphicsError:
         print("ERROR: Unable to find file " + file_path)
-        return
+        raise
 
     m.shape(file_path)
     m.penup()
