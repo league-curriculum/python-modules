@@ -233,7 +233,7 @@ def main(original_path: str, new_path: str, verbose: bool):
 
     process_python_files(new_path)
 
-    create_assignment_data(new_path)
+    #create_assignment_data(new_path)
 
 if __name__ == '__main__':
     main()
