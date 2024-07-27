@@ -30,7 +30,7 @@ open a new browser window with a "noVNC" logo.
 You might need to drag the browser window to the right side of the screen. Your
 screen should look something like:
 
-enter><img src="https://images.jointheleague.org/module-navigation/browser_window.png" width="600px"></center>
+<center><img src="https://images.jointheleague.org/module-navigation/browser_window.png" width="600px"></center>
 
 Click on "Connect". If it asks for a password,  enter the passwod: "code4life"
 
@@ -44,6 +44,8 @@ Here is a simple program, one that you might have seen before.
 ```python
 
 import turtle 
+
+turtle.setup (width=600, height=600)
 
 tina = turtle.Turtle()
 
@@ -62,3 +64,4 @@ This program has been copied into the next file in this module, which is named
 1. Click on the file name to open the file
 2. Look in the upper right for these icons: <img style="vertical-align:middle" src="https://images.jointheleague.org/vscode/run_buttons.png" height="25px" > 
     click on the ▶️ run button to run the program.  
+3. Click on the window to close it. 
