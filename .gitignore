@@ -11,8 +11,6 @@ Level1-Module3/_01_gui_app_bindings/_c_PigLatinTranslator/__pycache__/PigLatinCo
 .idea
 .idea/workspace.xml
 
-save/
-orig/
 
 
 # Byte-compiled / optimized / DLL files
@@ -54,3 +52,5 @@ coverage.xml
 # Miscellaneous
 *.bak
 *.swp
+
+saved/

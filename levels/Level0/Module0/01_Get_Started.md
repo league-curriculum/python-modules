@@ -1,7 +1,7 @@
 
 # Getting Started with Python
 
-This is the first formal lesson of your first Python class with the Leage of
+This is the first formal lesson of your first Python class with the League of
 Amazing Programmers. To follow these lessons, you should be reading this file in
 Visual Studio Code if you are on your own computer, or if you are using a
 website, it should be Github Codespaces. For the first step, be that this text
@@ -80,6 +80,8 @@ tina.forward(20)                        # Move tina forward by 20
 tina.write("Why, hello there!")         # Write the message "Why, hello there!"
 tina.backward(20)                       # Move tina backward by 20
 
+
+
 turtle.exitonclick()                    # Close the window when we click on it
 ```
  
@@ -90,3 +92,5 @@ This program has been copied into the next file in this module, which is named
 2. Look in the upper right for these icons: <img style="vertical-align:middle" src="https://images.jointheleague.org/vscode/run_buttons.png" height="25px" > 
     click on the ▶️ run button to run the program.  
 3. Click on the window to close it. 
+
+
