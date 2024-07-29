@@ -31,3 +31,8 @@ tina.circle(100, steps=50)
 tina.end_fill() 
 
 # 4 continue with the file 04_Loops.ipynb
+
+... # your code here
+
+
+turtle.exitonclick()                    # Close the window when we click on it
